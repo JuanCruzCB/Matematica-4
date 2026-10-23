@@ -1,3 +1,1000 @@
 # Índice
 
-## 
+- [Índice](#índice)
+- [0.1. Cálculo](#01-cálculo)
+  - [Ecuaciones](#ecuaciones)
+    - [Concepto](#concepto)
+    - [Ecuaciones en el plano $\\mathbb{R}^2$](#ecuaciones-en-el-plano-mathbbr2)
+      - [Rectas](#rectas)
+      - [Parábolas](#parábolas)
+      - [Circunferencias](#circunferencias)
+      - [Elipses](#elipses)
+    - [Ecuaciones en el espacio $\\mathbb{R}^3$](#ecuaciones-en-el-espacio-mathbbr3)
+      - [Planos](#planos)
+      - [Esferas](#esferas)
+      - [Elipsoides](#elipsoides)
+      - [Paraboloides](#paraboloides)
+  - [Límites de una variable](#límites-de-una-variable)
+    - [Definición](#definición)
+    - [Límites laterales](#límites-laterales)
+    - [Existencia del límite](#existencia-del-límite)
+    - [Leyes de los límites](#leyes-de-los-límites)
+    - [Límites conocidos](#límites-conocidos)
+  - [Continuidad](#continuidad)
+    - [Dominio](#dominio)
+    - [Continuidad en un punto](#continuidad-en-un-punto)
+    - [Teoremas](#teoremas)
+  - [Derivación en una variable](#derivación-en-una-variable)
+    - [Concepto de derivada](#concepto-de-derivada)
+    - [Definición de cociente incremental de Newton](#definición-de-cociente-incremental-de-newton)
+    - [Reglas de derivación](#reglas-de-derivación)
+    - [Teorema sobre derivabilidad y continuidad](#teorema-sobre-derivabilidad-y-continuidad)
+  - [Máximos y mínimos](#máximos-y-mínimos)
+    - [Definición](#definición-1)
+    - [Punto crítico](#punto-crítico)
+    - [Teorema de Weierstrass](#teorema-de-weierstrass)
+- [0.2. Vectores](#02-vectores)
+  - [Puntos y Vectores](#puntos-y-vectores)
+    - [Punto en $\\mathbb{R}^2$ y $\\mathbb{R}^3$](#punto-en-mathbbr2-y-mathbbr3)
+    - [Vector en $\\mathbb{R}^2$ y $\\mathbb{R}^3$](#vector-en-mathbbr2-y-mathbbr3)
+  - [Operaciones algebraicas con vectores](#operaciones-algebraicas-con-vectores)
+  - [Vectores base unitarios](#vectores-base-unitarios)
+  - [Magnitud y distancia](#magnitud-y-distancia)
+  - [Producto interno y ángulo entre vectores](#producto-interno-y-ángulo-entre-vectores)
+- [0.3. Estadística](#03-estadística)
+  - [Variables Aleatorias](#variables-aleatorias)
+  - [Esperanza](#esperanza)
+  - [Varianza](#varianza)
+  - [Estadísticos y Estimación puntual](#estadísticos-y-estimación-puntual)
+  - [Intervalos de confianza](#intervalos-de-confianza)
+  - [Tests de Hipótesis](#tests-de-hipótesis)
+- [0.4. Lógica y Conjuntos](#04-lógica-y-conjuntos)
+  - [Lógica proposicional](#lógica-proposicional)
+    - [Proposición](#proposición)
+    - [Conectivos Lógicos](#conectivos-lógicos)
+      - [Negación $(\\lnot)$](#negación-lnot)
+      - [Conjunción $(\\land)$](#conjunción-land)
+      - [Disyunción $(\\lor)$](#disyunción-lor)
+      - [Disyunción Exclusiva $(\\oplus)$](#disyunción-exclusiva-oplus)
+      - [Condicional $(\\rightarrow)$](#condicional-rightarrow)
+      - [Bicondicional $(\\leftrightarrow)$](#bicondicional-leftrightarrow)
+    - [Equivalencia Lógica](#equivalencia-lógica)
+      - [Definición](#definición-2)
+      - [Ejemplos de equivalencias conocidas](#ejemplos-de-equivalencias-conocidas)
+        - [Doble negación](#doble-negación)
+        - [Leyes conmutativas](#leyes-conmutativas)
+        - [Leyes asociativas](#leyes-asociativas)
+        - [Leyes distributivas](#leyes-distributivas)
+        - [Leyes de idempotencia](#leyes-de-idempotencia)
+        - [Leyes de De Morgan](#leyes-de-de-morgan)
+        - [Contrapositiva](#contrapositiva)
+        - [Condicional](#condicional)
+        - [Bicondicional](#bicondicional)
+        - [Adición](#adición)
+        - [Simplificación](#simplificación)
+        - [Modus Ponens](#modus-ponens)
+        - [Modus Tollens](#modus-tollens)
+        - [Transitividad del condicional](#transitividad-del-condicional)
+        - [Transitividad del bicondicional](#transitividad-del-bicondicional)
+    - [Esquema proposicional](#esquema-proposicional)
+    - [Cuantificadores Existencial y Universal](#cuantificadores-existencial-y-universal)
+  - [Teoría de Conjuntos](#teoría-de-conjuntos)
+    - [Definición](#definición-3)
+    - [Formas de expresar conjuntos](#formas-de-expresar-conjuntos)
+    - [Conjunto vacío](#conjunto-vacío)
+    - [Operaciones](#operaciones)
+      - [Subconjunto estricto](#subconjunto-estricto)
+      - [Subconjunto no estricto](#subconjunto-no-estricto)
+      - [Igualdad](#igualdad)
+      - [Intersección](#intersección)
+      - [Unión](#unión)
+      - [Diferencia](#diferencia)
+      - [Complemento](#complemento)
+      - [Producto cartesiano](#producto-cartesiano)
+    - [Propiedades](#propiedades)
+- [0.5. Matrices](#05-matrices)
+  - [Ecuación lineal](#ecuación-lineal)
+  - [Matriz](#matriz)
+    - [Definición](#definición-4)
+    - [Tipos de matrices](#tipos-de-matrices)
+      - [Rectangular vs cuadrada](#rectangular-vs-cuadrada)
+      - [Nula](#nula)
+      - [Triangular superior vs triangular inferior](#triangular-superior-vs-triangular-inferior)
+      - [Diagonal](#diagonal)
+      - [Identidad](#identidad)
+    - [Operaciones](#operaciones-1)
+      - [Igualdad](#igualdad-1)
+      - [Suma](#suma)
+      - [Producto por un escalar](#producto-por-un-escalar)
+      - [Producto de matrices](#producto-de-matrices)
+    - [Matriz invertible](#matriz-invertible)
+    - [Matriz transpuesta](#matriz-transpuesta)
+- [0.6. Sistemas de ecuaciones](#06-sistemas-de-ecuaciones)
+- [1.1. Cálculo en dos o más variables](#11-cálculo-en-dos-o-más-variables)
+  - [Definición de función de varias variables](#definición-de-función-de-varias-variables)
+  - [Ejemplos de funciones de dos variables](#ejemplos-de-funciones-de-dos-variables)
+  - [Límites y Continuidad](#límites-y-continuidad)
+    - [Concepto](#concepto-1)
+    - [Definición](#definición-5)
+    - [Teorema del encaje](#teorema-del-encaje)
+    - [Propiedades](#propiedades-1)
+- [1.2 Descenso del gradiente](#12-descenso-del-gradiente)
+- [2.1. Regresión Lineal 1](#21-regresión-lineal-1)
+- [2.2. Regresión Lineal 2](#22-regresión-lineal-2)
+- [3. Teoría de números](#3-teoría-de-números)
+- [4. Relaciones entre conjuntos](#4-relaciones-entre-conjuntos)
+- [5.1. Estructuras algebraicas](#51-estructuras-algebraicas)
+- [5.2. Aritmética Modular](#52-aritmética-modular)
+- [5.3. Morfismos](#53-morfismos)
+- [6. Álgebra Lineal](#6-álgebra-lineal)
+- [Resumen](#resumen)
+
+---
+
+# 0.1. Cálculo
+
+## Ecuaciones
+
+### Concepto
+
+Una ecuación es una igualdad que contiene una o más incógnitas. A partir de ecuaciones, se pueden realizar representaciones gráficas en un plano cartesiano $(\mathbb{R}^2)$.
+
+### Ecuaciones en el plano $\mathbb{R}^2$
+
+#### Rectas
+
+- **$x = a$** con $a \in \mathbb{R}$ es una recta **vertical** paralela al eje $Y$.
+- **$y = b$** con $b \in \mathbb{R}$ es una recta **horizontal** paralela al eje $X$.
+- **$y = mx + b$** con $m, b \in \mathbb{R}$ es una recta con pendiente $m$ y ordenada al origen $b$. Si $m = 0$, la recta es horizontal.
+
+#### Parábolas
+
+- **$y = a(x - h)^2 + k$** con $a, h, k \in \mathbb{R}$ es una parábola con eje paralelo al eje $Y$ y vértice en $V(h, k)$.
+- **$x = b(y - c)^2 + v$** con $b, c, v \in \mathbb{R}$ es una parábola con eje paralelo al eje $X$ y vértice en $V(c, v)$.
+- **$y = ax^2$** con $a \in \mathbb{R}$ es una parábola con eje paralelo al eje $Y$ y vértice en el origen.
+
+#### Circunferencias
+
+- **$(x - h)^2 + (y - k)^2 = r^2$** con $h, k, r \in \mathbb{R}$ es una circunferencia con centro en $C(h, k)$ y radio $r$.
+- **$x^2 + y^2 = r^2$** con $r \in \mathbb{R}$ es una circunferencia con centro en el origen y radio $r$.
+
+#### Elipses
+
+- **$\frac{(x - h)^2}{a^2} + \frac{(y - k)^2}{b^2} = 1$** con $h, k, a, b \in \mathbb{R}$ es una elipse con centro en $C(h, k)$.
+- **$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$** con $a, b \in \mathbb{R}$ es una elipse con centro en el origen.
+
+### Ecuaciones en el espacio $\mathbb{R}^3$
+
+#### Planos
+
+- **$z = 0$** es el plano coordenado $XY$.
+- **$y = 0$** es el plano coordenado $XZ$.
+- **$x = 0$** es el plano coordenado $YZ$.
+- **$\alpha \cdot y + \beta \cdot z + d = 0$** con $\alpha, \beta, d \in \mathbb{R}$ es un plano paralelo al eje coordenado $X$.
+- **$\gamma \cdot y + \beta \cdot z + d = 0$** con $\gamma, \beta, d \in \mathbb{R}$ es un plano paralelo al eje coordenado $Y$.
+- **$\gamma \cdot x + \alpha \cdot y + d = 0$** con $\gamma, \beta, d \in \mathbb{R}$ es un plano paralelo al eje coordenado $Z$.
+- **$\gamma \cdot x + \alpha \cdot y + \beta \cdot z + d = 0$** con $\gamma, \alpha, \beta, d \in \mathbb{R}$ es un plano general.
+
+#### Esferas
+
+- **$(x - h)^2 + (y - k)^2 + (z - l)^2 = r^2$** con $h, k, l, r \in \mathbb{R}$ es una esfera con centro en $C(h, k, l)$ y radio $r$.
+- **$x^2 + y^2 + z^2 = r^2$** con $r \in \mathbb{R}$ es una esfera con centro en el origen y radio $r$.
+
+#### Elipsoides
+
+- **$\frac{(x - h)^2}{a^2} + \frac{(y - k)^2}{b^2} + \frac{(z - l)^2}{c^2} = 1$** con $h, k, l, a, b, c \in \mathbb{R}$ es un elipsoide con centro en $C(h, k, l)$ y semiejes $a$, $b$ y $c$.
+- **$\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1$** con $a, b, c \in \mathbb{R}$ es un elipsoide con centro en el origen.
+
+#### Paraboloides
+
+- **$z = (x - h)^2 + (y - k)^2 + l$** con $h, k, l \in \mathbb{R}$ es un paraboloide con vértice en $V(h, k, l)$ y eje de simetría paralelo al eje $Z$.
+- **$z = x^2 + y^2$** es un paraboloide con vértice en el origen y eje de simetría paralelo al eje $Z$.
+
+## Límites de una variable
+
+### Definición
+
+- **$\lim_{x \to x_0} f(x) = L$**
+- Dada una función $f(x)$ definida en un intervalo $S$ alrededor del valor $x_0$, exceptuando posiblemente a $x_0$, se dice que el límite de $f(x)$ cuando $x$ tiende a $x_0$ es igual a $L$ si se puede lograr que los valores de $f(x)$ estén arbitrariamente cerca de $L$ tomando valores de $x$ suficientemente cercanos a $x_0$ por ambos lados, tanto por la izquierda como por la derecha, pero no iguales a $x_0$.
+- No es necesario que la función esté definida en $x_0$ para que exista el límite, por ejemplo:
+  - $H(t) = \begin{cases}0 & \text{si } t < 0 \\ 1 & \text{si } t \geq 0 \end{cases}$
+  - Cuando $t$ se aproxima a $0$ por la izquierda, $H(t)$ se acerca a $0$, y cuando $t$ se aproxima a $0$ por la derecha, $H(t)$ se acerca a $1$.
+  - Como no hay un único númeroal que se acerca $H(t)$ cuando $t$ tiende a $0$, se dice que el límite no existe.
+
+### Límites laterales
+
+- Dada una función $f(x)$ y una constante $x_0$, se definen:
+  - **$\lim_{x \to x_0^+} f(x) = L$**
+  - **$\lim_{x \to x_0^-} f(x) = L$**
+  - Lo primero expresa que el límite de $f(x)$ cuando $x$ tiende a $x_0$ por derecha es igual a $L$ si se puede hacer que los valores de $f(x)$ se acerquen arbitrariamente a $L$ tanto como uno quiera, tomando valores de $x$ suficientemente cercanos a $x_0$ pero **mayores** que $x_0$.
+  - Lo segundo expresa que el límite de $f(x)$ cuando $x$ tiende a $x_0$ por izquierda es igual a $L$ si se puede hacer que los valores de $f(x)$ se acerquen arbitrariamente a $L$ tanto como uno quiera, tomando valores de $x$ suficientemente cercanos a $x_0$ pero **menores** que $x_0$.
+
+### Existencia del límite
+
+- **$\lim_{x \to x_0} f(x) = L \iff (\lim_{x \to x_0^+} f(x) = \lim_{x \to x_0^-} f(x) = L)$**.
+- En palabras, el límite de $f(x)$ cuando $x$ tiende a $x_0$ existe si y solo si ambos límites laterales **existen** y son **iguales**.
+
+### Leyes de los límites
+
+- Dada $c$ una constante y dado que los límites $\lim_{x \to x_0} f(x) = L_1$ y $\lim_{x \to x_0} g(x) = L_2$ existen, se cumplen las siguientes leyes:
+  - **Suma: $\lim_{x \to x_0} (f(x) + g(x)) = \lim_{x \to x_0} f(x) + \lim_{x \to x_0} g(x) = L_1 + L_2$**
+  - **Resta: $\lim_{x \to x_0} (f(x) - g(x)) = \lim_{x \to x_0} f(x) - \lim_{x \to x_0} g(x) = L_1 - L_2$**
+  - **Constante multiplicativa: $\lim_{x \to x_0} (c \cdot f(x)) = c \cdot \lim_{x \to x_0} f(x) = c \cdot L_1$**
+  - **Producto: $\lim_{x \to x_0} (f(x) \cdot g(x)) = \lim_{x \to x_0} f(x) \cdot \lim_{x \to x_0} g(x) = L_1 \cdot L_2$**
+  - **Cociente: $\lim_{x \to x_0} \frac{f(x)}{g(x)} = \frac{\lim_{x \to x_0} f(x)}{\lim_{x \to x_0} g(x)} = \frac{L_1}{L_2}$ si $\lim_{x \to x_0} g(x) \neq 0$**
+
+### Límites conocidos
+
+- **$\lim_{x \to 0} \frac{\sin(x)}{x} = 1$**
+- **$\lim_{x \to 0} \frac{1 - \cos(x)}{x} = 0$**
+- **$\lim_{x \to \infty} (1 + \frac{1}{x})^x = e$**
+- **$\lim_{x \to 0} \frac{e^{k \cdot x} - 1}{x} = k$**
+- **$\lim_{x \to 0} \frac{a^{k \cdot x} - 1}{x} = k \cdot \ln(a)$**
+- **$\lim_{x \to 0} \ln \frac{(1 + x)}{x} = 1$**
+- **$\lim_{t \to 0} (1 + t)^{\frac{1}{t}} = e$**
+
+## Continuidad
+
+### Dominio
+
+- Dada una función $f : D \subset \mathbb{R} \to \mathbb{R}$, se llama dominio de $f$, denotado $Dom(f)$, al subconjunto $D$ de $\mathbb{R}$ en donde la función $f$ está definida.
+- En otras palabras, el dominio de una función es el conjunto de todos los valores de entrada posibles (valores de $x$) para los cuales la función produce un valor de salida (valor de $f(x)$).
+
+### Continuidad en un punto
+
+- Dada una función $f : D \subset \mathbb{R} \to \mathbb{R}$ y un punto $x_0 \in D$, se dice que la función $f$ es continua en el punto $x_0$ si se cumplen $\lim_{x \to x_0} f(x) = f(x_0)$.
+- Implícitamente, la definición requiere que se cumplan tres condiciones:
+  1. $f(x_0)$ está definido, es decir, $x_0 \in D$.
+  2. $\lim_{x \to x_0} f(x)$ existe.
+  3. $\lim_{x \to x_0} f(x) = f(x_0)$.
+- Si la función es continua en todo un intervalo de puntos de su dominio, tiene la propiedad de que un pequeño cambio en la entrada (valor de $x$) produce un pequeño cambio en la salida (valor de $f(x)$). En otras palabras, no hay saltos bruscos ni interrupciones.
+- Si alguna de las tres condiciones dadas no se cumple, se dice que la función presenta una discontinuidad en el punto $x_0$, o que la función es discontinua en el punto $x_0$.
+
+### Teoremas
+
+1. Si $c \in \mathbb{R}$ y $f$ y $g$ son funciones continuas en un punto $x_0$, entonces las siguientes funciones también son continuas en $x_0$:
+   - **Múltiplo escalar: $c \cdot f$**
+   - **Suma: $f + g$**
+   - **Resta: $f - g$**
+   - **Producto: $f \cdot g$**
+   - **Cociente: $\frac{f}{g}$, siempre que $g(x_0) \neq 0$**.
+2. Los siguientes tipos de funciones son continuas en todo punto de su dominio:
+   - **Polinómicas**.
+   - **Trigonométricas**.
+   - **Exponenciales**.
+   - **Racionales**.
+   - **Radicales**.
+   - **Logarítmicas**.
+3. **Si $g$ es continua en $x_0$ y $f$ es continua en $g(x_0)$, entonces la composición de funciones $f \circ g$ dada por $(f \circ g)(x) = f(g(x))$ es continua en $x_0$**.
+
+Con ayuda de estos tres teoremas se pueden tomar funciones relativamente complejas y determinar el intervalo de continuidad con facilidad. Usualmente, es en **los puntos donde la función no está definida que se debe hacer un análisis cuidadoso para determinar si la función es continua o discontinua**.
+
+## Derivación en una variable
+
+### Concepto de derivada
+
+- La derivada permite determinar la **pendiente** de la recta tangente a una curva en un determinado punto.
+- La **pendiente** de una recta es la razón de cambio entre los valores de $x$ e $y$. Indica la cantidad de unidades que aumenta o disminuye el valor de $y$ cuando $x$ cambia en una unidad.
+- La pendiente de una **recta** es **única** a lo largo de toda su extensión, mientras que la pendiente de una **curva** puede **variar** en cada punto.
+
+### Definición de cociente incremental de Newton
+
+- Sea $f$ una función y sea $x \in D \subset \mathbb{R}$ un punto de su dominio. Llamamos derivada de $f$ en $x$, denotada $f'(x)$, al límite del cociente incremental de $f$ en $x$ cuando el incremento tiende a cero, siempre que ese límite exista: **$f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}$**
+
+### Reglas de derivación
+
+- Sean $g(x)$ y $f(x)$ funciones de una variable derivables, entonces tenemos las siguientes
+  propiedades:
+  - **Derivada de una constante: $f(x) = c \implies f'(x) = 0$**
+  - **Derivada de una función polinómica: $f(x) = x^n \implies f'(x) = n \cdot x^{n - 1}$**
+  - **Derivada de una suma de funciones: $(f(x) + g(x))' = f'(x) + g'(x)$**
+  - **Derivada de una resta de funciones: $(f(x) - g(x))' = f'(x) - g'(x)$**
+  - **Derivada de un producto de funciones: $(f(x) \cdot g(x))' = f'(x) \cdot g(x) + f(x) \cdot g'(x)$**
+  - **Derivada de un cociente de funciones: $\left(\frac{f(x)}{g(x)}\right)' = \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{(g(x))^2}$ si $g(x) \neq 0$**
+
+### Teorema sobre derivabilidad y continuidad
+
+- Sea $f$ una función. Si $f$ es derivable en un punto $x_0$, entonces $f$ es continua en $x_0$.
+- Es decir, toda función derivable en un punto es continua en ese punto.
+- Sin embargo, el recíproco no se cumple: no toda función continua en un punto es derivable en ese punto. Por ejemplo, la función valor absoluto $f(x) = |x|$ es continua en $x = 0$, pero no es derivable en $x = 0$.
+
+## Máximos y mínimos
+
+### Definición
+
+- Sea $f$ una función y sea $x_0$ un punto de su dominio.
+- $x_0$ es un **máximo absoluto** de $f$ si $f(x_0) \geq f(x)$ para todo $x$ en el dominio de $f$.
+- $x_0$ es un **máximo relativo o local** de $f$ si existe un intervalo abierto alrededor de $x_0$ tal que $f(x_0) \geq f(x)$ para todo $x$ en ese intervalo.
+- $x_0$ es un **mínimo absoluto** de $f$ si $f(x_0) \leq f(x)$ para todo $x$ en el dominio de $f$.
+- $x_0$ es un **mínimo relativo o local** de $f$ si existe un intervalo abierto alrededor de $x_0$ tal que $f(x_0) \leq f(x)$ para todo $x$ en ese intervalo.
+
+### Punto crítico
+
+- Se dice que $x_0$ es un **punto crítico** de $f$ si $f'(x_0) = 0$ o si $f'(x_0)$ no existe.
+- Si $f$ tiene un máximo o mínimo local en un punto $c$ de su dominio, y suponiendo que la derivada de $f$ existe en $c$, entonces $f'(c) = 0$.
+- Intuitivamente, hallar los puntos donde la derivada es cero o no existe nos permite identificar los posibles máximos y mínimos de la función.
+
+### Teorema de Weierstrass
+
+- Sea $f$ una función continua en un intervalo cerrado $[a, b]$. Ésta alcanza un valor máximo absoluto $M$ y un valor mínimo absoluto $m$ en valores de $x \in [a, b]$.
+- Por definición de máximos y mínimos absolutos en $[a, b]$ debe cumplirse que $m \leq f(x) \leq M$ para todo $x \in [a, b]$.
+
+---
+
+# 0.2. Vectores
+
+## Puntos y Vectores
+
+### Punto en $\mathbb{R}^2$ y $\mathbb{R}^3$
+
+- En el plano $\mathbb{R}^2$, un punto $P$ se representa como un **par ordenado** $(a_1, a_2)$. Tanto $a_1$ como $a_2$ se denominan coordenadas cartesianas del punto $P$. Si consideramos a los ejes cartesianos $x$ e $y$, entonces $a_1$ es la coordenada $x$ y $a_2$ es la coordenada $y$.
+- En el espacio $\mathbb{R}^3$, un punto $Q$ se representa como una **terna ordenada** $(a_1, a_2, a_3)$. Tanto $a_1$, $a_2$ como $a_3$ se denominan coordenadas cartesianas del punto $Q$. Si consideramos a los ejes cartesianos $x$, $y$ y $z$, entonces $a_1$ es la coordenada $x$, $a_2$ es la coordenada $y$ y $a_3$ es la coordenada $z$.
+
+### Vector en $\mathbb{R}^2$ y $\mathbb{R}^3$
+
+- En el plano $\mathbb{R}^2$, un vector $\vec{v}$ se define como un **par ordenado** $(v_1, v_2)$, donde $v_1$ y $v_2$ son números reales que representan las componentes del vector. Un vector se representa gráficamente vía un segmento de recta dirigido (flecha) que empieza desde un punto inicial (cola) y termina en un punto final (punta). La magnitud, sentido y dirección del vector lo caracterizan y lo diferencian de otros vectores.
+- En el espacio $\mathbb{R}^3$, un vector es una **terna ordenada**. Todo lo demás es análogo a lo explicado para el plano $\mathbb{R}^2$.
+- Se denota como $\vec{OP}$ al vector en **posición canónica**, es decir, el vector que tiene su cola en el origen y su punta en el punto $P$.
+  - Para $\mathbb{R}^2$, $O = (0, 0)$ y $P = (a_1, a_2)$.
+  - Para $\mathbb{R}^3$, $O = (0, 0, 0)$ y $P = (a_1, a_2, a_3)$.
+- Aquellos vectores que no están en posición canónica poseen un punto inicial $A$ y un punto terminal $B$.
+  - Para $\mathbb{R}^2$, $v = (v_1, v_2)$ con $A = (a_1, a_2)$ y $B = (b_1, b_2)$.
+  - Para $\mathbb{R}^3$, $v = (v_1, v_2, v_3)$ con $A = (a_1, a_2, a_3)$ y $B = (b_1, b_2, b_3)$.
+  - Se puede ver que las componentes del vector se pueden obtener restando las coordenadas del punto inicial a las coordenadas del punto final (análogo para $\mathbb{R}^2$):
+    - $v_1 = b_1 - a_1$
+    - $v_2 = b_2 - a_2$
+    - $v_3 = b_3 - a_3$
+
+## Operaciones algebraicas con vectores
+
+Sean $u = (u_1, u_2, u_3)$ y $v = (v_1, v_2, v_3)$ dos vectores en $\mathbb{R}^3$ y sea $c \in \mathbb{R}$ un escalar.
+
+- **Igualdad: $u = v \iff u_1 = v_1, u_2 = v_2, u_3 = v_3$**
+- **Suma: $u + v = (u_1 + v_1, u_2 + v_2, u_3 + v_3)$**
+- **Resta: $u - v = (u_1 - v_1, u_2 - v_2, u_3 - v_3)$**
+- **Producto por escalar: $c \cdot u = (c \cdot u_1, c \cdot u_2, c \cdot u_3)$**
+
+## Vectores base unitarios
+
+- Para describir vectores en $\mathbb{R}^3$, muchas veces es conveniente expresarlos en términos de sumas y productos por escalar de 3 vectores base, también conocidos como versores: $i$, $j$ y $k$. Estos tres segmentos de recta dirigidos tienen longitud $1$ y son paralelos a cada uno de los ejes coordenados $x$, $y$ y $z$, respectivamente. Se definen como:
+  - **$i = (1, 0, 0)$** (paralelo al eje $X$)
+  - **$j = (0, 1, 0)$** (paralelo al eje $Y$)
+  - **$k = (0, 0, 1)$** (paralelo al eje $Z$)
+- De forma análoga en $\mathbb{R}^2$, se definen los vectores base unitarios $i$ y $j$ como:
+  - **$i = (1, 0)$** (paralelo al eje $X$)
+  - **$j = (0, 1)$** (paralelo al eje $Y$)
+- Ejemplo: Sea $v = (3, 4, 5)$ un vector en $\mathbb{R}^3$. Entonces, se puede expresar como una combinación lineal de los vectores base unitarios:
+  - $v = (3, 4, 5)$
+  - $v = 3 \cdot i + 4 \cdot j + 5 \cdot k$
+  - $v = 3 \cdot (1, 0, 0) + 4 \cdot (0, 1, 0) + 5 \cdot (0, 0, 1) = (3, 0, 0) + (0, 4, 0) + (0, 0, 5)$
+  - $v = (3, 4, 5)$
+
+## Magnitud y distancia
+
+- Sea $u = (u_1, u_2)$ un vector en $\mathbb{R}^2$ y sea $v = (v_1, v_2, v_3)$ un vector en $\mathbb{R}^3$.
+- Se define la magnitud de un vector como la longitud del segmento de recta dirigido que representa al vector.
+  - **$||u|| = \sqrt{u_1^2 + u_2^2}$**
+  - **$||v|| = \sqrt{v_1^2 + v_2^2 + v_3^2}$**
+- Aquellos vectores cuya magnitud es exactamente igual a $1$ se denominan **unitarios**.
+- Cualquier vector puede ser **normalizado**, es decir, se puede obtener un vector unitario en la misma dirección que el vector original dividiendo cada componente del vector por su magnitud:
+  - **$u = \frac{u}{||u||}$** es un vector unitario con la misma dirección que $u$.
+
+## Producto interno y ángulo entre vectores
+
+- Sean $u = (u_1, u_2, u_3)$ y $v = (v_1, v_2, v_3)$ dos vectores en $\mathbb{R}^3$.
+- Se define el producto interno, producto escalar o producto punto entre ellos como:
+  - **$u \cdot v = u_1 \cdot v_1 + u_2 \cdot v_2 + u_3 \cdot v_3$**
+  - El resultado del producto interno NO es un vector, si no que es un número real.
+- Propiedades:
+  - **$u \cdot u \geq 0 \quad \forall u \in \mathbb{R}^3$**
+  - **$u \cdot u = 0 \iff u = 0 \quad \forall u \in \mathbb{R}^3$**
+  - **$\alpha(u \cdot v) = (\alpha u) \cdot v = u \cdot (\alpha v) \quad \forall u, v \in \mathbb{R}^3, \alpha \in \mathbb{R}$**
+  - **$u \cdot (v + w) = u \cdot v + u \cdot w \quad \forall u, v, w \in \mathbb{R}^3$**
+  - **$(u + v) \cdot w = u \cdot w + v \cdot w \quad \forall u, v, w \in \mathbb{R}^3$**
+  - **$u \cdot v = v \cdot u \quad \forall u, v \in \mathbb{R}^3$**
+- La magnitud de un vector siempre se puede expresar en términos del producto interno:
+  - **$||u|| = \sqrt{u \cdot u}$**
+- Dados los vectores $u$ y $v$ mencionados, y sea $\theta$ el ángulo entre ellos, donde $0 \leq \theta \leq \pi$, se cumple la igualdad:
+  - **$u \cdot v = ||u|| \cdot ||v|| \cdot \cos(\theta)$**
+  - A partir de ahí, se puede derivar que el ángulo entre los dos vectores tiene la forma: $\theta = \cos^{-1} \left(\frac{u \cdot v}{||u|| \cdot ||v||}\right)$
+- Propiedades:
+  - **$u \cdot v > 0 \iff \theta < \frac{\pi}{2} = 90^\circ$**
+  - **$u \cdot v = 0 \iff \theta = \frac{\pi}{2} = 90^\circ$**
+  - **$u \cdot v < 0 \iff \theta > \frac{\pi}{2} = 90^\circ$**
+
+---
+
+# 0.3. Estadística
+
+## Variables Aleatorias
+
+- Dado un espacio muestral $S$ de un determinado experimento aleatorio, una variable aleatoria $X$ es una función que asigna a cada elemento de $S$ un número real. Es decir, si $X$ es una v.a. de $S$, entonces $X : S \to \mathbb{R}$.
+- Ejemplo: Sea un experimento aleatorio que consiste en lanzar un dado. El espacio muestral es $S = \{1, 2, 3, 4, 5, 6\}$. Definimos una variable aleatoria $X$ que representa el número que sale en el dado. Entonces, $X$ es una función que asigna a cada elemento de $S$ un número real:
+  - $X(1) = 1$
+  - $X(2) = 2$
+  - $X(3) = 3$
+  - $X(4) = 4$
+  - $X(5) = 5$
+  - $X(6) = 6$
+- Las v.a. se clasifican según su rango/imagen. Si $X$ es una v.a. con rango $R_X$ y $R_X$ es un conjunto finito o infinito contable, se dice que $X$ es una **v.a. discreta**. Si $R_X$ es un conjunto infinito no contable, se dice que $X$ es una **v.a. continua**.
+
+## Esperanza
+
+- La esperanza de una v.a. $X$ puede definir informalmente como el promedio ponderado de los valores del rango de la variable.
+- Para calcular la esperanza de una variable aleatoria en necesario conocer su distribución de probabilidad, lo que indica cómo está distribuida (asignada) la probabilidad total $(1)$ entre todos los valores posibles de la variable.
+- Para las variables discretas se define una **función de masa de probabilidad** y para las continuas una **función de densidad de probabilidad**.
+- Sean $X$ una v.a. discreta e $Y$ una v.a. continua:
+  - **$E(X) = \sum_{x_i \in R_X} x_i \cdot P(X = x_i)$**
+  - **$E(Y) = \int_{-\infty}^{\infty} y_i \cdot P(Y = y_i) dy$**
+- Tanto para variables discretas como continuas, la esperanza es una función lineal, es decir: $E(a + b \cdot X) = a + b \cdot E(X)$, donde $a, b \in \mathbb{R}$.
+
+## Varianza
+
+- La varianza de una v.a. $X$ es una medida de dispersión que indica qué tan alejados están los valores de la variable respecto a su esperanza.
+- Dos v.a. con la misma esperanza pueden tener varianzas muy diferentes.
+- Formalmente: **$V(X) = E((X - E(X))^2) = \sigma^2$**
+- La varianza nunca es negativa, y si es igual a cero, significa que todos los valores de la variable son iguales a su esperanza.
+- Propiedades:
+  - **$V(X) = E(X^2) - (E(X))^2$**
+  - **$V(a \cdot X + b) = a^2 \cdot V(X)$**
+
+## Estadísticos y Estimación puntual
+
+- Las variables aleatorias $X_1, X_2, \ldots, X_n$ representan una **muestra aleatoria** simple de tamaño $n$ si:
+  1. Las variables aleatorias $X_1, X_2, \ldots, X_n$ son independientes entre sí.
+  2. Cada variable aleatoria $X_i$ tiene la misma distribución de probabilidad.
+- Un **estadístico** es cualquier función o cálculo que se puede realizar a partir de los datos de la muestra aleatoria. Como su valor varía según la muestra que se tome, un estadístico se considera una variable aleatoria.
+- El objetivo de la **estimación puntual** es dar un único número (un punto en la recta numérica) para estimar a un parámetro desconocido de la población denominado $\theta$. El cálculo o estadístico que se usa para adivinar el valor de $\theta$ se llama **estimador puntual** y se denota como $\hat{\theta}$.
+- Estimadores comunes:
+  - Media muestral, estimador de la media poblacional $\mu$: $\bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_i$
+  - Varianza muestral, estimador de la varianza poblacional $\sigma^2$: $S^2 = \frac{1}{n - 1} \sum_{i=1}^{n} (X_i - \bar{X})^2$
+  - Desviación estándar muestral, estimador de la desviación estándar poblacional $\sigma$: $S = \sqrt{S^2}$
+- Un estimador de $\theta$ se dice **insesgado** si su esperanza es igual al parámetro que estima, es decir, $E(\hat{\theta}) = \theta$. Los tres estimadores mencionados anteriormente son insesgados.
+
+## Intervalos de confianza
+
+- Un **intervalo de confianza** es un rango de valores, calculado a partir de los datos de una muestra, dentro del cual se estima que se encuentra un parámetro poblacional desconocido (como la media o la proporción) con un nivel determinado de certeza.
+- A diferencia de la estimación puntual que da un solo número, el intervalo de confianza reconoce y mide la **incertidumbre** del muestreo.
+- Los valores de confianza más comunes son el 90%, 95% y 99%. Por ejemplo, un intervalo de confianza del 95% para la media poblacional $\mu$ significa que si se repitiera el muestreo muchas veces y se calcularan intervalos de confianza para cada muestra, aproximadamente el 95% de esos intervalos contendrían el verdadero valor de $\mu$.
+- Cuanto mayor sea el nivel de confianza, más amplio será el intervalo, reflejando una mayor certeza de que el parámetro poblacional se encuentra dentro de ese rango.
+
+## Tests de Hipótesis
+
+- Una **hipótesis estadística** es una afirmación sobre el valor de uno o varios parámetros de una población.
+- La prueba de hipótesis consiste en, dadas dos afirmaciones lógicas mutuamente excluyentes denominadas hipótesis nula ($H_0$) e hipótesis alternativa ($H_1$), decidir cual de ellas es la verdadera.
+- La hipótesis nula $H_0$ es la afirmación que se asume verdadera hasta que se demuestre lo contrario.
+- $H_0$ será **rechazada** en favor de $H_1$ solo si la evidencia muestral sugiere que $H_0$ es falsa. Si la muestra no contradice fuertemente a $H_0$, se continuará creyendo en la verdad de la hipótesis nula. Las dos posibles conclusiones derivadas de un análisis de prueba de hipótesis son entonces rechazar $H_0$ o no rechazar $H_0$.
+- Durante la prueba de hipótesis, se usan datos muestrales para decidir si se rechaza o no la hipótesis nula.
+- Pueden haber dos tipos de errores:
+  - Tipo 1: Rechazar la hipótesis nula cuando es verdadera.
+  - Tipo 2: No rechazar la hipótesis nula cuando es falsa.
+
+---
+
+# 0.4. Lógica y Conjuntos
+
+## Lógica proposicional
+
+### Proposición
+
+- Una proposición es una afirmación que es siempre o verdadera o falsa, pero no ambas al mismo tiempo ni tampoco indeterminada. Por ejemplo, "2 + 2 = 4" es una proposición verdadera, mientras que "El cielo es verde" es una proposición falsa.
+- Cualquier expresión a la cual no sea posible asignarle un valor de verdad V o F no es una proposición. Por ejemplo, la pregunta "¿Cuál es tu color favorito?" no es una proposición, ya que no tiene un valor de verdad definido.
+- No es necesario que el valor de verdad de una proposición sea totalmente conocido para que sea considerada una proposición. Por ejemplo, "Los extraterrestres existen" es una proposición, por más que algunos crean que es verdadera y otros crean que es falsa. Lo importante es que la proposición tiene un valor de verdad definido, aunque no se conozca cuál es.
+- Una proposición puede ser **simple** o **compuesta**.
+  - Una proposición **simple** es aquella que no contiene otras proposiciones como parte de ella.
+  - Una proposición **compuesta** se forma combinando dos o más proposiciones simples mediante conectores lógicos.
+
+### Conectivos Lógicos
+
+#### Negación $(\lnot)$
+
+| $p$ | $\lnot p$ |
+| --- | --------- |
+| $V$ | $F$       |
+| $F$ | $V$       |
+
+#### Conjunción $(\land)$
+
+| $p$ | $q$ | $p \land q$ |
+| --- | --- | ----------- |
+| $V$ | $V$ | $V$         |
+| $V$ | $F$ | $F$         |
+| $F$ | $V$ | $F$         |
+| $F$ | $F$ | $F$         |
+
+#### Disyunción $(\lor)$
+
+| $p$ | $q$ | $p \lor q$ |
+| --- | --- | ---------- |
+| $V$ | $V$ | $V$        |
+| $V$ | $F$ | $V$        |
+| $F$ | $V$ | $V$        |
+| $F$ | $F$ | $F$        |
+
+#### Disyunción Exclusiva $(\oplus)$
+
+| $p$ | $q$ | $p \oplus q$ |
+| --- | --- | ------------ |
+| $V$ | $V$ | $F$          |
+| $V$ | $F$ | $V$          |
+| $F$ | $V$ | $V$          |
+| $F$ | $F$ | $F$          |
+
+#### Condicional $(\rightarrow)$
+
+| $p$ | $q$ | $p \rightarrow q$ |
+| --- | --- | ----------------- |
+| $V$ | $V$ | $V$               |
+| $V$ | $F$ | $F$               |
+| $F$ | $V$ | $V$               |
+| $F$ | $F$ | $V$               |
+
+#### Bicondicional $(\leftrightarrow)$
+
+| $p$ | $q$ | $p \leftrightarrow q$ |
+| --- | --- | --------------------- |
+| $V$ | $V$ | $V$                   |
+| $V$ | $F$ | $F$                   |
+| $F$ | $V$ | $F$                   |
+| $F$ | $F$ | $V$                   |
+
+### Equivalencia Lógica
+
+#### Definición
+
+- Dos proposiciones $p$ y $q$ son lógicamente equivalentes si coinciden sus resultados para los mismos valores de verdad.
+- Se denota $p \Leftrightarrow q$.
+- Ejemplos:
+  - $p \rightarrow q \nLeftrightarrow q \rightarrow p$
+  - $p \rightarrow q \Leftrightarrow \lnot q \rightarrow \lnot p$
+
+#### Ejemplos de equivalencias conocidas
+
+##### Doble negación
+
+- $\lnot \lnot p \Leftrightarrow p$
+
+##### Leyes conmutativas
+
+- **De la conjunción**: $(p \land q) \Leftrightarrow (q \land p)$
+- **De la disyunción**: $(p \lor q) \Leftrightarrow (q \lor p)$
+
+##### Leyes asociativas
+
+- **De la conjunción**: $((p \land q) \land r) \Leftrightarrow (p \land (q \land r)) \Leftrightarrow (p \land q \land r)$
+- **De la disyunción**: $((p \lor q) \lor r) \Leftrightarrow (p \lor (q \lor r)) \Leftrightarrow (p \lor q \lor r)$
+
+##### Leyes distributivas
+
+- **De la conjunción**: $(p \lor (q \land r)) \Leftrightarrow ((p \lor q) \land (p \lor r))$
+- **De la disyunción**: $(p \land (q \lor r)) \Leftrightarrow ((p \land q) \lor (p \land r))$
+
+##### Leyes de idempotencia
+
+- $p \land p \Leftrightarrow p$
+- $p \lor p \Leftrightarrow p$
+
+##### Leyes de De Morgan
+
+- $\lnot (A \land B) \Leftrightarrow (\lnot A \lor \lnot B)$
+  - Se generaliza a n conjunciones: $\lnot (A_1 \land A_2 \land ... \land A_n) \Leftrightarrow (\lnot A_1 \lor \lnot A_2 \lor ... \lor \lnot A_n)$
+- $\lnot (A \lor B) \Leftrightarrow (\lnot A \land \lnot B)$
+  - Se generaliza a n disyunciones: $\lnot (A_1 \lor A_2 \lor ... \lor A_n) \Leftrightarrow (\lnot A_1 \land \lnot A_2 \land ... \land \lnot A_n)$
+
+##### Contrapositiva
+
+- $(p \rightarrow q) \Leftrightarrow (\lnot q \rightarrow \lnot p)$
+
+##### Condicional
+
+- $(p \rightarrow q) \Leftrightarrow \lnot p \lor q$
+- $(p \rightarrow q) \Leftrightarrow \lnot (p \land \lnot q)$
+
+##### Bicondicional
+
+- $(p \leftrightarrow q) \Leftrightarrow ((p \rightarrow q) \land (q \rightarrow p))$
+
+##### Adición
+
+- $p \implies (p \lor q)$
+
+##### Simplificación
+
+- $(p \land q) \implies p$
+
+##### Modus Ponens
+
+- $p \land (p \rightarrow q) \implies q$
+
+##### Modus Tollens
+
+- $\lnot q \land (p \rightarrow q) \implies \lnot p$
+
+##### Transitividad del condicional
+
+- $(p \rightarrow q) \land (q \rightarrow r) \implies (p \rightarrow r)$
+
+##### Transitividad del bicondicional
+
+- $(p \leftrightarrow q) \land (q \leftrightarrow r) \implies (p \leftrightarrow r)$
+
+### Esquema proposicional
+
+- $p(x)$ es un esquema proposicional en la variable o indeterminada $x$ si y solo si existe por lo menos una sustitución de $x$ por una constante que la convierte en una proposición. En otras palabras, un esquema proposicional es una proposición que contiene una o más variables que pueden ser reemplazadas por valores específicos para obtener una proposición verdadera o falsa.
+- Por ejemplo, "$x$ es un número par" es un esquema proposicional, ya que al sustituir $x$ por un número específico (como 2 o 3), se obtiene una proposición que puede ser verdadera o falsa. La pregunta "¿Quién es $x$?" no es un esquema proposicional, ya que no se puede determinar su valor de verdad al sustituir $x$ por un valor específico.
+- Si $p(x)$ es un esquema proposicional en $x$ y $a$ es una constante, se denota valor de $p(x)$ en la constante $a$ a la expresión obtenida de sustituir $x$ por $a$ en $p(x)$, es decir, $p(a)$.
+- Se denomina conjunto universal $U$ al conjunto del cual se extraen las constantes para reemplazar a la indeterminada.
+
+### Cuantificadores Existencial y Universal
+
+- Los cuantificadores se usan en conjunto con los esquemas proposicionales para expresar afirmaciones sobre todos los elementos de un conjunto o sobre la existencia de al menos un elemento que cumpla una determinada propiedad.
+- El **cuantificador existencial** se denota como $\exists$ y se puede leer de varias formas:
+  - "Para algujn $x$ se verifica $p(x)$"
+  - "Existe $x$ tal que se cumple $p(x)$"
+  - "Para al menos un $x$ se cumple $p(x)$"
+  - Todas estas formas se escriben formalmente como $(\exists x)(p(x))$.
+- El **cuantificador universal** se denota como $\forall$ y se puede leer de varias formas:
+  - "Para todo $x$ se verifica $p(x)$"
+  - "Para cualquier $x$ se cumple $p(x)$"
+  - "Para cada $x$ se satisface $p(x)$"
+  - Todas estas formas se escriben formalmente como $(\forall x)(p(x))$.
+- El **alcance** de un cuantificador está delimitado por los paréntesis que lo encierran. Por ejemplo, en el esquema $(\forall x)(p(x) \rightarrow q(x))$, el alcance del cuantificador universal $\forall$ es la proposición $p(x) \rightarrow q(x)$. Sin embargo, en el esquema $p(x) \rightarrow (\forall x)(q(x))$, el alcance del cuantificador universal $\forall$ es únicamente la proposición $q(x)$.
+- Equivalencia: la negación de un cuantificador universal es equivalente a un cuantificador existencial con la negación de la proposición, y viceversa:
+  - $\lnot (\forall x)(p(x)) \Leftrightarrow (\exists x)(\lnot p(x))$
+  - $\lnot (\exists x)(p(x)) \Leftrightarrow (\forall x)(\lnot p(x))$
+
+## Teoría de Conjuntos
+
+### Definición
+
+- **Notación**:
+  - $A = \lbrace \dots \rbrace$
+  - $x \in A$ (x pertenece al conjunto A)
+  - $x \notin A$ (x no pertenece al conjunto A)
+    - Es equivalente a $\lnot (x \in A)$
+- **Conjunto**:
+  - Colección de objetos bien definidos llamados elementos.
+  - Se denotan comunmente con letras mayúsculas (A, B, C, etc) y se definen con llaves.
+    - Ejemplo: $A = \lbrace 1, 2, 3 \rbrace$ es un conjunto con tres elementos: 1, 2 y 3.
+  - Un conjunto puede ser finito o infinito.
+- **Elemento**:
+  - Cada elemento es único e "indivisible".
+  - No hay ningún orden entre los elementos, es decir que por ejemplo: $A = \lbrace 1, 2, 3 \rbrace$ es equivalente a $B = \lbrace 3, 2, 1 \rbrace$, $A = B$.
+
+### Formas de expresar conjuntos
+
+1. **Por extensión**:
+   - Listando todos los elementos del conjunto.
+   - Ejemplo: $A = \lbrace a, b, c, d \rbrace$
+2. **Por comprensión**:
+   - Describiendo una propiedad que caracteriza a los elementos del conjunto.
+     - Ejemplo: $A = \lbrace x \mid x \text{ es un número par y } 1 < x < 7 \rbrace = \lbrace 2, 4, 6 \rbrace$.
+3. **Por diagramas de Venn**:
+   - Representación gráfica de conjuntos y sus relaciones.
+
+### Conjunto vacío
+
+- **Notación**: $\emptyset$ o $\lbrace \rbrace$.
+- **Definición intuitiva**:
+  - El conjunto vacío es el conjunto sin elementos.
+  - Es decir, ningún objeto puede jamás pertenecer al conjunto vacío.
+- **Definición formal**:
+  - $(\forall x)(x \notin \emptyset)$
+
+### Operaciones
+
+#### Subconjunto estricto
+
+- **Notación**: $A \subset B$.
+- **Definición intuitiva**:
+  - A es un subconjunto estricto de B si todos los elementos de A están en B, pero B no es igual a A: porque B tiene uno o más elementos que no están en A.
+- **Definición formal**:
+  - $(\forall x)(x \in A \rightarrow x \in B) \land (\exists x)(x \in B \land x \notin A)$
+- **Propiedades**:
+  - Si A es subconjunto estricto de B, entonces A es subconjunto no estricto de B:
+    - $A \subset B \implies A \subseteq B$
+  - Ningún conjunto es subconjunto estricto de sí mismo:
+    - $\forall A (A \not\subset A)$
+- **Ejemplo**:
+  - Si $A = \lbrace 1, 2 \rbrace$ y $B = \lbrace 1, 2, 3 \rbrace$ entonces $A \subset B$.
+
+#### Subconjunto no estricto
+
+- **Notación**: $A \subseteq B$.
+- **Definición intuitiva**:
+  - A es un subconjunto de B si todos los elementos de A están en B.
+  - A puede ser igual a B.
+- **Definición formal**:
+  - $(\forall x)(x \in A \rightarrow x \in B)$
+- **Propiedades**:
+  - El conjunto vacío es subconjunto de cualquier conjunto:
+    - $(\forall A) (\emptyset \subseteq A)$
+  - Todo conjunto es subconjunto no estricto de sí mismo:
+    - $(\forall A) (A \subseteq A)$
+  - La inclusión es transitiva:
+    - Si $A \subseteq B$ y $B \subseteq C$ entonces $A \subseteq C$.
+- **Ejemplos**:
+  - Si $A = \lbrace 1, 2 \rbrace$ y $B = \lbrace 1, 2, 3 \rbrace$ entonces $A \subseteq B$.
+  - Si $A = \lbrace 1, 2, 3 \rbrace$ y $B = \lbrace 1, 2, 3 \rbrace$ entonces $A \subseteq B$.
+
+#### Igualdad
+
+- **Notación**: $A = B$.
+- **Definición intuitiva**:
+  - A es igual a B si ambos conjuntos tienen **exactamente** los mismos elementos.
+- **Definición formal**:
+  - $(\forall x)(x \in A \leftrightarrow x \in B)$
+- **Equivalencia lógica con el subconjunto**:
+  - $A = B \iff (A \subseteq B) \land (B \subseteq A)$
+- **Ejemplo**:
+  - Si $A = \lbrace 1, 2, 3 \rbrace$ y $B = \lbrace 1, 2, 3 \rbrace$ entonces $A = B$.
+  - Si $A = \lbrace 1, 2, 3 \rbrace$ y $B = \lbrace 3, 2, 1 \rbrace$ entonces $A = B$.
+
+#### Intersección
+
+- **Notación**: $A \cap B$.
+- **Definición intuitiva**:
+  - La intersección de A y B es el conjunto de elementos que pertenecen a **ambos** conjuntos.
+- **Definición formal**:
+  - $A \cap B = \lbrace x \mid x \in A \land x \in B \rbrace$
+- **Ejemplo**:
+  - Si $A = \lbrace 1, 2, 3 \rbrace$ y $B = \lbrace 1, 2, 5 \rbrace$ entonces $A \cap B = \lbrace 1, 2 \rbrace$.
+
+#### Unión
+
+- **Notación**: $A \cup B$.
+- **Definición intuitiva**:
+  - La unión de A y B es el conjunto de elementos que pertenecen a A, a B, o a ambos.
+  - Es decir, todos los elementos de A y todos los elementos de B.
+  - Si hay repetidos entre A y B, se cuentan solo una vez.
+- **Definición formal**:
+  - $A \cup B = \lbrace x \mid x \in A \lor x \in B \rbrace$
+- **Ejemplos**:
+  - Si $A = \lbrace 1, 2, 3 \rbrace$ y $B = \lbrace 1, 2, 4 \rbrace$ entonces $A \cup B = \lbrace 1, 2, 3, 4 \rbrace$.
+  - Si $A = \lbrace 1, 2, 3 \rbrace$ y $B = \lbrace 4, 5, 6 \rbrace$ entonces $A \cup B = \lbrace 1, 2, 3, 4, 5, 6 \rbrace$.
+
+#### Diferencia
+
+- **Notación**: $A - B$.
+- **Definición intuitiva**:
+  - La diferencia de A y B es el conjunto de elementos que pertenecen a A pero no pertenecen a B.
+  - Algorítmicamente, para obtener $A - B$ se recorren todos los elementos de $A$ uno por uno y se chequea si pertenecen a $B$. Si no pertenecen, se agregan al conjunto resultado.
+- **Definición formal**:
+  - $A - B = \lbrace x \mid x \in A \land x \notin B \rbrace$
+- **Propiedades**:
+  - Si $A \cap B = \emptyset$ entonces $A - B = A$.
+  - $A - B \neq B - A$ en general.
+- **Ejemplos**:
+  - Si $A = \lbrace 1, 2, 3 \rbrace$ y $B = \lbrace 1, 2, 4 \rbrace$ entonces $A - B = \lbrace 3 \rbrace$.
+  - Si $A = \lbrace 1, 2, 3 \rbrace$ y $B = \lbrace 4, 5, 6 \rbrace$ entonces $A - B = \lbrace 1, 2, 3 \rbrace$.
+
+#### Complemento
+
+- **Notación**: $\overline{A}$.
+- **Definición intuitiva**:
+  - El complemento de A es el conjunto de elementos que no pertenecen a A.
+- **Definición formal**:
+  - $\overline{A} = \lbrace x \mid x \notin A \rbrace$
+- **Nota**: El complemento siempre se define respecto a un conjunto universal U, es decir, $\overline{A} = U - A$.
+- **Ejemplo**:
+  - Si el conjunto universal $U = \lbrace 1, 2, 3, 4, 5 \rbrace$ y $A = \lbrace 1, 2, 3 \rbrace$ entonces $\overline{A} = \lbrace 4, 5 \rbrace$.
+
+#### Producto cartesiano
+
+- **Notación**: $A \times B$.
+- **Definición intuitiva**:
+  - El producto cartesiano de A y B es el conjunto de todos los pares ordenados (x, y) donde x pertenece a A, y pertenece a B.
+- **Definición formal**:
+  - $A \times B = \lbrace (x, y) \mid x \in A \land y \in B \rbrace$
+- **Nota 1**: El producto cartesiano se puede generalizar a más de dos conjuntos: $A_1 \times A_2 \times ... \times A_n = \lbrace (x_1, x_2, ..., x_n) \mid x_1 \in A_1 \land x_2 \in A_2 \land ... \land x_n \in A_n \rbrace$
+- **Nota 2**: El producto cartesiano de un conjunto consigo mismo n veces se denota como $A^n = A \times A \times ... \times A$ (n veces).
+- **Ejemplos**:
+  - Si $A = \lbrace 1, 2 \rbrace$ y $B = \lbrace 3, 4 \rbrace$ entonces $A \times B = \lbrace (1, 3), (1, 4), (2, 3), (2, 4) \rbrace$.
+  - $\lbrace 1 \rbrace^5 = \lbrace 1 \rbrace \times \lbrace 1 \rbrace \times \lbrace 1 \rbrace \times \lbrace 1 \rbrace \times \lbrace 1 \rbrace = \lbrace (1, 1, 1, 1, 1) \rbrace$
+
+### Propiedades
+
+- **Idempotencia**:
+  - $A \cup A = A$
+  - $A \cap A = A$
+- **Absorción**:
+  - $A \cup (A \cap B) = A$
+  - $A \cap (A \cup B) = A$
+- **Distributiva**:
+  - $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$
+  - $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
+- **Complementariedad**:
+  - $A \cup \overline{A} = U$
+  - $A \cap \overline{A} = \emptyset$
+  - $\overline{\overline{A}} = A$
+
+---
+
+# 0.5. Matrices
+
+## Ecuación lineal
+
+- Una ecuación lineal con coeficientes reales $a_1, a_2, \ldots, a_n \in \mathbb{R}$, término independiente $b \in \mathbb{R}$ e incógnitas $x_1, x_2, \ldots, x_n \in \mathbb{R}$ es una expresión algebraica de la forma: **$a_1 x_1 + a_2 x_2 + ... + a_n x_n = b$**
+- Un sistema de $m$ ecuaciones lineales con $n$ incógnitas (sistema $m \times n$) consiste en un conjunto de $m$ ecuaciones lineales concurrentes sobre las mismas $n$ variables:
+  - $a_{11} x_1 + a_{12} x_2 + ... + a_{1n} x_n = b_1$
+  - $a_{21} x_1 + a_{22} x_2 + ... + a_{2n} x_n = b_2$
+  - $\vdots$
+  - $a_{m1} x_1 + a_{m2} x_2 + ... + a_{mn} x_n = b_m$
+  - Una solución del sistema, de existir, es una $n-$tupla ordenada de números $(x_1^0, x_2^0, \ldots, x_n^0) \in \mathbb{R}^n$ que satisface simultáneamente las $m$ ecuaciones. Dado que los nombres de las variables son arbitrarios, toda la información estructural del sistema reside en el orden y valor numérico de sus coeficientes $a_{ij}$ y de sus términos independientes $b_i$.
+
+## Matriz
+
+### Definición
+
+- Una matriz $A$ de dimensión $m \times n$ es un arreglo rectangular de números reales distribuidos en $m$ filas horizontales y $n$ columnas verticales. El conjunto de todas las matrices de dimensión $m \times n$ con componentes reales se denota $\mathbb{R}^{m \times n}$.
+- La matriz $A$ se representa como:
+  - $A = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{pmatrix} \in \mathbb{R}^{m \times n}$
+- La expresión $a_{ij}$ representa el elemento de la matriz que se encuentra en la fila $i$ y columna $j$. Por ejemplo, en la matriz anterior, el elemento $a_{23}$ es el número que se encuentra en la segunda fila y tercera columna.
+
+### Tipos de matrices
+
+#### Rectangular vs cuadrada
+
+- Una matriz es **rectangular** si el número de filas y columnas es distinto, es decir, $m \neq n$.
+- Una matriz es **cuadrada** si el número de filas y columnas es igual, es decir, $m = n$.
+  - En una matriz cuadrada, la diagonal está formada por los elementos con igual índice de fila y columna, es decir, los elementos $a_{ii}$ para $i = 1, 2, \ldots, n$.
+
+#### Nula
+
+- Una matriz es **nula** si todos sus elementos son iguales a cero, es decir, $a_{ij} = 0$ para todo $i = 1, 2, \ldots, m$ y $j = 1, 2, \ldots, n$.
+
+#### Triangular superior vs triangular inferior
+
+- Una matriz cuadrada es **triangular superior** si todos sus elementos por **debajo** de la diagonal son iguales a cero, es decir, $a_{ij} = 0$ para todo $i > j$.
+- Una matriz cuadrada es **triangular inferior** si todos sus elementos por **encima** de la diagonal son iguales a cero, es decir, $a_{ij} = 0$ para todo $i < j$.
+
+#### Diagonal
+
+- Una matriz cuadrada es **diagonal** si todos sus elementos por **encima** y por **debajo** de la diagonal son iguales a cero, es decir, $a_{ij} = 0$ para todo $i \neq j$.
+
+#### Identidad
+
+- Una matriz es **identidad** si es una matriz diagonal y todos los elementos de su diagonal son iguales a uno, es decir, $a_{ij} = 0$ para todo $i \neq j$ y $a_{ii} = 1$ para todo $i = 1, 2, \ldots, n$.
+
+### Operaciones
+
+#### Igualdad
+
+- Dos matrices $A, B \in \mathbb{R}^{m \times n}$ son iguales si y solo si tienen la misma dimensión y todos sus elementos correspondientes son iguales, es decir, $a_{ij} = b_{ij}$ para todo $i = 1, 2, \ldots, m$ y $j = 1, 2, \ldots, n$.
+
+#### Suma
+
+- La suma de dos matrices $A, B \in \mathbb{R}^{m \times n}$ es otra matriz $C = A + B \in \mathbb{R}^{m \times n}$ cuyos elementos se obtienen sumando los elementos correspondientes de $A$ y $B$, es decir, $c_{ij} = a_{ij} + b_{ij}$ para todo $i = 1, 2, \ldots, m$ y $j = 1, 2, \ldots, n$.
+- La suma de matrices tiene las siguientes propiedades:
+  - **Asociativa**: $(A + B) + C = A + (B + C)$
+  - **Elemento neutro**: $A + 0 = A$
+  - **Elemento opuesto**: $A + (-A) = 0$
+  - **Conmutativa**: $A + B = B + A$
+
+#### Producto por un escalar
+
+- El producto de una matriz $A \in \mathbb{R}^{m \times n}$ por un escalar $\alpha \in \mathbb{R}$ es otra matriz $B = \alpha A \in \mathbb{R}^{m \times n}$ cuyos elementos se obtienen multiplicando cada elemento de $A$ por el escalar $\alpha$, es decir, $b_{ij} = \alpha a_{ij}$ para todo $i = 1, 2, \ldots, m$ y $j = 1, 2, \ldots, n$.
+- El producto por un escalar tiene las siguientes propiedades:
+  - **Asociativa**: $\alpha (\beta A) = (\alpha \beta) A$
+  - **Elemento neutro**: $1 \cdot A = A$
+  - **Distributiva respecto a la suma de matrices**: $\alpha (A + B) = \alpha A + \alpha B$
+  - **Distributiva respecto a la suma de escalares**: $(\alpha + \beta) A = \alpha A + \beta A$
+
+#### Producto de matrices
+
+- El producto de dos matrices $A \in \mathbb{R}^{m \times n}$ y $B \in \mathbb{R}^{n \times p}$ es otra matriz $C = AB \in \mathbb{R}^{m \times p}$ cuyos elementos se obtienen sumando las multiplicaciones de los elementos de cada fila de $A$ con cada columna de $B$ y la suma de los elementos de $A$.
+- El producto de matrices tiene las siguientes propiedades:
+  - **Asociativa**: $(AB)C = A(BC)$
+  - **Elemento neutro**: $AI_n = A$ y $I_mA = A$
+  - **Distributiva respecto a la suma de matrices**: $A(B + C) = AB + AC$ y $(A + B)C = AC + BC$
+  - **No conmutativa**: En general, $A \times B \neq B \times A$
+
+### Matriz invertible
+
+- Una matriz $A \in \mathbb{R}^{n \times n}$ es **invertible** si existe otra matriz $B \in \mathbb{R}^{n \times n}$ tal que $AB = BA = I_n$, donde $I_n$ es la matriz identidad de dimensión $n \times n$. La matriz $B$ se llama inversa de $A$ y se denota como $A^{-1}$.
+- Si una matriz posee inversa, ésta es única.
+- Si $A, B \in \mathbb{R}^{n \times n}$ son matrices invertibles, entonces $AB$ también es invertible y $(AB)^{-1} = B^{-1}A^{-1}$.
+
+### Matriz transpuesta
+
+- La matriz transpuesta de una matriz $A \in \mathbb{R}^{m \times n}$ es otra matriz $A^T \in \mathbb{R}^{n \times m}$ cuyos elementos se obtienen intercambiando las filas por las columnas de $A$, es decir, $a_{ij}^T = a_{ji}$ para todo $i = 1, 2, \ldots, m$ y $j = 1, 2, \ldots, n$.
+
+---
+
+# 0.6. Sistemas de ecuaciones
+
+...
+
+---
+
+# 1.1. Cálculo en dos o más variables
+
+## Definición de función de varias variables
+
+- Una función real $f$ de $n$ variables es una regla que asigna a cada $n$-tupla de números reales $(x_1, x_2, \ldots, x_n)$ un único número real $f(x_1, x_2, \ldots, x_n)$.
+- Se denota como $f: D \subset \mathbb{R}^n \rightarrow \mathbb{R}$.
+- El **dominio** de $f$ es el conjunto de todos los valores de **entrada** permitidos, es decir, el conjunto de todos los $n$-tuplas $(x_1, x_2, \ldots, x_n)$ para los cuales $f$ está definida. Se denota como $Dom(f)$.
+- La **imagen** de $f$ es el conjunto de todos los valores de **salida** posibles, es decir, el conjunto de todos los números reales que pueden ser obtenidos al evaluar $f$ en su dominio. Se denota como $Im(f)$.
+
+## Ejemplos de funciones de dos variables
+
+- $f(x, y) = 0$ (función nula)
+  - Dominio: $Dom(f) = \mathbb{R}^2$
+  - Imagen: $Im(f) = \lbrace 0 \rbrace$
+- $f(x, y) = c$ (función constante)
+  - Dominio: $Dom(f) = \mathbb{R}^2$
+  - Imagen: $Im(f) = \lbrace c \rbrace$
+- $f(x, y) = ax + by + c$ (función lineal)
+  - Dominio: $Dom(f) = \mathbb{R}^2$
+  - Imagen: $Im(f) = \mathbb{R}$
+- $f(x, y) = \frac{x}{x^2 + y^2}$
+  - Dominio: $Dom(f) = \lbrace (x, y) \in \mathbb{R}^2 \mid x^2 + y^2 \neq 0 \rbrace \Rightarrow Dom(f) = \mathbb{R}^2 - \lbrace (0, 0) \rbrace$
+  - Imagen: $Im(f) = \mathbb{R}$
+
+## Límites y Continuidad
+
+### Concepto
+
+- Se dice que una función de dos variables $f(x, y)$ tiene límite $L$ (un número real fijo) cuando $(x, y)$ tiende a $(x_0, y_0)$, si para todos los puntos $(x, y)$ cercanos al punto $(x_0, y_0)$, los valores $f(x, y)$ son arbitrariamente próximos al número $L$.
+- La dificultad radica en que a diferencia de las funciones de una variable donde $x$ puede acercarse a $x_0$ únicamente por izquierda o derecha, en el caso de funciones de dos variables $(x, y)$ puede acercarse a $(x_0, y_0)$ por **infinitas direcciones**.
+
+### Definición
+
+- Se dice que una función $f(x, y)$ tiene límite $L$ si cuando $(x, y)$ tiende a $(x_0, y_0)$, la función $f(x, y)$ se acerca al valor $L$. Formalmente, se escribe:
+  - **$\lim_{(x, y) \to (x_0, y_0)} f(x, y) = L$**
+- **El límite existe si dado un número $\epsilon$ existe un número $\delta > 0$ tal que $\forall(x, y) \in Dom(f)$, si $0 < \sqrt{(x - x_0)^2 + (y - y_0)^2} \leq \delta$ entonces $|f(x, y) - L| < \epsilon$**.
+  - Notar que $\sqrt{(x - x_0)^2 + (y - y_0)^2}$ es la distancia entre los puntos $(x, y)$ y $(x_0, y_0)$, mientras que $|f(x, y) - L|$ es la distancia entre los valores de la función $f(x, y)$ y el límite $L$.
+- Para determinar si una función $f(x, y)$ tiene límite o no, se eligen dos o tres caminos que nos lleven hacia el punto $(x_0, y_0)$. Si resulta que los valores obtenidos para el límite son distintos, entonces el límite no existe. Si los valores obtenidos son iguales, entonces el límite puede existir, pero se debe demostrar formalmente.
+
+### Teorema del encaje
+
+- Si existen funciones $g(x, y)$ y $h(x, y)$ tales que $g(x, y) \leq f(x, y) \leq h(x, y)$ para todos los puntos $(x, y)$ distintos de $(x_0, y_0)$ en un disco con centro en $(x_0, y_0)$ y además $\lim_{(x, y) \to (x_0, y_0)} g(x, y) = \lim_{(x, y) \to (x_0, y_0)} h(x, y) = L$, entonces $\lim_{(x, y) \to (x_0, y_0)} f(x, y) = L$.
+
+### Propiedades
+
+- Sea $c \in \mathbb{R}$ una constante y sean $f(x, y)$ y $g(x, y)$ funciones de dos variables tales que existen los límites $\lim_{(x, y) \to (x_0, y_0)} f(x, y) = L$ y $\lim_{(x, y) \to (x_0, y_0)} g(x, y) = M$, entonces:
+  - $\lim_{(x, y) \to (x_0, y_0)} (f(x, y) + g(x, y)) = L + M$
+  - $\lim_{(x, y) \to (x_0, y_0)} c(f(x, y)) = c \cdot L$
+  - $\lim_{(x, y) \to (x_0, y_0)} (f(x, y) \cdot g(x, y)) = L \cdot M$
+  - $\lim_{(x, y) \to (x_0, y_0)} \frac{f(x, y)}{g(x, y)} = \frac{L}{M}$, siempre que $M \neq 0$.
+  - Si $M = 0$ y $L \neq 0$, entonces $\lim_{(x, y) \to (x_0, y_0)} \frac{f(x, y)}{g(x, y)}$ no existe.
+
+---
+
+# 1.2 Descenso del gradiente
+
+---
+
+# 2.1. Regresión Lineal 1
+
+---
+
+# 2.2. Regresión Lineal 2
+
+---
+
+# 3. Teoría de números
+
+---
+
+# 4. Relaciones entre conjuntos
+
+---
+
+# 5.1. Estructuras algebraicas
+
+---
+
+# 5.2. Aritmética Modular
+
+---
+
+# 5.3. Morfismos
+
+---
+
+# 6. Álgebra Lineal
+
+---
+
+# Resumen

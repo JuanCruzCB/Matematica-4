@@ -963,13 +963,19 @@ Sean $u = (u_1, u_2, u_3)$ y $v = (v_1, v_2, v_3)$ dos vectores en $\mathbb{R}^3
 
 # 1.2 Descenso del gradiente
 
+...
+
 ---
 
 # 2.1. Regresión Lineal 1
 
+...
+
 ---
 
 # 2.2. Regresión Lineal 2
+
+...
 
 ---
 

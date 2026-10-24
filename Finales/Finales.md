@@ -1,4 +1,4 @@
-<h1 align="center">2026-08</h1>
+<h1 align="center">2026-03</h1>
 
 ## 1. Explicar el concepto de diferenciabilidad. Dar ejemplos.
 
@@ -46,7 +46,7 @@
 
 ### Probar que una transformación lineal inyectiva mantiene la independencia lineal.
 
-### 
+###
 
 ---
 

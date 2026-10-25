@@ -113,11 +113,36 @@
 - [1.1. Cálculo en dos o más variables](#11-cálculo-en-dos-o-más-variables)
   - [Definición de función de varias variables](#definición-de-función-de-varias-variables)
   - [Ejemplos de funciones de dos variables](#ejemplos-de-funciones-de-dos-variables)
-  - [Límites y Continuidad](#límites-y-continuidad)
+  - [Límites](#límites)
     - [Concepto](#concepto-1)
     - [Definición](#definición-5)
     - [Teorema del encaje](#teorema-del-encaje)
     - [Propiedades](#propiedades-1)
+    - [Coordenadas Polares](#coordenadas-polares)
+  - [Continuidad](#continuidad-1)
+    - [Definición](#definición-6)
+    - [Teorema de continuidad](#teorema-de-continuidad)
+    - [Teorema de continuidad de funciones compuestas](#teorema-de-continuidad-de-funciones-compuestas)
+  - [Diferenciabilidad](#diferenciabilidad)
+    - [Derivadas Parciales](#derivadas-parciales)
+      - [Definición](#definición-7)
+      - [Ejemplo](#ejemplo)
+    - [Definición de diferenciable](#definición-de-diferenciable)
+    - [Ejemplo](#ejemplo-1)
+    - [Relación entre diferenciabilidad y continuidad](#relación-entre-diferenciabilidad-y-continuidad)
+    - [Teorema de diferenciabilidad](#teorema-de-diferenciabilidad)
+    - [Propiedades de las funciones diferenciables](#propiedades-de-las-funciones-diferenciables)
+  - [Plano tangente](#plano-tangente)
+  - [Linealización](#linealización)
+  - [Vector Gradiente](#vector-gradiente)
+    - [Concepto](#concepto-2)
+    - [Derivada Direccional](#derivada-direccional)
+    - [Dirección de máximo crecimiento](#dirección-de-máximo-crecimiento)
+  - [Extremos de funciones de dos variables](#extremos-de-funciones-de-dos-variables)
+    - [Concepto](#concepto-3)
+    - [Teorema](#teorema)
+    - [Teorema de Clairaut](#teorema-de-clairaut)
+    - [Criterio de las derivadas segundas](#criterio-de-las-derivadas-segundas)
 - [1.2 Descenso del gradiente](#12-descenso-del-gradiente)
 - [2.1. Regresión Lineal 1](#21-regresión-lineal-1)
 - [2.2. Regresión Lineal 2](#22-regresión-lineal-2)
@@ -931,7 +956,7 @@ Sean $u = (u_1, u_2, u_3)$ y $v = (v_1, v_2, v_3)$ dos vectores en $\mathbb{R}^3
   - Dominio: $Dom(f) = \lbrace (x, y) \in \mathbb{R}^2 \mid x^2 + y^2 \neq 0 \rbrace \Rightarrow Dom(f) = \mathbb{R}^2 - \lbrace (0, 0) \rbrace$
   - Imagen: $Im(f) = \mathbb{R}$
 
-## Límites y Continuidad
+## Límites
 
 ### Concepto
 
@@ -953,11 +978,194 @@ Sean $u = (u_1, u_2, u_3)$ y $v = (v_1, v_2, v_3)$ dos vectores en $\mathbb{R}^3
 ### Propiedades
 
 - Sea $c \in \mathbb{R}$ una constante y sean $f(x, y)$ y $g(x, y)$ funciones de dos variables tales que existen los límites $\lim_{(x, y) \to (x_0, y_0)} f(x, y) = L$ y $\lim_{(x, y) \to (x_0, y_0)} g(x, y) = M$, entonces:
-  - $\lim_{(x, y) \to (x_0, y_0)} (f(x, y) + g(x, y)) = L + M$
-  - $\lim_{(x, y) \to (x_0, y_0)} c(f(x, y)) = c \cdot L$
-  - $\lim_{(x, y) \to (x_0, y_0)} (f(x, y) \cdot g(x, y)) = L \cdot M$
-  - $\lim_{(x, y) \to (x_0, y_0)} \frac{f(x, y)}{g(x, y)} = \frac{L}{M}$, siempre que $M \neq 0$.
-  - Si $M = 0$ y $L \neq 0$, entonces $\lim_{(x, y) \to (x_0, y_0)} \frac{f(x, y)}{g(x, y)}$ no existe.
+  - **$\lim_{(x, y) \to (x_0, y_0)} (f(x, y) + g(x, y)) = L + M$**
+  - **$\lim_{(x, y) \to (x_0, y_0)} c(f(x, y)) = c \cdot L$**
+  - **$\lim_{(x, y) \to (x_0, y_0)} (f(x, y) \cdot g(x, y)) = L \cdot M$**
+  - **$\lim_{(x, y) \to (x_0, y_0)} \frac{f(x, y)}{g(x, y)} = \frac{L}{M}$, siempre que $M \neq 0$**.
+  - **Si $M = 0$ y $L \neq 0$, entonces $\lim_{(x, y) \to (x_0, y_0)} \frac{f(x, y)}{g(x, y)}$ no existe**.
+
+### Coordenadas Polares
+
+- Las coordenadas polares pueden servir para calcular límites.
+- Se puede expresar cualquier punto $(x, y)$ en coordenadas polares como:
+  - $x = r \cos(\theta)$
+  - $y = r \sin(\theta)$
+- Se puede decir, por ejemplo, que $(x, y) \to (0, 0)$ equivale a decir $r \to 0$, independientemente del valor de $\theta$.
+- Vale recordar las identidades trigonométricas:
+  - $\cos^2(\theta) + \sin^2(\theta) = 1$
+  - $\tan(\theta) = \frac{\sin(\theta)}{\cos(\theta)}$
+- Ejemplo:
+  - $\lim_{(x, y) \to (0, 0)} \frac{xy^2}{x^2 + y^2}$
+  - $\lim_{r \to 0} \frac{r \cos(\theta) (r \sin(\theta))^2}{(r \cos(\theta))^2 + (r \sin(\theta))^2}$
+  - $\lim_{r \to 0} \frac{r \cos(\theta) r^2 \sin^2(\theta)}{r^2 \cos^2(\theta) + r^2 \sin^2(\theta)}$
+  - $\lim_{r \to 0} \frac{r \cos(\theta) r^2 \sin^2(\theta)}{r^2 (\cos^2(\theta) + \sin^2(\theta))}$
+  - $\lim_{r \to 0} \frac{r \cos(\theta) r^2 \sin^2(\theta)}{r^2 (1)}$
+  - $\lim_{r \to 0} \frac{r \cos(\theta) r^2 \sin^2(\theta)}{r^2}$
+  - $\lim_{r \to 0} r \cos(\theta) \sin^2(\theta) = 0$
+  - El límite vale $0$ independientemente del valor de $\theta$.
+
+## Continuidad
+
+### Definición
+
+- Una función real $f(x, y)$ es continua en un punto $(x_0, y_0)$ si se cumplen las siguientes tres condiciones:
+  1. **$f(x_0, y_0)$ está definida**.
+  2. **$\lim_{(x, y) \to (x_0, y_0)} f(x, y)$ existe**.
+  3. **$\lim_{(x, y) \to (x_0, y_0)} f(x, y) = f(x_0, y_0)$**.
+- Se dice que $f(x, y)$ es continua en una región plana $R$ si es continua en todos los puntos de $R$.
+- La continuidad de una función en un punto significa, intuitivamente, que si se cambia el punto (sus coordenadas) en una pequeña cantidad, entonces el valor de la función cambia en una pequeña cantidad.
+
+### Teorema de continuidad
+
+Si $c \in \mathbb{R}$ y $f(x, y)$ y $g(x, y)$ son funciones de dos variables continuas en un punto $(x_0, y_0)$, entonces:
+
+1. **$c \cdot f(x, y)$ es continua en $(x_0, y_0)$**.
+2. **$f(x, y) + g(x, y)$ es continua en $(x_0, y_0)$**.
+3. **$f(x, y) - g(x, y)$ es continua en $(x_0, y_0)$**.
+4. **$f(x, y) \cdot g(x, y)$ es continua en $(x_0, y_0)$**.
+5. **$\frac{f(x, y)}{g(x, y)}$ es continua en $(x_0, y_0)$ siempre que $g(x_0, y_0) \neq 0$**.
+
+### Teorema de continuidad de funciones compuestas
+
+**Si $h$ es continua en $(x_0, y_0)$ y $g$ es continua en $h(x_0, y_0)$, entonces la función compuesta $g(h(x, y))$ es continua en $(x_0, y_0)$**.
+
+## Diferenciabilidad
+
+### Derivadas Parciales
+
+#### Definición
+
+- Si $f(x, y)$ es una función de dos variables, sus derivadas parciales respecto de $x$ e $y$ son las funciones definidas por:
+  - **$\frac{\partial f(x, y)}{\partial x} = \lim_{h \to 0} \frac{f(x + h, y) - f(x, y)}{h}$**
+  - **$\frac{\partial f(x, y)}{\partial y} = \lim_{h \to 0} \frac{f(x, y + h) - f(x, y)}{h}$**
+- También se usa la notación $f_x(x, y)$ y $f_y(x, y)$ para denotar las derivadas parciales de $f$ respecto de $x$ e $y$, respectivamente.
+
+#### Ejemplo
+
+- Sea $f(x, y) = x^2y$. Hallar las derivadas parciales en el punto $(-1, 2)$.
+- Derivada parcial respecto de $x$:
+  - $\frac{\partial f(x, y)}{\partial x} = \lim_{h \to 0} \frac{f(x + h, y) - f(x, y)}{h}$
+  - $\frac{\partial f(-1, 2)}{\partial x} = \lim_{h \to 0} \frac{f(-1 + h, 2) - f(-1, 2)}{h}$
+  - $\frac{\partial f(-1, 2)}{\partial x} = \lim_{h \to 0} \frac{((-1 + h)^2 2) - ((-1)^2 2)}{h}$
+  - $\frac{\partial f(-1, 2)}{\partial x} = \lim_{h \to 0} \frac{(((-1)^2 + 2(-1)h + h^2)2) - 2}{h}$
+  - $\frac{\partial f(-1, 2)}{\partial x} = \lim_{h \to 0} \frac{((1 - 2h + h^2)2) - 2}{h}$
+  - $\frac{\partial f(-1, 2)}{\partial x} = \lim_{h \to 0} \frac{(2 - 4h + 2h^2) - 2}{h}$
+  - $\frac{\partial f(-1, 2)}{\partial x} = \lim_{h \to 0} \frac{-4h + 2h^2}{h}$
+  - $\frac{\partial f(-1, 2)}{\partial x} = \lim_{h \to 0} \frac{h(2h - 4)}{h}$
+  - $\frac{\partial f(-1, 2)}{\partial x} = \lim_{h \to 0} 2h - 4 = -4$
+- Derivada parcial respecto de $y$:
+  - $\frac{\partial f(x, y)}{\partial y} = \lim_{h \to 0} \frac{f(x, y + h) - f(x, y)}{h}$
+  - $\frac{\partial f(-1, 2)}{\partial y} = \lim_{h \to 0} \frac{f(-1, 2 + h) - f(-1, 2)}{h}$
+  - $\frac{\partial f(-1, 2)}{\partial y} = \lim_{h \to 0} \frac{1(2 + h) - 2}{h}$
+  - $\frac{\partial f(-1, 2)}{\partial y} = \lim_{h \to 0} \frac{2 + h - 2}{h}$
+  - $\frac{\partial f(-1, 2)}{\partial y} = \lim_{h \to 0} \frac{h}{h} = 1$
+- Para agilizar el cálculo de derivadas parciales, se pueden usar las reglas de derivación de funciones de una variable, considerando a la otra variable como una constante. Por ejemplo:
+  - $\frac{\partial f(x, y)}{\partial x} = \frac{\partial (x^2y)}{\partial x} = 2xy; \frac{\partial f(-1, 2)}{\partial x} = 2(-1)2 = -4$
+  - $\frac{\partial f(x, y)}{\partial y} = \frac{\partial (x^2y)}{\partial y} = x^2; \frac{\partial f(-1, 2)}{\partial y} = (-1)^2 = 1$
+
+### Definición de diferenciable
+
+- Sea $f : D \subset \mathbb{R}^2 \rightarrow \mathbb{R}$ y sea $(x_0, y_0) \in D$. Se dice que $f$ es diferenciable en $(x_0, y_0)$ si se cumple el límite:
+  - $\lim_{(x, y) \to (x_0, y_0)} \frac{f(x, y) - [\frac{\partial f(x_0, y_0)}{\partial x}(x - x_0) + \frac{\partial f(x_0, y_0)}{\partial y}(y - y_0) + f(x_0, y_0)]}{\sqrt{(x - x_0)^2 + (y - y_0)^2}} \rightarrow 0$
+
+### Ejemplo
+
+- Sea $f(x, y) = x^2 + y^2$. Analizar la diferenciabilidad de $f$ en el punto $(0, 0)$.
+- Como la función es polinómica, se sabe que es continua en todo su dominio.
+- Buscamos las derivadas parciales:
+  - $\frac{\partial f(x, y)}{\partial x} = \frac{\partial (x^2 + y^2)}{\partial x} = 2x^{2-1} + 0 = 2x$
+  - $\frac{\partial f(x, y)}{\partial y} = \frac{\partial (x^2 + y^2)}{\partial y} = 0 + 2y^{2-1} + 0 = 2y$
+  - $\lim_{(x, y) \to (0, 0)} \frac{\partial f(x, y)}{\partial x} = \lim_{(x, y) \to (0, 0)} 2x = 0$
+  - $\lim_{(x, y) \to (0, 0)} \frac{\partial f(x, y)}{\partial y} = \lim_{(x, y) \to (0, 0)} 2y = 0$
+- Armamos el límite de la definición de diferenciable:
+  - $\lim_{(x, y) \to (0, 0)} \frac{f(x, y) - [\frac{\partial f(0, 0)}{\partial x}(x - 0) + \frac{\partial f(0, 0)}{\partial y}(y - 0) + f(0, 0)]}{\sqrt{(x - 0)^2 + (y - 0)^2}}$
+  - $\lim_{(x, y) \to (0, 0)} \frac{x^2 + y^2 - [0(x) + 0(y) + 0]}{\sqrt{x^2 + y^2}}$
+  - $\lim_{(x, y) \to (0, 0)} \frac{x^2 + y^2 - 0(x) - 0(y) - 0}{\sqrt{x^2 + y^2}}$
+  - $\lim_{(x, y) \to (0, 0)} \frac{x^2 + y^2}{\sqrt{x^2 + y^2}}$
+  - Recordamos la propiedad de raíces: $a = \sqrt{a} \cdot \sqrt{a}$. Entonces:
+  - $\lim_{(x, y) \to (0, 0)} \frac{\sqrt{x^2 + y^2} \cdot \sqrt{x^2 + y^2}}{\sqrt{x^2 + y^2}}$
+  - $\lim_{(x, y) \to (0, 0)} \sqrt{x^2 + y^2} = 0$
+- Como el límite tiende a cero, se concluye que la función $f(x, y) = x^2 + y^2$ es diferenciable en el punto $(0, 0)$.
+
+### Relación entre diferenciabilidad y continuidad
+
+- Si $f(x, y)$ es diferenciable en un punto $(x_0, y_0)$, entonces $f(x, y)$ es continua en $(x_0, y_0)$.
+- Por contrarrecíproca, si $f(x, y)$ NO es continua en $(x_0, y_0)$, entonces $f(x, y)$ NO es diferenciable en $(x_0, y_0)$.
+- Vale resaltar que el hecho de que una función sea continua en un punto NO implica necesariamente que sea diferenciable en ese punto.
+
+### Teorema de diferenciabilidad
+
+- Sea $f : D \subset \mathbb{R}^2 \rightarrow \mathbb{R}$ y sea $(x_0, y_0) \in D$. Si existen las derivadas parciales $\frac{\partial f(x, y)}{\partial x}$ y $\frac{\partial f(x, y)}{\partial y}$ y además éstas son continuas en un entorno del punto $(x_0, y_0)$, entonces $f$ es diferenciable en $(x_0, y_0)$.
+- Es importante notar que simplemente el hecho de que existan las derivadas parciales en un punto no garantiza que la función sea diferenciable en ese punto. Dichas derivadas deben ser **continuas** en un entorno de ese punto.
+
+### Propiedades de las funciones diferenciables
+
+Dadas $f : D \subset \mathbb{R}^2 \rightarrow \mathbb{R}$ y $g : D \subset \mathbb{R}^2 \rightarrow \mathbb{R}$ funciones diferenciables en un entorno del punto $(x_0, y_0) \in D$:
+
+1. $f + g$ es diferenciable en $(x_0, y_0)$.
+2. $f - g$ es diferenciable en $(x_0, y_0)$.
+3. $c \cdot f$ y $c \cdot g$ son diferenciables en $(x_0, y_0)$ para cualquier constante $c \in \mathbb{R}$.
+4. $f \cdot g$ es diferenciable en $(x_0, y_0)$.
+5. $\frac{f}{g}$ es diferenciable en $(x_0, y_0)$ siempre que $g(x_0, y_0) \neq 0$.
+
+## Plano tangente
+
+- Sea $f : D \subset \mathbb{R}^2 \rightarrow \mathbb{R}$ una función diferenciable en un punto $(x_0, y_0) \in D$. Una ecuación del plano tangente a la gráfica de $f$ en el punto $P_0 = (x_0, y_0, f(x_0, y_0))$ es:
+  - $z = \frac{\partial f(x_0, y_0)}{\partial x}(x - x_0) + \frac{\partial f(x_0, y_0)}{\partial y}(y - y_0) + f(x_0, y_0)$
+
+## Linealización
+
+- Se denomina linealización de $f$ en el punto $P_0 = (x_0, y_0)$ a la función lineal $L(x, y)$ definida por:
+  - $L(x, y) = f(x_0, y_0) + \frac{\partial f(x_0, y_0)}{\partial x}(x - x_0) + \frac{\partial f(x_0, y_0)}{\partial y}(y - y_0)$
+- La gráfica de dicha función es el plano tangente a $f$ en el punto $P_0 = (x_0, y_0, f(x_0, y_0))$.
+
+## Vector Gradiente
+
+### Concepto
+
+- El vector gradiente de una función de dos variables es el vector cuyas componentes son las derivadas parciales de la función $f$, y se denota como $\nabla f(x, y)$:
+  - $\nabla f(x, y) = \left( \frac{\partial f(x, y)}{\partial x}, \frac{\partial f(x, y)}{\partial y} \right) = (f_x(x, y), f_y(x, y))$
+
+### Derivada Direccional
+
+- La derivada direccional de una función de dos variables $f$ en la dirección de un vector unitario $\vec{v} = (v_1, v_2)$ se define como:
+  - $D_{\vec{v}} f(x, y) = \lim_{t \to 0} \frac{f((x, y) + t(v_1, v_2)) - f(x, y)}{t}$
+- Por teorema, si $f : D \subset \mathbb{R}^2 \rightarrow \mathbb{R}$ es diferenciable, entonces existen todas las derivadas direccionales. La derivada direccional de $f$ en $x$ en la dirección de $\vec{v}$ está dada por: $D f(x) = \nabla f(x) \cdot \vec{v}$ donde $\nabla f(x) = (\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y})$
+
+### Dirección de máximo crecimiento
+
+- Si $f(x, y)$ es diferenciable en un punto $(x_0, y_0)$, entonces la dirección de máximo crecimiento de $f$ en $(x_0, y_0)$ está dada por la dirección del vector gradiente de $f$ en $(x_0, y_0)$.
+- Además, la máxima razón de cambio es $|\nabla f(x_0, y_0)|$.
+
+## Extremos de funciones de dos variables
+
+### Concepto
+
+- Sea $f : D \subset \mathbb{R}^2 \rightarrow \mathbb{R}$. $f$ tiene un máximo local en un punto $(x_0, y_0) \in D$ si $f(x_0, y_0) \geq f(x, y)$ para todos los puntos $(x, y)$ en un entorno de $(x_0, y_0)$. Si la desigualdad se verifica para todo punto del dominio de $f$, el máximo es global.
+- Se dice que $f$ tiene un mínimo local en un punto $(x_0, y_0) \in D$ si $f(x_0, y_0) \leq f(x, y)$ para todos los puntos $(x, y)$ en un entorno de $(x_0, y_0)$. Si la desigualdad se verifica para todo punto del dominio de $f$, el mínimo es global.
+- Un punto perteneciente al dominio de $f$ es considerado un punto crítico si se cumple alguna de las dos condiciones:
+  1. Las dos derivadas parciales primeras de $f$ se anulan en $(x_0, y_0)$.
+  2. Al menos una de las derivadas parciales primeras de $f$ NO existe en $(x_0, y_0)$.
+- Si la condición que se cumple es la primera, se dice que $(x_0, y_0)$ es un punto estacionario de $f$.
+
+### Teorema
+
+- Si $f$ tiene un máximo o mínimo local en $(x_0, y_0)$ y si existen las derivadas parciales primeras de $f$ en $(x_0, y_0)$, entonces $f_x(x_0, y_0) = 0$ y $f_y(x_0, y_0) = 0$.
+- Se afirma, básicamente, que todo extremo local es un punto crítico pero no todo punto crítico es un extremo local.
+
+### Teorema de Clairaut
+
+- Sea $f: D \subset \mathbb{R}^2 \rightarrow \mathbb{R}$ una función de dos variables.
+- Si existen las segundas derivadas cruzadas y son continuas en $D$, entonces estas son iguales: $\frac{\partial^2 f}{\partial x \partial y} = \frac{\partial^2 f}{\partial y \partial x}$.
+
+### Criterio de las derivadas segundas
+
+- Sea $f: D \subset \mathbb{R}^2 \rightarrow \mathbb{R}$ una función de dos variables con segundas derivadas continuas en un entorno de un punto crítico $(x_0, y_0)$.
+- Sea $H = \frac{\partial^2 f}{\partial x \partial x}(x_0, y_0) \cdot \frac{\partial^2 f}{\partial y \partial y}(x_0, y_0) - \left( \frac{\partial^2 f}{\partial x \partial y}(x_0, y_0) \right)^2$.
+- Si $H > 0$ y $\frac{\partial^2 f}{\partial x \partial x}(x_0, y_0) > 0$, entonces $f$ tiene un mínimo local en $(x_0, y_0)$.
+- Si $H > 0$ y $\frac{\partial^2 f}{\partial y \partial y}(x_0, y_0) < 0$, entonces $f$ tiene un máximo local en $(x_0, y_0)$.
+- Si $H < 0$, entonces $f$ no tiene ni un máximo ni un mínimo en $(x_0, y_0)$. Esto se denomina un punto silla.
+- Si $H = 0$, el criterio no es concluyente.
 
 ---
 

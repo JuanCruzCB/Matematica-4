@@ -147,6 +147,40 @@
 - [2.1. Regresión Lineal 1](#21-regresión-lineal-1)
 - [2.2. Regresión Lineal 2](#22-regresión-lineal-2)
 - [3. Teoría de números](#3-teoría-de-números)
+  - [Números Enteros $\\mathbb{Z}$](#números-enteros-mathbbz)
+    - [Definición](#definición-8)
+    - [Operaciones](#operaciones-2)
+      - [Suma y resta](#suma-y-resta)
+      - [Multiplicación](#multiplicación)
+    - [Divisibilidad](#divisibilidad)
+      - [División exacta](#división-exacta)
+      - [División inexacta (con resto)](#división-inexacta-con-resto)
+    - [Cambio de base](#cambio-de-base)
+    - [Enteros Primos](#enteros-primos)
+      - [Definición](#definición-9)
+      - [Teorema Fundamental de la Aritmética](#teorema-fundamental-de-la-aritmética)
+    - [Máximo Común Divisor (MCD)](#máximo-común-divisor-mcd)
+      - [Definición](#definición-10)
+      - [Algoritmo de Euclides](#algoritmo-de-euclides)
+      - [Identidad de Bézout](#identidad-de-bézout)
+      - [Números Coprimos](#números-coprimos)
+    - [Mínimo Común Múltiplo (MCM)](#mínimo-común-múltiplo-mcm)
+      - [Definición](#definición-11)
+  - [Números Reales $\\mathbb{R}$](#números-reales-mathbbr)
+    - [Concepto](#concepto-4)
+    - [Números Racionales $\\mathbb{Q}$](#números-racionales-mathbbq)
+      - [Definición](#definición-12)
+      - [Equivalencia de fracciones y orden](#equivalencia-de-fracciones-y-orden)
+      - [Operaciones](#operaciones-3)
+        - [Suma](#suma-1)
+        - [Resta](#resta)
+        - [Multiplicación](#multiplicación-1)
+        - [División](#división)
+      - [Densidad de los números racionales](#densidad-de-los-números-racionales)
+    - [Números Irracionales $\\mathbb{I}$](#números-irracionales-mathbbi)
+      - [Definición](#definición-13)
+  - [Números Complejos $\\mathbb{C}$](#números-complejos-mathbbc)
+    - [Definición](#definición-14)
 - [4. Relaciones entre conjuntos](#4-relaciones-entre-conjuntos)
 - [5.1. Estructuras algebraicas](#51-estructuras-algebraicas)
 - [5.2. Aritmética Modular](#52-aritmética-modular)
@@ -1188,6 +1222,216 @@ Dadas $f : D \subset \mathbb{R}^2 \rightarrow \mathbb{R}$ y $g : D \subset \math
 ---
 
 # 3. Teoría de números
+
+## Números Enteros $\mathbb{Z}$
+
+### Definición
+
+- Un número entero es un número que puede ser positivo, negativo o cero, y no tiene parte fraccionaria. Los números enteros se representan con el símbolo $\mathbb{Z}$ y se pueden clasificar en tres categorías:
+  - Números enteros positivos: $1, 2, 3, \ldots$
+  - Números enteros negativos: $-1, -2, -3, \ldots$
+  - El número cero: $0$
+- Los números enteros están **ordenados**. Este orden se define como:
+  - Dados dos enteros con signos distintos $a$ y $-b$, $-b < a$.
+  - Dados dos enteros con signos iguales, el menor de ambos es el de menor valor absoluto si ambos son positivos, y el de mayor valor absoluto si ambos son negativos.
+  - El cero es mayor que todos los enteros negativos y menor que todos los enteros positivos.
+
+### Operaciones
+
+#### Suma y resta
+
+La suma de enteros es **cerrada**, es decir, la suma de dos enteros siempre es otro entero. Propiedades:
+
+- **Asociativa**: $(a + b) + c = a + (b + c)$
+- **Conmutativa**: $a + b = b + a$
+- **Elemento neutro**: $a + 0 = a$
+- **Ley de monotonía de la suma**: Si $a \leq b$, entonces $a + c \leq b + c$
+
+La resta de enteros es cerrada. Se realiza sumando el opuesto del segundo número al primero: $a - b = a + (-b)$
+
+#### Multiplicación
+
+La multiplicación de enteros es cerrada. Propiedades:
+
+- **Asociativa**: $(a \cdot b) \cdot c = a \cdot (b \cdot c)$
+- **Conmutativa**: $a \cdot b = b \cdot a$
+- **Elemento neutro**: $a \cdot 1 = a$
+- **Ley de monotonía de la multiplicación**: Si $a \leq b$ y $c > 0$, entonces $a \cdot c \leq b \cdot c$. Si $c < 0$, entonces $a \cdot c \geq b \cdot c$
+- **Distributiva respecto a la suma**: $a \cdot (b + c) = a \cdot b + a \cdot c$
+
+### Divisibilidad
+
+#### División exacta
+
+- La división de enteros es una operación "especial" porque no es cerrada.
+- La división **exacta** se define como:
+  - Dados dos enteros $a$ y $b$ con $b \neq 0$, se dice que $b$ divide a $a$, denotado como $b | a$, si existe un entero $c$ tal que $a = b \cdot c$. En este caso se dice que:
+    - $b$ es un **divisor** de $a$
+    - $a$ es **divisible** por $b$
+    - $a$ es un **múltiplo** de $b$.
+- Propiedades:
+  - $a | a$ ($a = a \cdot c$ con $c = 1$)
+  - $1 | a$
+  - $a | 0$
+  - Si $a | b$ entonces $a | -b$, $-a | b$ y $-a | -b$
+  - Si $a | b$ y $b | c$ entonces $a | c$
+  - Si $a | b$ y $a | c$ entonces $a | (b + c)$
+
+#### División inexacta (con resto)
+
+- Dados $a, b \in \mathbb{Z}$ con $b \neq 0$, cuando no existe un entero $c$ tal que $a = b \cdot c$, se intenta realizar la división inexacta entre $a$ y $b$. Se trata de aproximar de la mejor manera posible a $a$ por un múltiplo de $b$. La diferencia entre $a$ y dicho múltiplo se denomina **resto** de la división. Este resto es $0$ si $a$ es múltiplo de $b$.
+- Formalmente: $a = b \cdot c + r$ con $0 \leq r < |b|$ donde $c$ se denomina **cociente** y $r$ se denomina **resto**. Tanto $c$ como $r$ son **únicos**.
+
+### Cambio de base
+
+- Los números enteros se pueden representar en diferentes bases. La base más común es la base decimal (base 10), pero también se pueden usar otras bases como la binaria (base 2), octal (base 8) y hexadecimal (base 16).
+- **Teorema**: Sea $b \in \mathbb{Z}$ con $b > 1$, entonces todo número entero positivo $n$ puede escribirse de manera única como $n = a_k b^k + a_{k-1} b^{k-1} + \cdots + a_1 b + a_0$, donde $0 \leq a_i < b$ para todo $i$. El número $b$ es la base de la representación. Si no se especifica, se asume que es igual a $10$.
+- Ejemplo: Escribir $37$ en base $5$.
+  - $37 = 1 \cdot 5^2 + 2 \cdot 5^1 + 2 \cdot 5^0 = (122)_5$
+
+### Enteros Primos
+
+#### Definición
+
+- Un número entero $p \neq 1$ se denomina **primo** si sus únicos divisores son $1$, $-1$, $p$ y $-p$. En caso contrario, el número se denomina **compuesto**.
+- Ejemplo: $2, 3, 5, 7$ son primos. $4, 6, 8, 9$ son compuestos.
+- Propiedades:
+  - Hay infinitos números primos.
+  - Si $m$ es un entero compuesto, entonces existe un número primo $p$ tal que $p | m$. Esto implica que todo entero compuesto es divisible por un número primo y por lo tanto todo entero compuesto se puede descomponer en factores primos. Esta factorización es única salvo el orden de los factores.
+
+#### Teorema Fundamental de la Aritmética
+
+- Todo número entero distinto de $0$, $1$, y $-1$ es un producto finito de números primos y esa factorización es única salvo el orden de los factores.
+- Ejemplo:
+  - $72 = 2^3 \cdot 3^2$
+  - $48 = 2^4 \cdot 3^1$
+
+### Máximo Común Divisor (MCD)
+
+#### Definición
+
+- Dados $a, b \in \mathbb{Z}$ donde $a$ y $b$ no son simultáneamente nulos, existe un único entero $d > 0$ tal que:
+  1. $d | a$ y $d | b$
+  2. Si $c | a$ y $c | b$, entonces $c | d$
+- Este entero $d$ se denomina **máximo común divisor** entre $a$ y $b$, y se denota como $d = \text{mcd}(a, b)$.
+- Ejemplo:
+  - Hallar $\text{mcd}(45, 60)$.
+  - Descomponer ambos números en factores primos:
+    - $45 = 15 \cdot 3 = 5 \cdot 3 \cdot 3 = 5 \cdot 3^2$
+    - $60 = 20 \cdot 3 = 4 \cdot 5 \cdot 3 = 2 \cdot 2 \cdot 5 \cdot 3 = 2^2 \cdot 5 \cdot 3$
+  - El máximo común divisor es el producto de los factores comunes con el menor exponente:
+    - $\text{mcd}(45, 60) = 3^1 \cdot 5^1 = 15$
+
+#### Algoritmo de Euclides
+
+- El algoritmo de Euclides es un método eficiente para calcular el máximo común divisor (MCD) de dos números enteros.
+- Dado $a, b \in \mathbb{Z}$ con $b \neq 0$, se puede expresar $a$ como:
+  - $a = c_1 b + r_1$ con $0 \leq r_1 < |b|$
+- Si $r_1 = 0$, entonces $\text{mcd}(a, b) = mcd(b, r_1) = mcd(b, 0) = b$
+- Si $r_1 \neq 0$, se puede decir que existen enteros $c_2$ y $r_2$ tales que:
+  - $b = c_2 r_1 + r_2$ con $0 \leq r_2 < |r_1|$
+- Si $r_2 = 0$, entonces $\text{mcd}(a, b) = mcd(b, r_1) = mcd(r_1, r_2) = mcd(r_1, 0) = r_1$
+- Si $r_2 \neq 0$, se repite el proceso hasta que se obtenga un resto igual a cero.
+- **El último resto distinto de cero es el máximo común divisor de $a$ y $b$**.
+- Ejemplo:
+  - Hallar $\text{mcd}(45, 60)$ usando el algoritmo de Euclides.
+  - $60 = 1 \cdot 45 + 15$
+  - $45 = 3 \cdot 15 + 0$
+  - El último resto distinto de cero es $15$, por lo tanto $\text{mcd}(45, 60) = 15$.
+
+#### Identidad de Bézout
+
+- Dados $a, b \in \mathbb{Z}$ y $d = mcd(a, b)$, existen $m, n \in \mathbb{Z}$ tales que $d = m \cdot a + n \cdot b$.
+
+#### Números Coprimos
+
+- Si $mcd(a, b) = 1$, entonces se dice que $a$ y $b$ son **coprimos**.
+- Si $p$ es un número primo, entonces $mcd(a, p)$ para cualquier $a \in \mathbb{Z}$ será el propio $p$ o si no son coprimos.
+- Si $d = mcd(a, b)$ entonces existen $A, B \in \mathbb{Z}$ tales que $a = d \cdot A$, $b = d \cdot B$ y $mcd(A, B) = 1$.
+
+### Mínimo Común Múltiplo (MCM)
+
+#### Definición
+
+- Dados $a, b \in \mathbb{Z}$, existe un único $m \in \mathbb{Z}$ tal que:
+  1. $a | m$ y $b | m$
+  2. Si existe $M$ tal que $a | M$ y $b | M$, entonces $m | M$
+- Este entero $m$ se denomina **mínimo común múltiplo** entre $a$ y $b$, y se denota como $m = \text{mcm}[a, b]$.
+
+## Números Reales $\mathbb{R}$
+
+### Concepto
+
+- El conjunto $\mathbb{R}$ de los números reales incluye tanto a los números **racionales** como a los números **irracionales**.
+- En este conjunto pueden realizarse todo tipo de operaciones básicas como la suma, resta, producto, división, potencias y raíces. Sin embargo, hay diversas excepciones importantes:
+  - La división por cero no está definida ya que el cero no posee inverso multiplicativo.
+  - No existen raíces de orden par de números negativos. Por ejemplo, tanto $\sqrt{-1}$ como $\sqrt[4]{-1}$ no están definidos en $\mathbb{R}$.
+  - No se puede calcular el logaritmo de un número real negativo, sea cual sea la base del logaritmo. Por ejemplo, $\log_{10}(-1)$ no está definido en $\mathbb{R}$.
+- El conjunto $\mathbb{R}$, junto con la suma y el producto forma una estructura algebraica llamada **cuerpo**.
+
+### Números Racionales $\mathbb{Q}$
+
+#### Definición
+
+- Un número racional es un número que se puede representar como el cociente de dos números enteros: $\frac{a}{b}$, donde $a, b \in \mathbb{Z}$ y $b \neq 0$.
+- Es importante notar que todo número racional puede ser representado de infinitas formas, por ejemplo $\frac{1}{2} = \frac{2}{4} = \frac{3}{6} = \ldots$. Sin embargo, de todas ellas se toma como representante canónico a la **fracción irreducible**, que es aquella en la que ni el numerador ni el denominador pueden ser divididos por un mismo número.
+- Los números enteros son un subconjunto estricto $(\mathbb{Z} \subset \mathbb{Q})$ de los números racionales, ya que todo $a \in \mathbb{Z}$ puede ser representado como $\frac{a}{1}$.
+
+#### Equivalencia de fracciones y orden
+
+- Dos fracciones $\frac{a}{b}$ y $\frac{c}{d}$ son equivalentes si y solo si $a \cdot d = b \cdot c$.
+- Dadas dos fracciones $\frac{a}{b}$ y $\frac{c}{d}$, se dice que $\frac{a}{b} < \frac{c}{d}$ si $a \cdot d < b \cdot c$. Si alguno de los denominadores es negativo, las fracciones deben transformarse en otras equivalentes con denominadores positivos, siguiendo las igualdades:
+  - $\frac{-a}{-b} = \frac{a}{b}$
+  - $\frac{a}{-b} = \frac{-a}{b}$
+
+#### Operaciones
+
+##### Suma
+
+- $\frac{a}{b} + \frac{c}{d} = \frac{a \cdot d + b \cdot c}{b \cdot d}$
+- Como el producto y la suma de enteros son operaciones cerradas, el resultado de la suma de fracciones es otra fracción. Por lo tanto la suma de números racionales es una operación cerrada.
+- Propiedades:
+  - **Asociativa**: $(\frac{a}{b} + \frac{c}{d}) + \frac{e}{f} = \frac{a}{b} + (\frac{c}{d} + \frac{e}{f})$
+  - **Conmutativa**: $\frac{a}{b} + \frac{c}{d} = \frac{c}{d} + \frac{a}{b}$
+  - **Elemento neutro**: $\frac{a}{b} + \frac{0}{1} = \frac{a}{b}$
+
+##### Resta
+
+- Todo número racional $\frac{a}{b}$ tiene un opuesto: $-(\frac{a}{b}) = \frac{-a}{b} = \frac{a}{-b}$.
+- La resta de dos números racionales $\frac{a}{b}$ y $\frac{c}{d}$ se define como: $\frac{a}{b} - \frac{c}{d} = \frac{a}{b} + (-\frac{c}{d})$
+
+##### Multiplicación
+
+- La multiplicación de dos números racionales $\frac{a}{b}$ y $\frac{c}{d}$ se define como: $\frac{a}{b} \cdot \frac{c}{d} = \frac{a \cdot c}{b \cdot d}$.
+- Como el producto de enteros es una operación cerrada, el resultado de la multiplicación de fracciones es otra fracción. Por lo tanto la multiplicación de números racionales es una operación cerrada.
+- Propiedades:
+  - **Asociativa**: $(\frac{a}{b} \cdot \frac{c}{d}) \cdot \frac{e}{f} = \frac{a}{b} \cdot (\frac{c}{d} \cdot \frac{e}{f})$
+  - **Conmutativa**: $\frac{a}{b} \cdot \frac{c}{d} = \frac{c}{d} \cdot \frac{a}{b}$
+  - **Elemento neutro**: $\frac{a}{b} \cdot \frac{1}{1} = \frac{a}{b}$
+
+##### División
+
+- Los racionales tienen inverso multiplicativo y está dado por $(\frac{a}{b})^{-1} = \frac{b}{a}$, siempre que $a \neq 0$.
+- Se define la división de dos racionales como el producto del primero por el inverso multiplicativo del segundo: $\frac{a}{b} \div \frac{c}{d} = \frac{a}{b} \cdot (\frac{c}{d})^{-1} = \frac{a}{b} \cdot \frac{d}{c} = \frac{a \cdot d}{b \cdot c}$, siempre que $c \neq 0$.
+
+#### Densidad de los números racionales
+
+- Los números racionales cumplen la propiedad de densidad, que establece que para cualquier par de números racionales siempre existe otro número racional situado entre ellos.
+- Demostración
+  - Sean $x$ e $y$ dos números racionales con $x < y$.
+  - Sumando $x$ de ambos lados: $x + x < y + x \Rightarrow 2x < x + y$
+  - Sumando $y$ de ambos lados: $x + y < y + y \Rightarrow x + y < 2y$
+  - Combinando las desigualdades: $2x < x + y < 2y$
+  - Dividiendo todo por $2$: $x < \frac{x + y}{2} < y$
+  - Se halla el número racional $\frac{x + y}{2}$ que está entre $x$ e $y$.
+
+### Números Irracionales $\mathbb{I}$
+
+#### Definición
+
+## Números Complejos $\mathbb{C}$
+
+### Definición
 
 ---
 

@@ -204,6 +204,24 @@
       - [Potencias](#potencias-1)
       - [Raíces](#raíces)
 - [4. Relaciones entre conjuntos](#4-relaciones-entre-conjuntos)
+  - [Relaciones $n$-arias](#relaciones-n-arias)
+  - [Relaciones binarias](#relaciones-binarias)
+    - [Definición](#definición-15)
+    - [Dominio e Imagen](#dominio-e-imagen)
+    - [Relación Inversa](#relación-inversa)
+    - [Relación Compuesta](#relación-compuesta)
+    - [Matriz de una relación](#matriz-de-una-relación)
+    - [Relaciones en un único conjunto](#relaciones-en-un-único-conjunto)
+    - [Relaciones de Preorden, Orden Parcial y Orden Total](#relaciones-de-preorden-orden-parcial-y-orden-total)
+    - [Conjuntos Ordenados](#conjuntos-ordenados)
+    - [Elementos extremos de conjuntos ordenados](#elementos-extremos-de-conjuntos-ordenados)
+    - [Relaciones de Equivalencia](#relaciones-de-equivalencia)
+      - [Definición](#definición-16)
+      - [Clases de Equivalencia](#clases-de-equivalencia)
+      - [Conjunto Cociente](#conjunto-cociente)
+      - [Particiones](#particiones)
+    - [Relación de Congruencia](#relación-de-congruencia)
+      - [Definición](#definición-17)
 - [5.1. Estructuras algebraicas](#51-estructuras-algebraicas)
 - [5.2. Aritmética Modular](#52-aritmética-modular)
 - [5.3. Morfismos](#53-morfismos)
@@ -1635,6 +1653,172 @@ Dado un número complejo $z = a + ib$, se define la **parte real** de $z$ como $
 ---
 
 # 4. Relaciones entre conjuntos
+
+## Relaciones $n$-arias
+
+- Una relación $n$-aria sobre los conjuntos $A_1, A_2, \ldots, A_n$ es un subconjunto del producto cartesiano $A_1 \times A_2 \times \ldots \times A_n$.
+- Si $R$ es una relación $n$-aria sobre $A_1, A_2, \ldots, A_n$, se llama $i$-ésima proyección $\prod_i$ a la aplicación de $R$ en $A_i$ que a cada $n$-upla de $R$ le asigna su $i$-ésimo coordenada.
+- Las relaciones se pueden expresar por extensión o por comprensión, igual que los conjuntos.
+- Ejemplo:
+  - $R = \lbrace (a, b, c) \in \mathbb{R^3} \mid a < b < c \rbrace$ es una relación ternaria definida sobre los reales.
+  - Las bases de datos relacionales son un ejemplo de relaciones n-arias, donde cada tabla es una relación, cada registro/fila es una $n$-upla, cada campo es una entrada de la $n$-upla y cada atributo es una columna de cada tabla.
+
+## Relaciones binarias
+
+### Definición
+
+- Dados dos conjuntos $A \neq \emptyset, B \neq \emptyset$, una relación binaria $R$ definida entre los mismos es un subconjunto del producto cartesiano $A \times B$, caracterizado por alguna propiedad que es común a sus elementos.
+- $R = \lbrace (x, y) \mid (x,y) \in A \times B\rbrace \subset A \times B$
+- Notación: $(x, y) \in R$ se suele denotar como $xRy$ y se lee como "$x$ está por $R$ con $y$".
+- Ejemplo:
+  - $A = \lbrace x \mid \text{x es vocal} \rbrace$
+  - $B = \lbrace brisa, sol, mar, nube \rbrace$
+  - $R: \text{xRy si y solo si x es letra de y}$
+  - $R = \lbrace (i, brisa); (a, brisa); (a, mar); (o, sol); (u, nube); (e, nube) \rbrace$
+
+### Dominio e Imagen
+
+- Sea $R$ una relación de $A$ en $B$.
+- Se llama **dominio** de $R$ al conjunto de elementos $x$ de $A$ tales que $(x, y) \in R$.
+  - **$Dom_R = \lbrace x \in A \mid (x, y) \in R \rbrace$**
+- Se llama **imagen** de $R$ al conjunto de elementos $y$ de $B$ tales que $(x, y) \in R$.
+  - **$Im_R = \lbrace y \in B \mid (x, y) \in R \rbrace$**
+- En el ejemplo anterior, el dominio de $R$ es $Dom_R = \lbrace i, a, o, u, e \rbrace$ y la imagen de $R$ es $Im_R = \lbrace brisa, mar, sol, nube \rbrace$.
+
+### Relación Inversa
+
+- Sea $R$ una relación de $A$ en $B$. La relación inversa de $R$, denotada como $R^{-1}$, es el subconjunto de $B \times A$ definido por:
+  - **$R^{-1} = \lbrace (y, x) \mid (x, y) \in R \rbrace$**
+- Ejemplo:
+  - $R = \lbrace (3, 4); (2, 4); (10, 11) \rbrace$
+  - $R^{-1} = \lbrace (4, 3); (4, 2); (11, 10) \rbrace$
+
+### Relación Compuesta
+
+- Dadas las relaciones $R$ de $A$ en $B$ y $S$ de $B$ en $C$, la relación compuesta de $R$ y $S$, denotada como $S \circ R$, es el subconjunto de $A \times C$ definido por:
+  - **$S \circ R = \lbrace (x, z) \mid (x, y) \in R \land (y, z) \in S \rbrace$**
+- Ejemplo:
+  - $R = \lbrace (1, 2); (2, 3); (3, 4) \rbrace$
+  - $S = \lbrace (2, 5); (3, 6); (4, 7) \rbrace$
+  - $S \circ R = \lbrace (1, 5); (2, 6); (3, 7) \rbrace$
+
+### Matriz de una relación
+
+- Se puede representar a una relación binaria entre dos conjuntos finitos con una matriz.
+- Sea $R$ una relación de $A$ en $B$, donde $A = \lbrace a_1, a_2, \ldots, a_m \rbrace$ y $B = \lbrace b_1, b_2, \ldots, b_n \rbrace$. La matriz de la relación $R$, denotada como $M_R$, es la matriz de tamaño $m \times n$ definida por:
+  - **$M_R = [m_{ij}]_{m \times n}$**
+  - Donde:
+    - $m_{ij} = 1$ si $(a_i, b_j) \in R$
+    - $m_{ij} = 0$ si $(a_i, b_j) \notin R$
+- Ejemplo:
+  - $A = \lbrace 1, 2, 3 \rbrace$
+  - $B = \lbrace r, s \rbrace$
+  - $R = \lbrace (1, r); (2, s); (3, r) \rbrace$
+  - $M_R = \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 1 & 0 \end{bmatrix}$
+
+### Relaciones en un único conjunto
+
+- Si una relación $R$ es tal que $R \subset A \times A$, se dice que está definida en el conjunto $A$, o que $R$ es una relación sobre $A$.
+- Este tipo de relaciones tiene varias propiedades:
+  - **Reflexividad**: $\forall x \in A, (x, x) \in R$
+  - **Simetría**: $\forall x, y \in A, (x, y) \in R \Rightarrow (y, x) \in R$
+  - **Antisimetría**: $\forall x, y \in A, ((x, y) \in R \land (y, x) \in R) \Rightarrow x = y$
+  - **Transitividad**: $\forall x, y, z \in A, ((x, y) \in R \land (y, z) \in R) \Rightarrow (x, z) \in R$
+  - Notar que las últimas tres propiedades constituyen implicaciones lógicas tradicionales, por lo cual el **único caso donde estas propiedades no se cumplen es cuando el antecedente es falso y el consecuente es verdadero**. Esto es clave a la hora de probar si una relación es simétrica, antisimétrica o transitiva ya que permiten construir contraejemplos.
+- Ejemplo:
+  - $A = \lbrace a, b, c \rbrace$
+  - $R = \lbrace (a, b); (a, a); (b, b) \rbrace$
+  - $R$ no es reflexiva porque $(c, c) \notin R$, no es simétrica porque $(b, a) \notin R$, pero es antisimétrica y transitiva.
+
+### Relaciones de Preorden, Orden Parcial y Orden Total
+
+- Una relación de preorden es una relación binaria **reflexiva** y **transitiva**.
+- Una relación de orden parcial es una relación binaria **reflexiva**, **antisimétrica** y **transitiva** donde algunos pero no todos los elementos son comparables entre sí.
+- Una relación de orden total es una relación binaria **reflexiva**, **antisimétrica** y **transitiva** donde todos los elementos son comparables entre sí.
+- **Comparabilidad**: Dado un conjunto ordenado $A$, se dice que dos elementos $a, b \in A$ son comparables si se verifica que $aRb$ o $bRa$. En caso contrario, se dice que son incomparables.
+  - Si todos los elementos de $A$ son comparables entre sí, entonces se dice que $R$ es un orden total en $A$. En caso contrario, se dice que $R$ es un orden parcial en $A$.
+- Ninguna de las dos relaciones de orden es simétrica porque ésto rompería la jerarquía de los elementos y ya no serían ordenables.
+- Ejemplos de relaciones de orden:
+  - Preorden: inclusión estricta de conjuntos $\subset$.
+  - Orden total: inclusión de conjuntos $\subseteq$.
+
+### Conjuntos Ordenados
+
+- Un conjunto $A$ junto con un orden $R$, ya sea éste parcial o total, es un conjunto ordenado, parcialmente o totalmente. Se dice que $R$ ordena al conjunto $A$ y se denota como $(A, R)$.
+- **Diagramas de Hasse**: es una versión simplificada de un digrafo que describe visualmente a un conjunto ordenado.
+
+### Elementos extremos de conjuntos ordenados
+
+- Sea $(A, <)$ un conjunto ordenado. Un elemento $a \in A$ es:
+  - **Máximo**: si $\forall x \in A, x < a$.
+  - **Mínimo**: si $\forall x \in A, a < x$.
+- Sea $B \subseteq A$. Un elemento $a \in A$ es:
+  - **Cota superior**: si $\forall x \in B, x < a$.
+  - **Cota inferior**: si $\forall x \in B, a < x$.
+- Un elemento $a \in A$ es:
+  - **Supremo de $B$**: si $a$ es cota superior de $B$ y además $a < c$ para todo $c$ que sea cota superior de $B$.
+  - **Ínfimo de $B$**: si $a$ es cota inferior de $B$ y además $a > c$ para todo $c$ que sea cota inferior de $B$.
+- Un **reticulado** es un conjunto ordenado $(A, <)$ en el que para todos sus subconjuntos de dos elementos $\lbrace a, b \rbrace \subseteq A$ existe un supremo y un ínfimo.
+
+### Relaciones de Equivalencia
+
+#### Definición
+
+- Una relación de equivalencia es una relación binaria **reflexiva**, **simétrica** y **transitiva**.
+- Se suele denotar a una relación de equivalencia como $\equiv$.
+- La idea de equivalencia sobre un conjunto permite establecer una relación entre los elementos del conjunto que comparten cierta propiedad, de manera que se pueden reagrupar dichos elementos.
+- Ejemplo: la igualdad matemática trivial $=$ es una relación de equivalencia.
+
+#### Clases de Equivalencia
+
+- Dada una relación de equivalencia $R$ sobre $A$ y un elemento $a \in A$, se denomina clase de equivalencia de $a$ por $R$ y se denota $\overline{a}$ o $R(a)$ al conjunto de todos los elementos de $A$ que están relacionados con $a$ por $R$.
+- **$\overline{a} = R(a) = \lbrace x \in A \mid xRa \rbrace$**
+- Todo elemento de $\overline{a}$ es llamado representante de la clase.
+- Como la relación es reflexiva, se da que $a \in \overline{a}$, por lo tanto $a$ es representante de la clase $\overline{a}$ para todo $a \in A$.
+- Ejemplo:
+  - Sea $A = \lbrace 1, 2, 3, 4 \rbrace$ y la relación de equivalencia $R$ definida por $aRb$ si y solo si $a$ y $b$ tienen la misma paridad.
+  - $R = \lbrace (1, 1); (1, 3); (2, 2); (2, 4); (3, 1); (3, 3); (4, 2); (4, 4) \rbrace$
+  - Las clases de equivalencia son:
+    - $\overline{1} = \lbrace 1, 3 \rbrace$
+    - $\overline{2} = \lbrace 2, 4 \rbrace$
+    - $\overline{3} = \lbrace 1, 3 \rbrace$
+    - $\overline{4} = \lbrace 2, 4 \rbrace$
+  - Sin embargo, como $\overline{1} = \overline{3}$ y $\overline{2} = \overline{4}$, podemos decir que hay dos clases de equivalencia distintas: $\lbrace 1, 3 \rbrace$ y $\lbrace 2, 4 \rbrace$.
+- Si $R$ es una relación de equivalencia sobre $A$, entonces para todo par $a, b \in A$ se cumple que $\overline{a} = \overline{b}$ si y solo si $aRb$.
+
+#### Conjunto Cociente
+
+- Se llama conjunto cociente al conjunto formado por todas las clases de equivalencia a partir de elementos de un conjunto $A$ bajo una relación de equivalencia $R$.
+- Se denota como $A / R$ y se define como: $A / R = \lbrace \overline{a} \mid a \in A \rbrace$.
+
+#### Particiones
+
+- Una partición de un conjunto $A$ es un conjunto de partes no vacías de $A$, disjuntas dos a dos y tales que su unión es $A$.
+- Dado un conjunto $A$ y $P = \lbrace A_1, A_2, \ldots, A_n \rbrace$ una partición de $A$, $P$ es una partición de $A$ si y solo si se verifican tres condiciones:
+  1. $A_i \neq \emptyset$ para todo $A_i \in P$.
+  2. $A_i \cap A_j = \emptyset$ para todo $A_i, A_j \in P$ con $i \neq j$.
+  3. $\bigcup_{i=1}^{n} A_i = A$
+- Ejemplo: el conjunto $\mathbb{N}$ puede particionarse en dos partes: los números pares y los números impares. Entonces, $\mathbb{N} = \lbrace 0, 2, 4, 6, \ldots \rbrace \cup \lbrace 1, 3, 5, 7, \ldots \rbrace$. Claramente ninguno de los dos subconjuntos es vacío, no tienen ningún elemento en común y su unión es $\mathbb{N}$ porque todo número natural es o par o impar.
+- Dada una partición válida $P$ sobre un conjunto $A$, se puede definir una relación de equivalencia $R$ sobre $A$ tal que $aRb$ si y solo si existe $X \in P$ tal que $a, b \in X$. Esta relación se suele llamar la relación de equivalencia asociada a la partición $P$.
+- Si $R$ es una relación de equivalencia sobre $A$, entonces $A / R$ es una partición de $A$.
+
+### Relación de Congruencia
+
+#### Definición
+
+- Dados $a, b, m \in \mathbb{Z}$, se dice que $a$ es congruente con $b$ módulo $m$, denotado como $a \equiv b \mod m$, si y solo si $m \mid (a - b)$, es decir, existe $k \in \mathbb{Z}$ tal que $a - b = k \cdot m$.
+- Ejemplo:
+  - $4 \equiv 10 \mod 3$
+  - $3 \mid (4 - 10)$
+  - $4 - 10 = k \cdot 3$
+  - $-6 = k \cdot 3$
+  - $k = -2$
+- La relación de congruencia módulo $m$ es una relación de equivalencia en $\mathbb{Z}$.
+- Como la relación de congruencia es una relación de equivalencia en $\mathbb{Z}$, determina una partición del conjunto de los enteros $\mathbb{Z}$ en clases de equivalencia. Cada una de estas clases se denomina clase de congruencia módulo $m$.
+- La clase de congruencia módulo $m$ de un entero $x$ es el conjunto $\overline{x} = \lbrace y \in \mathbb{Z} \mid y \equiv x \mod m \rbrace$.
+- Esto permite agrupar a los enteros en familias disjuntas de manera que dos enteros son congruentes módulo $m$ si y solo si pertenecen a la misma clase de congruencia.
+- Todo numero entero es congruente módulo $m$ con su resto en la división por $m$.
+- Dos enteros son congruentes módulo $m$ si y solo si tienen el mismo resto en la división por $m$.
 
 ---
 

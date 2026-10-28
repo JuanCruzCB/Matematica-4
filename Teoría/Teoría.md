@@ -179,8 +179,30 @@
       - [Densidad de los números racionales](#densidad-de-los-números-racionales)
     - [Números Irracionales $\\mathbb{I}$](#números-irracionales-mathbbi)
       - [Definición](#definición-13)
+      - [Propiedades](#propiedades-2)
   - [Números Complejos $\\mathbb{C}$](#números-complejos-mathbbc)
     - [Definición](#definición-14)
+    - [Parte Real e Imaginaria](#parte-real-e-imaginaria)
+    - [Igualdad](#igualdad-2)
+    - [Conjugado](#conjugado)
+    - [Operaciones](#operaciones-4)
+      - [Suma](#suma-2)
+      - [Opuesto y Resta](#opuesto-y-resta)
+      - [Producto](#producto)
+      - [Inverso](#inverso)
+      - [Cociente](#cociente)
+      - [Potencias](#potencias)
+    - [Plano Complejo](#plano-complejo)
+      - [Representación](#representación)
+      - [Módulo y Argumento](#módulo-y-argumento)
+      - [Igualdad](#igualdad-3)
+      - [Seno y coseno](#seno-y-coseno)
+      - [Formas de representación](#formas-de-representación)
+    - [Operaciones en forma exponencial](#operaciones-en-forma-exponencial)
+      - [Producto](#producto-1)
+      - [Cociente](#cociente-1)
+      - [Potencias](#potencias-1)
+      - [Raíces](#raíces)
 - [4. Relaciones entre conjuntos](#4-relaciones-entre-conjuntos)
 - [5.1. Estructuras algebraicas](#51-estructuras-algebraicas)
 - [5.2. Aritmética Modular](#52-aritmética-modular)
@@ -1429,9 +1451,186 @@ La multiplicación de enteros es cerrada. Propiedades:
 
 #### Definición
 
+- Un número irracional es un número que no se puede expresar como cociente de dos enteros, es decir no puede ser una fracción $\frac{m}{n}$ con $m, n \in \mathbb{Z}$ y $n \neq 0$.
+- Ejemplos: $\sqrt{2}$, $\pi$, $e$.
+
+#### Propiedades
+
+- La suma y diferencia de un racional con un irracional es **siempre** un irracional.
+- El producto de un racional no nulo por un irracional es **siempre** un irracional.
+- El cociente entre un racional no nulo y un irracional es **siempre** un irracional.
+- El inverso de un irracional es **siempre** un irracional.
+- La suma entre dos irracionales **no siempre** es un irracional. Por ejemplo, $\sqrt{2} + (-\sqrt{2}) = 0$ donde $0 \notin \mathbb{I}$.
+- El producto entre dos irracionales **no siempre** es un irracional. Por ejemplo, $\sqrt{2} \cdot \frac{1}{\sqrt{2}} = 1$ donde $1 \notin \mathbb{I}$.
+
 ## Números Complejos $\mathbb{C}$
 
 ### Definición
+
+- Se define al número $i$ (unidad imaginaria) como aquel número que cumple la ecuación $i^2 = -1$.
+- Un número complejo $z$ se escribe como $z = a + ib$ donde $a, b \in \mathbb{R}$ y $i$ es la unidad imaginaria.
+- Esto es conocido como la forma binómica de un número complejo, donde $a$ es la parte real y $b$ es la parte imaginaria.
+- Por lo tanto el conjunto de los números complejos se define como $\mathbb{C} = \lbrace z = a + ib \mid a, b \in \mathbb{R}; i^2 = -1 \rbrace$.
+- Si $b = 0$, el número complejo es un número real. Si $a = 0$ y $b \neq 0$, el número complejo es un número imaginario puro.
+
+### Parte Real e Imaginaria
+
+Dado un número complejo $z = a + ib$, se define la **parte real** de $z$ como $\text{Re}(z) = a$ y la **parte imaginaria** de $z$ como $\text{Im}(z) = b$, con $a, b \in \mathbb{R}$.
+
+### Igualdad
+
+- Dos números complejos son iguales si tanto la parte real como la parte imaginaria son iguales.
+- Es decir, dados $z_1$ y $z_2$, **$z_1 = z_2 \Leftrightarrow \text{Re}(z_1) = \text{Re}(z_2)$ y $\text{Im}(z_1) = \text{Im}(z_2)$**.
+
+### Conjugado
+
+- El conjugado de un número complejo $z = a + bi$ se denota como $\overline{z}$ y se define como **$\overline{z} = a - bi$**.
+- Notar que $\overline{\overline{z}} = z$.
+
+### Operaciones
+
+#### Suma
+
+- **$z_1 + z_2 = (a_1 + a_2) + i(b_1 + b_2)$**
+- Ejemplo:
+  - $z_1 = 1 + i2$
+  - $z_2 = 3 - i4$
+  - $z_1 + z_2 = (1 + i2) + (3 - i4) = (1 + 3) + i(2 - 4) = 4 + i(-2) = 4 - i2$
+- Propiedades:
+  - Cerrada
+  - **Asociativa**: $(z_1 + z_2) + z_3 = z_1 + (z_2 + z_3)$
+  - **Conmutativa**: $z_1 + z_2 = z_2 + z_1$
+  - **Elemento neutro**: $z + (0 + i0) = z$
+
+#### Opuesto y Resta
+
+- El opuesto de un número complejo $z = a + ib$ se denota como $-z$ y se define como $-z = -a - ib$.
+- **$z_1 - z_2 = (a_1 + i b_1) - (a_2 + i b_2) = (a_1 + i b_1) + (-a_2 - i b_2)$**
+- Ejemplo:
+  - $z_1 = 1 + i3$
+  - $z_2 = 2 - i5$
+  - $z_1 - z_2 = (1 + i3) - (2 - i5) = (1 - 2) + i(3 + 5) = -1 + i8$
+
+#### Producto
+
+- **$z_1 \cdot z_2 = (a_1 + i b_1)(a_2 + i b_2) = (a_1 a_2 - b_1 b_2) + i(a_1 b_2 + a_2 b_1)$**
+- Ejemplo:
+  - $z_1 = 2 + i3$
+  - $z_2 = 4 - i5$
+  - $z_1 \cdot z_2 = (2 + i3)(4 - i5) = (2 \cdot 4 - 3 \cdot (-5)) + i(2 \cdot (-5) + 3 \cdot 4) = (8 + 15) + i(-10 + 12) = 23 + i2$
+- Propiedades:
+  - Cerrado
+  - **Asociativa**: $(z_1 \cdot z_2) \cdot z_3 = z_1 \cdot (z_2 \cdot z_3)$
+  - **Conmutativa**: $z_1 \cdot z_2 = z_2 \cdot z_1$
+  - **Elemento neutro**: $z \cdot (1 + i0) = z$
+
+#### Inverso
+
+- **$z^{-1} = \frac{1 \cdot \overline{z}}{z \cdot \overline{z}} = \frac{a - ib}{(a + ib) \cdot (a - ib)}$**
+- Ejemplo:
+  - $z = 2 + i3$
+  - $z^{-1} = \frac{1 \cdot \overline{z}}{z \cdot \overline{z}} = \frac{2 - i3}{(2 + i3)(2 - i3)} = \frac{2 - i3}{4 + 9} = \frac{2 - i3}{13} = \frac{2}{13} - i\frac{3}{13}$
+
+#### Cociente
+
+- **$\frac{z_1}{z_2} = z_1 \cdot z_2^{-1} = z_1 \cdot \frac{1 \cdot \overline{z_2}}{z_2 \cdot \overline{z_2}} = \frac{(a_1 + i b_1)(a_2 - i b_2)}{(a_2 + i b_2)(a_2 - i b_2)} = \frac{(a_1 a_2 + b_1 b_2) + i(-a_1 b_2 + a_2 b_1)}{a_2^2 + b_2^2}$**
+- Ejemplo:
+  - $z_1 = 1 + i$
+  - $z_2 = 3 + i4$
+  - $\frac{z_1}{z_2} = \frac{(1 + i)(3 - i4)}{(3 + i4)(3 - i4)} = \frac{(3 + 4) + i(-4 + 3)}{9 + 16} = \frac{7 - i}{25} = \frac{7}{25} - i\frac{1}{25}$
+
+#### Potencias
+
+- $i^0 = 1$
+- $i^1 = i$
+- $i^2 = -1$
+- $i^3 = -i$
+- $i^m = i^r$ donde $r$ es el resto de dividir $m$ por $4$.
+- Ejemplos:
+  - $i^{173} \Rightarrow 173 \mod 4 = 1 \Rightarrow i^{173} = i^1 = i$
+  - $i^{1354} \Rightarrow 1354 \mod 4 = 2 \Rightarrow i^{1354} = i^2 = -1$
+  - $(2i)^{15} = 2^{15} i^{15} = 4096 i^{15} \Rightarrow 15 \mod 4 = 3 \Rightarrow (4096) i^{15} = (4096) i^{3} = -4096i$
+
+### Plano Complejo
+
+#### Representación
+
+- Un número complejo $z$ puede representarse en el plano como un par ordenado $(a, b)$, donde $a$ es la parte real y $b$ es la parte imaginaria. Este plano se denomina **plano complejo**.
+- La unidad imaginaria $i$ se representa como el punto $(0, 1)$.
+
+#### Módulo y Argumento
+
+- El módulo de un número complejo $z = a + ib$ se denota como $|z|$ y se define como la distancia desde el origen hasta el punto $(a, b)$ en el plano complejo:
+  - **$|z| = \sqrt{a^2 + b^2}$**
+- El argumento de un número complejo $z = a + ib$ se denota como $\arg(z)$ y se define como el ángulo que forma el vector desde el origen hasta el punto $(a, b)$ con respecto al eje real positivo:
+  - **$\arg(z) = \theta = \arctan\left(\frac{b}{a}\right)$**
+- Si bien hay infinitos ángulos equivalentes a $\theta$, se suele tomar como convención que $0 \leq \theta < 2\pi$.
+
+#### Igualdad
+
+- Dos números complejos son iguales si y solo si:
+  - **$|z_1| = |z_2|$**
+  - **$\arg(z_1) = \arg(z_2)$**
+
+#### Seno y coseno
+
+- Dada la definición de módulo y argumento, tenemos dos relaciones importantes:
+  - **$cos(\theta) = \frac{adyacente}{hipotenusa} = \frac{a}{|z|} \Rightarrow a = |z| \cdot cos(\theta) \Rightarrow Re(z) = |z| \cdot cos(\theta)$**
+  - **$sin(\theta) = \frac{opuesto}{hipotenusa} = \frac{b}{|z|} \Rightarrow b = |z| \cdot sin(\theta) \Rightarrow Im(z) = |z| \cdot sin(\theta)$**
+
+#### Formas de representación
+
+- **Trigonométrica**: **$z = a + ib = |z| cos(\theta) + i |z| sin(\theta) = |z| (cos(\theta) + i sin(\theta))$**
+- **Exponencial**: **$z = a + ib = |z| (cos(\theta) + i sin(\theta)) = |z| e^{i\theta}$**
+- **Polar**: **$z = a + ib = |z|_\theta$**
+
+### Operaciones en forma exponencial
+
+#### Producto
+
+- $z_1 = |z_1| e^{i\theta_1}$
+- $z_2 = |z_2| e^{i\theta_2}$
+- **$z_1 \cdot z_2 = |z_1| e^{i\theta_1} \cdot |z_2| e^{i\theta_2} = |z_1| |z_2| e^{i(\theta_1 + \theta_2)}$**
+- Ejemplo:
+  - $z_1 = |\sqrt{8}| e^{i\frac{5}{4}\pi}$
+  - $z_2 = |2| e^{i\frac{3}{2}\pi}$
+  - $z_1 \cdot z_2 = (|\sqrt{8}| e^{i\frac{5}{4}\pi}) \cdot (|2| e^{i\frac{3}{2}\pi}) = |\sqrt{8} \cdot 2| e^{i(\frac{5}{4}\pi + \frac{3}{2}\pi)} = (\sqrt{2 \cdot 4}) 2e^{i(\frac{11}{4}\pi)} = (\sqrt{2} \cdot \sqrt{4}) 2e^{i(\frac{11}{4}\pi)} = (\sqrt{2} \cdot 2) 2e^{i(\frac{11}{4}\pi)} = 4 \sqrt{2} e^{i(\frac{11}{4}\pi)} = |4 \sqrt{2}| e^{i \frac{3}{4}\pi)}$
+  - NOTA: $e^{i(\frac{11}{4}\pi)} = e^{i(\frac{8 + 3}{4}\pi)} = e^{i(\frac{8}{4} + \frac{3}{4}\pi)} = e^{i(2 + \frac{3}{4})\pi} = e^{i(2 \pi + \frac{3}{4}\pi)} = e^{i 2 \pi} \cdot e^{i \frac{3}{4}\pi} = 1 \cdot e^{i \frac{3}{4}\pi} = e^{i \frac{3}{4}\pi}$
+
+#### Cociente
+
+- $z_1 = |z_1| e^{i\theta_1}$
+- $z_2 = |z_2| e^{i\theta_2}$
+- **$\frac{z_1}{z_2} = \frac{|z_1| e^{i\theta_1}}{|z_2| e^{i\theta_2}} = \frac{|z_1|}{|z_2|} e^{i(\theta_1 - \theta_2)}$**
+- Ejemplo:
+  - $z_1 = |\sqrt{2}| e^{i\frac{1}{4}\pi}$
+  - $z_2 = |4| e^{i\frac{1}{3}\pi}$
+  - $\frac{z_1}{z_2} = \frac{|\sqrt{2}| e^{i\frac{1}{4}\pi}}{|4| e^{i\frac{1}{3}\pi}} = \frac{|\sqrt{2}|}{|4|} e^{i(\frac{1}{4}\pi - \frac{1}{3}\pi)} = \frac{\sqrt{2}}{4} e^{i(\frac{3 - 4}{12}\pi)} = \frac{\sqrt{2}}{4} e^{i(-\frac{1}{12}\pi)} = \frac{\sqrt{2}}{4} e^{-i\frac{1}{12}\pi}$
+
+#### Potencias
+
+- $z^n = (|z| e^{i\theta})^n = |z|^n e^{i n \theta}$
+- Ejemplo:
+  - $z = 2 + 2i$
+  - Calcular $z^{15}$.
+  - $|z| = \sqrt{2^2 + 2^2} = \sqrt{8} = \sqrt{4 \cdot 2} = \sqrt{4} \cdot \sqrt{2} = 2\sqrt{2}$
+  - $\theta = \arctan\left(\frac{2}{2}\right) = \arctan(1) = \frac{\pi}{4}$
+  - $z^{15} = (|z| e^{i\theta})^{15} = (2\sqrt{2} e^{i\frac{\pi}{4}})^{15} = (2\sqrt{2})^{15} e^{i \frac{15 \pi}{4}} = 2^{15} \cdot (\sqrt{2})^{15} e^{i \frac{15 \pi}{4}} = 2^{15} \cdot (2^{\frac{1}{2}})^{15} e^{i \frac{15 \pi}{4}} = 2^{15} \cdot (2^{\frac{15}{2}}) e^{i \frac{15 \pi}{4}} = 2^{15} \cdot (\sqrt{2^{15}}) e^{i \frac{15 \pi}{4}} = 2^{15} \cdot 2^7 \sqrt{2} e^{i \frac{15 \pi}{4}} = 2^{22} \sqrt{2} e^{i \frac{15 \pi}{4}} = 2^{22} \sqrt{2} e^{i \frac{7}{4}\pi}$
+
+#### Raíces
+
+- Dado un número complejo $z = |z| e^{i\theta}$, sus raíces $n$-ésimas, denotadas como $\sqrt[n]{z}$ o $z^{\frac{1}{n}}$, se definen como los números complejos $w$ tales que $w^n = z$.
+- Las raíces $n$-ésimas de un número complejo $z$ se pueden calcular mediante la fórmula:
+  - **$w_k = \sqrt[n]{|z|} e^{i\left(\frac{\theta + 2k\pi}{n}\right)}$** con $0 \leq k < n$.
+- Ejemplo:
+  - Calcular las raíces cuartas de $z = 2 + 2i$.
+  - Forma exponencial: $z = |z| e^{i\theta} = 2\sqrt{2} e^{i\frac{\pi}{4}}$
+  - $n = 4$
+  - $|w| = \sqrt[4]{|z|} = \sqrt[4]{2\sqrt{2}} = \sqrt[4]{2 \cdot 2^{\frac{1}{2}}} = \sqrt[4]{2^({1 + \frac{1}{2}})} = \sqrt[4]{2^{\frac{3}{2}}} = \sqrt[4]{2^{\frac{3}{2}}} = \sqrt[4]{\sqrt{2^3}} = \sqrt[8]{2^3}$
+  - $w_0 = \sqrt[4]{|z|} e^{i\left(\frac{\theta + 2 \cdot 0 \cdot \pi}{4}\right)} = \sqrt[8]{2^3} e^{i\left(\frac{\frac{\pi}{4} + 0}{4}\right)} = \sqrt[8]{2^3} e^{i\left(\frac{\pi}{16}\right)}$
+  - $w_1 = \sqrt[4]{|z|} e^{i\left(\frac{\theta + 2 \cdot 1 \cdot \pi}{4}\right)} = \sqrt[8]{2^3} e^{i\left(\frac{\frac{\pi}{4} + 2\pi}{4}\right)} = \sqrt[8]{2^3} e^{i\left(\frac{\pi}{16} + \frac{2\pi}{4}\right)} = \sqrt[8]{2^3} e^{i\left(\frac{\pi}{16} + \frac{8\pi}{16}\right)} = \sqrt[8]{2^3} e^{i\left(\frac{9\pi}{16}\right)}$
+  - $w_2 = \sqrt[4]{|z|} e^{i\left(\frac{\theta + 2 \cdot 2 \cdot \pi}{4}\right)} = \sqrt[8]{2^3} e^{i\left(\frac{\frac{\pi}{4} + 4\pi}{4}\right)} = \sqrt[8]{2^3} e^{i\left(\frac{\pi}{16} + \frac{16\pi}{16}\right)} = \sqrt[8]{2^3} e^{i\left(\frac{17\pi}{16}\right)}$
+  - $w_3 = \sqrt[4]{|z|} e^{i\left(\frac{\theta + 2 \cdot 3 \cdot \pi}{4}\right)} = \sqrt[8]{2^3} e^{i\left(\frac{\frac{\pi}{4} + 6\pi}{4}\right)} = \sqrt[8]{2^3} e^{i\left(\frac{\pi}{16} + \frac{24\pi}{16}\right)} = \sqrt[8]{2^3} e^{i\left(\frac{25\pi}{16}\right)}$
 
 ---
 

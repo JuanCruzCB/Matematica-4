@@ -223,10 +223,27 @@
     - [Relación de Congruencia](#relación-de-congruencia)
       - [Definición](#definición-17)
 - [5.1. Estructuras algebraicas](#51-estructuras-algebraicas)
-- [5.2. Aritmética Modular](#52-aritmética-modular)
-- [5.3. Morfismos](#53-morfismos)
-- [6. Álgebra Lineal](#6-álgebra-lineal)
-- [Resumen](#resumen)
+  - [Estructuras algebraicas en general](#estructuras-algebraicas-en-general)
+    - [Definición](#definición-18)
+    - [Representación por medio de tablas](#representación-por-medio-de-tablas)
+    - [Propiedades de las operaciones](#propiedades-de-las-operaciones)
+    - [Propiedades de las estructuras algebraicas](#propiedades-de-las-estructuras-algebraicas)
+    - [Tipos de estructuras algebraicas](#tipos-de-estructuras-algebraicas)
+    - [Ejemplos](#ejemplos)
+    - [Exponentes](#exponentes)
+  - [Grupos](#grupos)
+    - [Definición](#definición-19)
+    - [Exponentes en grupos](#exponentes-en-grupos)
+    - [Propiedades](#propiedades-3)
+    - [Producto de grupos](#producto-de-grupos)
+    - [Grupo cíclico](#grupo-cíclico)
+    - [Orden de un grupo](#orden-de-un-grupo)
+    - [Grupos cíclicos finitos](#grupos-cíclicos-finitos)
+  - [Subgrupos](#subgrupos)
+    - [Definición](#definición-20)
+    - [Primera forma de chequear si un subconjunto es un subgrupo](#primera-forma-de-chequear-si-un-subconjunto-es-un-subgrupo)
+    - [Segunda forma más concisa de chequear si un subconjunto es un subgrupo](#segunda-forma-más-concisa-de-chequear-si-un-subconjunto-es-un-subgrupo)
+    - [Subgrupos cíclicos](#subgrupos-cíclicos)
 
 ---
 
@@ -1824,18 +1841,161 @@ Dado un número complejo $z = a + ib$, se define la **parte real** de $z$ como $
 
 # 5.1. Estructuras algebraicas
 
----
+## Estructuras algebraicas en general
 
-# 5.2. Aritmética Modular
+### Definición
 
----
+- Una estructura algebraica es un **conjunto** $A$, donde $A \neq \emptyset$, junto con una o más **operaciones** definidas sobre $A$.
+- Estas operaciones están definidas en el producto cartesiano $A \times A$ y son **cerradas**.
+- Es decir, si a cada elemento del producto cartesiano $A \times A$ se le asigna unívocamente un elemento del conjunto $A$, se dice que la operación está bien definida, o que es una operación $n$-aria sobre $A$.
+- Dependiendo de las propiedades que tengan dichas operaciones la estructura algebraica se clasifica en distintos tipos.
+- Ejemplo: dado $A \neq \emptyset$ y $\ast$ una operación sobre $A$, si $\ast : A \times A \to A$ se dice que $\ast$ es una operación binaria sobre $A$.
+- **Notación**: una estructura algebraica se denota como $(A, \ast)$, donde $A$ es el conjunto y $\ast$ es la operación definida sobre $A$.
 
-# 5.3. Morfismos
+### Representación por medio de tablas
 
----
+- Si $A$ es un conjunto finito, se puede representar a una operación binaria $\ast$ sobre $A$ mediante una tabla de doble entrada, donde las filas y columnas corresponden a los elementos de $A$ y la intersección de cada fila y columna corresponde al resultado de la operación entre los elementos correspondientes.
+- Ejemplo:
+  - $A = \lbrace a, b \rbrace$
+  - $\ast$ es una operación binaria sobre $A$ definida por la siguiente tabla:
+    | $\ast$ | a | b |
+    | ------ | --- | --- |
+    | **a** | b | a |
+    | **b** | b | a |
+  - Por lo tanto tenemos:
+    - $a \ast a = b$
+    - $a \ast b = a$
+    - $b \ast a = b$
+    - $b \ast b = a$
 
-# 6. Álgebra Lineal
+### Propiedades de las operaciones
 
----
+Dada una operación binaria $\ast$ sobre un conjunto $A$, se pueden definir las siguientes propiedades:
 
-# Resumen
+- **Conmutatividad**: $\forall a, b \in A, a \ast b = b \ast a$.
+- **Asociatividad**: $\forall a, b, c \in A, a \ast (b \ast c) = (a \ast b) \ast c$.
+- **Elemento neutro**: $\exists e \in A, \forall a \in A, a \ast e = e \ast a = a$.
+- **Elemento inverso**: $\forall a \in A, \exists a' \in A, a \ast a' = a' \ast a = e$, donde $e$ es el elemento neutro.
+
+### Propiedades de las estructuras algebraicas
+
+- Si una operación $\ast$ sobre un conjunto $A$ tiene elemento neutro, entonces dicho elemento neutro es único.
+- Si una operación $\ast$ sobre un conjunto $A$ es asociativa, tiene elemento neutro $e$ y **un elemento** $a \in A$ tiene inverso $a'$, entonces dicho inverso es único.
+- Si una operación $\ast$ sobre un conjunto $A$ es asociativa, tiene elemento neutro $e$ y **todos los elementos** de $A$ tienen inverso, entonces vale en $A$ la llamada propiedad cancelativa, que se asemeja a la simplificación en las ecuaciones:
+  - **$\forall a, b, c \in A, a \ast b = a \ast c \Rightarrow b = c$**
+  - **$\forall a, b, c \in A, b \ast a = c \ast a \Rightarrow b = c$**
+
+### Tipos de estructuras algebraicas
+
+- El nombre de una estructura algebraica $(A, \ast)$ indica qué propiedades cumple la operación y permite asegurar que se cumplirán ciertos resultados, sin importar qué elementos tenga el conjunto $A$ ni cuál sea la operación $\ast$ en particular.
+- $(A, \ast)$ es un **grupoide** si $\ast$ es binaria.
+- $(A, \ast)$ es un **semigrupo** si $\ast$ es asociativa. Si además es conmutativa, se dice que es un **semigrupo conmutativo**.
+- $(A, \ast)$ es un **monoide** si $\ast$ es asociativa existe elemento neutro $e$ en $A$ para $\ast$. Si $\ast$ es además conmutativa, se dice que es un **monoide conmutativo**.
+- $(A, \ast)$ es un **grupo** si $\ast$ es asociativa, existe elemento neutro $e$ en $A$ para $\ast$ y todos los elementos de $A$ tienen inverso para $\ast$. Si $\ast$ es además conmutativa, se dice que es un **grupo conmutativo/abeliano**.
+- Si $A$ posee no una si no dos operaciones binarias, comunmente denotadas como $+$ y $\cdot$, es decir $(A, +, \cdot)$, esta terna es un **anillo** si:
+  - $(A, +)$ es un grupo conmutativo.
+  - $\cdot$ es asociativa.
+  - Se cumple la propiedad distributiva por izquierda:
+    - $\forall a, b, c \in A, a \cdot (b + c) = a \cdot b + a \cdot c$
+  - Se cumple la propiedad distributiva por derecha:
+    - $\forall a, b, c \in A, (a + b) \cdot c = a \cdot c + b \cdot c$
+  - Si además $\cdot$ es conmutativa, se dice que $(A, +, \cdot)$ es un **anillo conmutativo**.
+  - Un anillo $(A, +, \cdot)$ tiene elemento unitario si existe $a \in A$ tal que $a$ es elemento neutro para $\cdot$. Este neutro debe ser diferente al neutro de $+$.
+  - Un anillo conmutativo con elemento unitario se llama **dominio de integridad** si se cumple $\forall a, b \in A, a \cdot b = 0 \Rightarrow a = 0 \lor b = 0$.
+
+### Ejemplos
+
+- $(\mathbb{Z}, \cdot)$ es un monoide conmutativo.
+- $(\mathbb{Q^+}, +)$ es un grupo conmutativo.
+- $(A \in K^{n \times n}, \cdot)$ (las matrices cuadradas) son un monoide no conmutativo. El elemento neutro es la matriz identidad.
+
+### Exponentes
+
+- Dada una estructura algebraica $(A, \ast)$ y un elemento $a \in A$, se define el exponente de $a$ como:
+  - $a^1 = a$
+  - $a^n = a \ast a^{n-1} = a \ast a \ast \ldots \ast a$
+- En los semigrupos se cumplen:
+  - $a^m \ast a^n = a^{m+n}$
+  - $(a^m)^n = a^{m \cdot n}$
+
+## Grupos
+
+### Definición
+
+- Un grupo es una estructura algebraica $(G, \ast)$ donde $G$ es un conjunto no vacío y $\ast$ es una operación binaria sobre $G$ que cumple las siguientes propiedades:
+  1. **Asociatividad**: $\forall a, b, c \in G, a \ast (b \ast c) = (a \ast b) \ast c$.
+  2. **Elemento neutro**: $\exists e \in G, \forall a \in G, a \ast e = e \ast a = a$.
+  3. **Elemento inverso**: $\forall a \in G, \exists a' \in G, a \ast a' = a' \ast a = e$, donde $e$ es el elemento neutro.
+- Se suele usar la notación multiplicativa para denotar a los grupos, es decir:
+  - $\cdot$ en vez de $\ast$
+  - $1$ en vez de $e$
+  - $a^{-1}$ en vez de $a'$
+- También puede usarse la notación aditiva, en cuyo caso se denota:
+  - $+$ en vez de $\ast$
+  - $0$ en vez de $e$
+  - $-a$ en vez de $a'$
+- Es importante aclarar que los símbolos $1$ y $0$ no representan el número uno ni el número cero convencionales, y $+$ y $\cdot$ no representan ni la suma ni el producto de números típica.
+- Es común omitir el símbolo de la operación y escribir $ab$ en vez de $a \cdot b$, por comodidad.
+
+### Exponentes en grupos
+
+- Cualquiera sea $n \in \mathbb{N}$, se indica con $a^n$ al elemento $a \ast a \ast \ldots \ast a$ ($n$ veces).
+- $a^{-n}$ será el resultado de aplicar la operación $\ast$ $n$ veces al inverso de $a$, es decir, $a^{-1} \ast a^{-1} \ast \ldots \ast a^{-1}$ ($n$ veces).
+- $(a^n)^{-1} = a^{-n}$
+- Se tiene que $a^n \ast a^{-n} = a^0 = e$
+
+### Propiedades
+
+1. El elemento neutro $e$ es único.
+2. Todo elemento $a \in G$ tiene un único inverso $a^{-1}$.
+3. Valen las propiedades cancelativas:
+   - $a \ast b = a \ast c \Rightarrow b = c$
+   - $b \ast a = c \ast a \Rightarrow b = c$
+4. $\forall a \in G, (a^{-1})^{-1} = a$
+5. $\forall a, b \in G, (a \ast b)^{-1} = b^{-1} \ast a^{-1}$
+
+### Producto de grupos
+
+- Si $(G_1, \ast_1), (G_2, \ast_2), \dots, (G_m, \ast_m)$ son grupos, entonces $G = G_1 \times G_2 \times \dots \times G_m$ es un grupo con la operación $\ast$ definida por:
+  - $(a_1, a_2, \dots, a_m) \ast (b_1, b_2, \dots, b_m) = (a_1 \ast_1 b_1, a_2 \ast_2 b_2, \dots, a_m \ast_m b_m)$
+
+### Grupo cíclico
+
+- Un grupo $(G, \ast)$ es cíclico si existe un elemento $a \in G$ tal que para todo elemento $b \in G$ existe $k \in \mathbb{Z}$ tal que $b = a^k$. En este caso, se dice que $a$ es un generador de $G$ y se denota como $G = \langle a \rangle$.
+- Ejemplo: $(\mathbb{Z}, +)$ es un grupo cíclico infinito generado por el número $1$, ya que todo número entero puede expresarse como una suma de $1$ o de su inverso $-1$.
+- **Teorema**: todo grupo cíclico es abeliano.
+
+### Orden de un grupo
+
+- Sea $(G, \ast)$ un grupo. Un elemento $a \in G$ es de orden finito si existe $k \in \mathbb{N}$ tal que $a^k = e$. En este caso, se define el orden de $a$ por $o(a) = min(k \in \mathbb{N} \mid a^k = e)$
+
+### Grupos cíclicos finitos
+
+- Si $(G, \ast)$ es un grupo cíclico de orden $m$, entonces $G = \lbrace e, a, a^2, \ldots, a^{m-1} \rbrace$
+
+## Subgrupos
+
+### Definición
+
+- Sea $(G, \ast)$ un grupo. Si se cumplen estas dos condiciones:
+  - $H \subset G$
+  - $(H, \ast)$ es un grupo
+- Entonces $(H, \ast)$ es un subgrupo de $(G, \ast)$.
+- Notar que la operación $\ast$ debe ser exactamente la misma tanto en el grupo como en el subgrupo.
+
+### Primera forma de chequear si un subconjunto es un subgrupo
+
+- Para que $H$ sea un subgrupo de $G$, será necesario que:
+  - $e \in H$ (el elemento neutro de $G$ debe estar en $H$)
+  - $\forall a, b \in H, a \ast b \in H$ (la operación $\ast$ debe ser cerrada en $H$)
+  - $\forall a \in H, a^{-1} \in H$ (cada elemento de $H$ debe tener su inverso en $H$)
+
+### Segunda forma más concisa de chequear si un subconjunto es un subgrupo
+
+- Dado un grupo $(G, \ast)$ y un subconjunto $H \subset G$, $H$ es un subgrupo de $G$ si y solo si:
+  - $e \in H$
+  - $\forall a, b \in H, a \ast b^{-1} \in H$
+
+### Subgrupos cíclicos
+
+- Si $(G, \ast)$ es un grupo cíclico y $(H, \ast)$ es un subgrupo de $(G, \ast)$, entonces $(H, \ast)$ es cíclico.

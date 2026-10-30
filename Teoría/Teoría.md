@@ -244,6 +244,26 @@
     - [Primera forma de chequear si un subconjunto es un subgrupo](#primera-forma-de-chequear-si-un-subconjunto-es-un-subgrupo)
     - [Segunda forma más concisa de chequear si un subconjunto es un subgrupo](#segunda-forma-más-concisa-de-chequear-si-un-subconjunto-es-un-subgrupo)
     - [Subgrupos cíclicos](#subgrupos-cíclicos)
+- [5.2. Aritmética Modular](#52-aritmética-modular)
+  - [Concepto](#concepto-5)
+  - [Clases de congruencia](#clases-de-congruencia)
+  - [Suma y producto en la relación de congruencia](#suma-y-producto-en-la-relación-de-congruencia)
+  - [Operaciones en $\\mathbb{Z}\_m$](#operaciones-en-mathbbz_m)
+    - [Suma](#suma-3)
+    - [Producto](#producto-2)
+    - [Ejemplo de sumas y producto](#ejemplo-de-sumas-y-producto)
+    - [Elementos invertibles](#elementos-invertibles)
+    - [Cuándo $\\mathbb{Z}\_m$ es un cuerpo](#cuándo-mathbbz_m-es-un-cuerpo)
+  - [Pequeño teorema de Fermat](#pequeño-teorema-de-fermat)
+  - [Función Euler](#función-euler)
+- [5.3. Morfismos](#53-morfismos)
+  - [Definición](#definición-21)
+  - [Ejemplo](#ejemplo-2)
+  - [Propiedad del neutro](#propiedad-del-neutro)
+  - [Núcleo e Imágen](#núcleo-e-imágen)
+  - [Subgrupos](#subgrupos-1)
+- [6. Álgebra Lineal](#6-álgebra-lineal)
+- [Resumen](#resumen)
 
 ---
 
@@ -1999,3 +2019,155 @@ Dada una operación binaria $\ast$ sobre un conjunto $A$, se pueden definir las 
 ### Subgrupos cíclicos
 
 - Si $(G, \ast)$ es un grupo cíclico y $(H, \ast)$ es un subgrupo de $(G, \ast)$, entonces $(H, \ast)$ es cíclico.
+
+---
+
+# 5.2. Aritmética Modular
+
+## Concepto
+
+- La aritmética modular es un sistema de aritmética para enteros, donde los números "vuelven a empezar" después de alcanzar un cierto valor, llamado el módulo.
+- La analogía más común es la de un reloj, donde después de las 12 horas, el conteo vuelve a empezar desde 1.
+
+## Clases de congruencia
+
+- Las clases de congruencia módulo $m$ son clases de equivalencia que agrupan a los enteros según su resto al dividirlos por $m$.
+- Formalmente: $\overline{x} = \lbrace y \in \mathbb{Z} \mid y \equiv x \mod m \rbrace$.
+- Esta partición de los números enteros inducida por la congruencia módulo $m$ es lo que determina el conjunto cociente $\mathbb{Z} / \equiv \mod m$.
+- Ejemplo:
+  - Sabemos que $a \equiv b \mod 3$ si y solo si $a - b = 3k$ para algún $k \in \mathbb{Z}$.
+  - Sea $b = 2$.
+  - Se tiene que $a \equiv 2 \mod 3 \Rightarrow a - 2 = 3k \Rightarrow a = 3k + 2$
+  - Es decir, todos los puntos de la recta son congruentes con $2$ módulo $3$.
+  - Entonces tenemos que:
+    - El valor elegido al inicio es la clase de congruencia en sí
+    - El escalar de la ecuación es el incremento por el cual se obtiene cada elemento de la clase de congruencia
+    - El resto de la ecuación es el primer elemento de la clase de congruencia
+  - $\overline{2} = \lbrace a \in \mathbb{Z} \mid a \equiv 2 \mod 3 \rbrace = \lbrace 2, 5, 8, 11, \ldots \rbrace$
+  - Con $b = 1$ y módulo $2$:
+  - $a \equiv 1 \mod 2 \Rightarrow a - 1 = 2k \Rightarrow a = 2k + 1$
+  - $\overline{1} = \lbrace a \in \mathbb{Z} \mid a \equiv 1 \mod 2 \rbrace = \lbrace 1, 3, 5, 7, \ldots \rbrace$
+  - $\overline{0} = \lbrace a \in \mathbb{Z} \mid a \equiv 0 \mod 2 \rbrace = \lbrace 0, 2, 4, 6, \ldots \rbrace$
+  - Se puede ver que $\mathbb{Z} / \equiv \mod 2 = \lbrace \overline{0}, \overline{1} \rbrace$. Es decir, partimos el conjunto de los enteros en dos clases de equivalencia: los pares y los impares.
+- **Teorema**: Sea $m \in \mathbb{Z}$, $\mathbb{Z}_m = \mathbb{Z} / \equiv \mod m$, el conjunto cociente tiene $m$ clases de equivalencia.
+
+## Suma y producto en la relación de congruencia
+
+Dados $a, b, c, d \in \mathbb{Z}$ tales que $a \equiv b \mod m$ y $c \equiv d \mod m$, se cumple que:
+
+- $a + c \equiv b + d \mod m$
+- $a \cdot c \equiv b \cdot d \mod m$
+
+## Operaciones en $\mathbb{Z}_m$
+
+### Suma
+
+- $\overline{x} + \overline{y} = \overline{x + y}$
+- Propiedades:
+  - Asociativa: $(\overline{x} + \overline{y}) + \overline{z} = \overline{x} + (\overline{y} + \overline{z})$
+  - Conmutativa: $\overline{x} + \overline{y} = \overline{y} + \overline{x}$
+  - Elemento neutro: $\overline{0} + \overline{x} = \overline{x} + \overline{0} = \overline{x}$
+  - Elemento opuesto: $\overline{x} + \overline{-x} = \overline{-x} + \overline{x} = \overline{0}$
+
+### Producto
+
+- $\overline{x} \cdot \overline{y} = \overline{x \cdot y}$
+- Propiedades:
+  - Asociativa: $(\overline{x} \cdot \overline{y}) \cdot \overline{z} = \overline{x} \cdot (\overline{y} \cdot \overline{z})$
+  - Conmutativa: $\overline{x} \cdot \overline{y} = \overline{y} \cdot \overline{x}$
+  - Elemento neutro: $\overline{1} \cdot \overline{x} = \overline{x} \cdot \overline{1} = \overline{x}$
+  - Distributiva: $\overline{x} \cdot (\overline{y} + \overline{z}) = \overline{x} \cdot \overline{y} + \overline{x} \cdot \overline{z}$
+
+### Ejemplo de sumas y producto
+
+- Sea $\mathbb{Z}_3 = \lbrace \overline{0}, \overline{1}, \overline{2} \rbrace$
+- Suma:
+
+  | $+$            | $\overline{0}$ | $\overline{1}$ | $\overline{2}$ |
+  | -------------- | -------------- | -------------- | -------------- |
+  | $\overline{0}$ | $\overline{0}$ | $\overline{1}$ | $\overline{2}$ |
+  | $\overline{1}$ | $\overline{1}$ | $\overline{2}$ | $\overline{0}$ |
+  | $\overline{2}$ | $\overline{2}$ | $\overline{0}$ | $\overline{1}$ |
+
+- Producto:
+
+  | $\cdot$        | $\overline{0}$ | $\overline{1}$ | $\overline{2}$ |
+  | -------------- | -------------- | -------------- | -------------- |
+  | $\overline{0}$ | $\overline{0}$ | $\overline{0}$ | $\overline{0}$ |
+  | $\overline{1}$ | $\overline{0}$ | $\overline{1}$ | $\overline{2}$ |
+  | $\overline{2}$ | $\overline{0}$ | $\overline{2}$ | $\overline{1}$ |
+
+- Se puede ver que $\overline{1}$ es el opuesto de $\overline{2}$ y viceversa, que el inverso de $\overline{2}$ es $\overline{2}$, etc.
+
+### Elementos invertibles
+
+- Igual que en $\mathbb{Z}$, no todos los elementos de $\mathbb{Z}_m$ tienen inverso multiplicativo.
+- Dado $\overline{a} \in \mathbb{Z}_m$ no nulo, decimos que $\overline{a}$ es divisor de $0$ si existe $\overline{b} \in \mathbb{Z}_m$ no nulo tal que $\overline{a} \cdot \overline{b} = \overline{0}$.
+- Los divisores de $0$ son elementos no nulos distintos del elemento neutro tal que su producto por otro elemento no nulo da como resultado el elemento neutro.
+- Dado $\overline{a} \in \mathbb{Z}_m$, decimos que $\overline{a}$ es invertible si existe $\overline{c} \in \mathbb{Z}_m$ tal que $\overline{a} \cdot \overline{c} = \overline{1}$.
+- Dado $\overline{a} \in \mathbb{Z}_m$, $\overline{a}$ es invertible si y solo si $MCD(a, m) = 1$.
+- Dado $\overline{a} \in \mathbb{Z}_m$, $\overline{a}$ es invertible si y solo si $\overline{a}$ no es divisor de $0$.
+
+### Cuándo $\mathbb{Z}_m$ es un cuerpo
+
+- Si $m \in \mathbb{Z}$ es primo, entonces $\mathbb{Z}_m$ es un cuerpo.
+- Esto significa que todos los elementos no nulos de $\mathbb{Z}_m$ son invertibles.
+
+## Pequeño teorema de Fermat
+
+- Si $p$ es un número primo, entonces $a^{-p} \equiv \overline{a} \mod p$. Si $\overline{a}$ es no nulo, entonces $a^{-p-1} \equiv \overline{1} \mod p$.
+
+## Función Euler
+
+- La función Euler $\phi$ es tal que a cada $m \in \mathbb{N}$ le asigna el número $\phi(m)$ de elementos **invertibles** de $\mathbb{Z}_m$.
+- **Teorema de Euler**: Sean $a, m \in \mathbb{Z}$ tales que $MCD(a, m) = 1$, entonces $a^{-\phi(m)} \equiv \overline{1} \mod m$.
+
+---
+
+# 5.3. Morfismos
+
+## Definición
+
+- Dados dos grupos $(G, \ast)$ y $(H, \otimes)$, se dice que una función $f : G \to H$ es un **morfismo de grupos** si y solo si respeta las operaciones de los grupos, es decir, si para todo $a, b \in G$ se cumple que:
+  - $\forall a, b \in G, f(a \ast b) = f(a) \otimes f(b)$
+  - Cuando se opera en $G$, las correspondientes imágenes resultan operadas en $H$.
+- Un morfismo que es además inyectivo se llama **monomorfismo**.
+- Un morfismo sobreyectivo se llama **epimorfismo**.
+- Un morfismo que es biyectivo se llama **isomorfismo**.
+- Recordatorio:
+  - Una función inyectiva es aquella donde no puede ocurrir por ejemplo que $f(1) = f(2)$
+  - Una función sobreyectiva es aquella donde no puede ocurrir que exista un elemento en el codominio que no sea imagen de ningún elemento del dominio.
+  - Una función biyectiva es aquella que es inyectiva y sobreyectiva a la vez.
+
+## Ejemplo
+
+- Sean los grupos $(\mathbb{R}, +)$ y $(\mathbb{R}^+, \cdot)$, donde $\mathbb{R}^+$ es el conjunto de números reales no nulos, y $+$ y $\cdot$ son la suma y el producto usuales de números reales, respectivamente.
+- La función exponencial $f(x) = e^x$ es un morfismo de grupos, ya que para todo $x, y \in \mathbb{R}$ se cumple que:
+  - $f(x + y) = e^{x + y} = e^x \cdot e^y = f(x) \cdot f(y)$
+
+## Propiedad del neutro
+
+Sean $(G, \ast)$ y $(H, \otimes)$ dos grupos y $f : G \to H$ un morfismo entre ellos. Entonces se cumplen dos propiedades:
+
+1. $f(e_G) = e_H$, donde $e_G$ y $e_H$ son los elementos neutros de $G$ y $H$, respectivamente.
+2. $\forall a \in G, f(a^{-1}) = (f(a))^{-1}$
+
+## Núcleo e Imágen
+
+- Sean los grupos $(G, \ast)$ y $(H, \otimes)$ y $f : G \to H$ un morfismo entre ellos. Entonces se definen dos subconjuntos de $G$ y $H$ respectivamente:
+  - $Nu(f) = \lbrace a \in G \mid f(a) = e_H \rbrace \subset G$
+  - $Im(f) = \lbrace b \in H \mid \exists a \in G, f(a) = b \rbrace \subset H$
+
+## Subgrupos
+
+- Sean los grupos $(G, \ast)$ y $(H, \otimes)$ y $f : G \to H$ un morfismo entre ellos. Entonces se cumplen dos propiedades:
+  - El núcleo $Nu(f)$ es un subgrupo de $G$.
+  - La imagen $Im(f)$ es un subgrupo de $H$.
+
+---
+
+# 6. Álgebra Lineal
+
+---
+
+# Resumen

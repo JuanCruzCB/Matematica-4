@@ -263,6 +263,43 @@
   - [Núcleo e Imágen](#núcleo-e-imágen)
   - [Subgrupos](#subgrupos-1)
 - [6. Álgebra Lineal](#6-álgebra-lineal)
+  - [Espacios Vectoriales](#espacios-vectoriales)
+    - [Definición](#definición-22)
+    - [Propiedades](#propiedades-4)
+    - [Axiomas](#axiomas)
+    - [Ejemplos](#ejemplos-1)
+    - [Teorema de la nulidad](#teorema-de-la-nulidad)
+  - [Subespacios Vectoriales](#subespacios-vectoriales)
+    - [Definición](#definición-23)
+    - [Cómo probar que un subconjunto es un subespacio vectorial](#cómo-probar-que-un-subconjunto-es-un-subespacio-vectorial)
+    - [Ejemplos](#ejemplos-2)
+  - [Combinación lineal](#combinación-lineal)
+    - [Definición](#definición-24)
+    - [Ejemplos](#ejemplos-3)
+  - [Espacio generado por $S$](#espacio-generado-por-s)
+    - [Definición](#definición-25)
+    - [Ejemplo](#ejemplo-3)
+  - [Conjunto generador de un espacio vectorial](#conjunto-generador-de-un-espacio-vectorial)
+    - [Definición](#definición-26)
+    - [Ejemplos](#ejemplos-4)
+  - [Independencia Lineal](#independencia-lineal)
+    - [Concepto](#concepto-6)
+    - [Definición](#definición-27)
+    - [Ejemplos](#ejemplos-5)
+  - [Base](#base)
+    - [Concepto](#concepto-7)
+    - [Definición](#definición-28)
+    - [Ejemplo](#ejemplo-4)
+    - [Teorema y corolario](#teorema-y-corolario)
+  - [Dimensión](#dimensión)
+    - [Definición](#definición-29)
+    - [Teorema](#teorema-1)
+    - [Ejemplo](#ejemplo-5)
+  - [Transformaciones Lineales](#transformaciones-lineales)
+    - [Definición](#definición-30)
+    - [Ejemplos](#ejemplos-6)
+    - [Propiedades](#propiedades-5)
+    - [Núcleo e Imagen](#núcleo-e-imagen)
 - [Resumen](#resumen)
 
 ---
@@ -2167,6 +2204,221 @@ Sean $(G, \ast)$ y $(H, \otimes)$ dos grupos y $f : G \to H$ un morfismo entre e
 ---
 
 # 6. Álgebra Lineal
+
+## Espacios Vectoriales
+
+### Definición
+
+- Un espacio vectorial sobre un cuerpo $K$ es una estructura algebraica $(V, +, \cdot)$ donde:
+  - La E.A está creada a partir de un conjunto $V \neq \emptyset$
+  - La operación interna $+$ es llamada suma y está definida sobre los elementos de $V$.
+  - La operación externa $\cdot$ es llamada producto por un escalar y está definida sobre los elementos de $V$ y los elementos del cuerpo $K$, que serán reales o complejos.
+
+### Propiedades
+
+- $+$ es cerrada en $V$: $\forall u, v \in V, u + v \in V$
+- $\cdot$ es cerrada en $V$: $\forall v \in V, \forall \alpha \in K, \alpha \cdot v \in V$
+
+### Axiomas
+
+- Para la suma:
+
+1. **Conmutatividad**: $\forall u, v \in V, u + v = v + u$
+2. **Asociatividad**: $\forall u, v, w \in V, (u + v) + w = u + (v + w)$
+3. **Elemento neutro**: $\exists 0 \in V, \forall v \in V, v + 0 = 0 + v = v$
+4. **Elemento opuesto**: $\forall v \in V, \exists -v \in V, v + (-v) = v - v = 0$
+
+- Para el producto por un escalar:
+
+1. **Asociatividad**: $\forall \alpha, \beta \in K, \forall v \in V, (\alpha \beta) \cdot v = \alpha (\beta \cdot v)$
+2. **Distributividad respecto de la suma de escalares**: $\forall \alpha, \beta \in K, \forall v \in V, (\alpha + \beta) \cdot v = \alpha v + \beta v$
+3. **Distributividad respecto de la suma de vectores**: $\forall \alpha \in K, \forall u, v \in V, \alpha (u + v) = \alpha u + \alpha v$
+4. **Elemento neutro**: $\exists 1 \in K, \forall v \in V, 1 \cdot v = v$
+
+### Ejemplos
+
+1. $\mathbb{R}^n$, las $n$-uplas de números reales, es un espacio vectorial sobre $\mathbb{R}$.
+2. $\mathcal{P}^n$, los polinomios de grado menor o igual a $n$, es un espacio vectorial sobre $\mathbb{R}$.
+3. $M_{m \times n}(\mathbb{R})$, las matrices de $m$ filas y $n$ columnas con entradas reales, es un espacio vectorial sobre $\mathbb{R}$.
+
+### Teorema de la nulidad
+
+Sea $V$ un espacio vectorial. Se cumplen las siguientes propiedades:
+
+1. $\forall \alpha, \alpha \cdot 0 = 0$
+2. $\forall v \in V, 0 \cdot v = 0$
+3. $\alpha \cdot v = 0 \Rightarrow (\alpha = 0 \lor v = 0)$
+4. $\forall v \in V, -1 \cdot v = -v$
+
+## Subespacios Vectoriales
+
+### Definición
+
+- Dado un espacio vectorial $V$, cualquier subconjunto $S \subset V$ donde $S \neq \emptyset$ y $S$ es en sí mismo un espacio vectorial bajo las mismas condiciones de suma y producto por un escalar, se llama subespacio vectorial de $V$.
+- Como $S$ es subconjunto de $V$, todos sus elementos pertenecen al espacio, entonces 6 de las 8 propiedades vistas se satisfacen automáticamente (se "heredan" de $V$). Solo las condiciones de clausura de la suma y del producto por un escalar deben verificarse para que $S$ sea un subespacio vectorial de $V$.
+
+### Cómo probar que un subconjunto es un subespacio vectorial
+
+- Sea $V$ un espacio vectorial y sea $S \subset V$. $S$ es un subespacio vectorial de $V$ si y solo si:
+  1. $S \neq \emptyset$
+  2. $\forall u, v \in S \Rightarrow u + v \in S$
+  3. $\forall v \in S, \forall \alpha \in K \Rightarrow \alpha \cdot v \in S$
+
+### Ejemplos
+
+1. $S = \lbrace (x, y) \in \mathbb{R}^2 \mid x + y = 0 \rbrace \subset \mathbb{R}^2$ es un subespacio vectorial del E.V $\mathbb{R}^2$:
+   1. Se cumple que $S \neq \emptyset$ ya que $(0, 0) \in S$.
+   2. Se cumple que $\forall (x_1, y_1), (x_2, y_2) \in S$, $(x_1 + x_2) + (y_1 + y_2) = (x_1 + y_1) + (x_2 + y_2) = 0 + 0 = 0 \Rightarrow (x_1 + x_2, y_1 + y_2) \in S$.
+   3. Se cumple que $\forall (x, y) \in S, \forall \alpha \in \mathbb{R}, \alpha x + \alpha y = \alpha (x + y) = \alpha \cdot 0 = 0 \Rightarrow (\alpha x, \alpha y) \in S$.
+2. $S = \lbrace (x, y) \in \mathbb{R}^2 \mid x + y = 1 \rbrace \subset \mathbb{R}^2$ no es un subespacio vectorial del E.V $\mathbb{R}^2$:
+   1. Se cumple que $S \neq \emptyset$ ya que $(0, 1) \in S$.
+   2. No se cumple que $\forall (x_1, y_1), (x_2, y_2) \in S$, $(x_1 + x_2)$ porque por ejemplo $(0, 1) \in S$ y $(1, 0) \in S$ pero $(0, 1) + (1, 0) = (0 + 1, 1 + 0) = (1, 1) \notin S$ ya que $1 + 1 = 2 \neq 1$.
+
+## Combinación lineal
+
+### Definición
+
+Dado un conjunto de vectores $S = \lbrace v_1, v_2, \ldots, v_n \rbrace$ de un espacio vectorial $V$, se llama **combinación lineal** de los vectores de $S$ a los vectores $v$ de la forma $v = c1 \cdot v_1 + c_2 \cdot v_2 + \ldots + c_n \cdot v_n$, donde los coeficientes $c_1, c_2, \ldots, c_n$ son escalares.
+
+### Ejemplos
+
+- $v = (3, 2, 1)$
+  - $3(1, 1, 0) + 1(0, -1, 1) = (3, 3, 0) + (0, -1, 1) = (3, 2, 1) = v$
+- $v = (4, 5)$
+  - $2(1, 2) + (-2)(-1, 1) + (-1)(0, -3) = (2, 4) + (2, -2) + (0, 3) = (4, 5) = v$
+
+## Espacio generado por $S$
+
+### Definición
+
+- Si $S = \lbrace v_1, v_2, \ldots, v_n \rbrace$ son vectores del espacio vectorial $V$, se llama **espacio generado por $S$** al conjunto de todas las combinaciones lineales de los vectores de $S$. Se denota $gen(S) = \langle v_1, v_2, \ldots, v_n \rangle$.
+- Este espacio es un subespacio vectorial de $V$.
+
+### Ejemplo
+
+- Encontrar el subespacio de $\mathbb{R}^3$ generado por el conjunto de vectores $S = \lbrace (1, 0, 1); (1, 1, 0) \rbrace$.
+- Sabemos que el espacio generado es el conjunto de **todas** las combinaciones lineales. ¿Qué forma tiene un vector genérico de ese subespacio?
+- $(x, y, z) = c_1(1, 0, 1) + c_2(1, 1, 0) = (c_1, 0, c_1) + (c_2, c_2, 0) = (c_1 + c_2, c_2, c_1)$
+  - $x = c_1 + c_2$
+  - $y = c_2$
+  - $z = c_1$
+- Se ve claramente que $x = z + y = y + z$.
+- Estos vectores generan un plano, el subespacio de $\mathbb{R}^3$ tal que la primer coordenada es la suma de la segunda más la tercera. Es decir, el subespacio generado por $S$ es:
+  - $gen(S) = \lbrace (x, y, z) \in \mathbb{R}^3 \mid x = y + z \rbrace$
+
+## Conjunto generador de un espacio vectorial
+
+### Definición
+
+- Se dice que el conjunto $S = \lbrace v_1, v_2, \ldots, v_n \rbrace$ es un **conjunto generador** de un espacio vectorial $V$ si y solo si $gen(S) = V$. Es decir, si todo vector de $V$ puede expresarse como combinación lineal de los vectores de $S$.
+
+### Ejemplos
+
+- El espacio vectorial $\mathbb{R}^3$ está generado por los vectores $S = \lbrace (1, 0, 0), (0, 1, 0), (0, 0, 1) \rbrace$:
+  - Cualquier vector $(x, y, z) \in \mathbb{R}^3$ puede expresarse como combinación lineal de los tres vectores dados:
+  - $x(1, 0, 0) + y(0, 1, 0) + z(0, 0, 1) = (x, 0, 0) + (0, y, 0) + (0, 0, z) = (x, y, z)$
+- $S = \lbrace (1, 2, 0); (0, 0, 1) \rbrace$ NO genera todo $\mathbb{R}^3$:
+  - $(x, y, z) = c_1(1, 2, 0) + c_2(0, 0, 1) = (c_1, 2c_1, 0) + (0, 0, c_2) = (c_1, 2c_1, c_2)$
+  - $x = c_1$
+  - $y = 2c_1$
+  - $z = c_2$
+  - Se ve claramente que $y = 2x$. Es decir, el subespacio generado por $S$ es el conjunto de todos los vectores de $\mathbb{R}^3$ cuya segunda coordenada es el doble de la primera. Por lo tanto, $S$ no puede generar todo $\mathbb{R}^3$.
+- $S = \lbrace (1, -1); (-2, 1) \rbrace$ genera todo $\mathbb{R}^2$:
+  - $(x, y) = c_1(1, -1) + c_2(-2, 1) = (c_1 - 2c_2, -c_1 + c_2)$
+  - $x = c_1 - 2c_2$
+  - $y = -c_1 + c_2$
+  - $c_1 = c_2 - y$
+  - $x = (c_2 - y) - 2c_2 = -c_2 - y$
+  - $c_2 = -x - y$
+  - $c_1 = (-x - y) - y = -x - 2y$
+
+## Independencia Lineal
+
+### Concepto
+
+- El objetivo principal es encontrar el conjunto generador más pequeño posible de un espacio vectorial $V$, es decir, conjuntos generadores de $V$ con la menor cantidad posible de vectores.
+- Un conjunto de generadores minimal para $V$ será aquel conjunto $S$ de vectores que no tenga ningún elemento redundante/innecesario, es decir, todos los vectores de $S$ deben ser necesarios para generar $V$.
+- Lo anterior implica que ninguno de los vectores de $S$ puede ser combinación lineal de los demás vectores de $S$. En otras palabras, si un vector de $S$ puede expresarse como combinación lineal de los demás vectores de $S$, entonces ese vector es redundante y no es necesario para generar $V$.
+
+### Definición
+
+- Los vectores $v_1, v_2, \ldots, v_n$ de un espacio vectorial $V$ se dicen **linealmente dependientes** si existen escalares $c_1, c_2, \ldots, c_n$ no todos nulos tales que $c_1 \cdot v_1 + c_2 \cdot v_2 + \ldots + c_n \cdot v_n = 0$.
+- También se puede definir la independencia lineal de manera equivalente: los vectores $v_1, v_2, \ldots, v_n$ son **linealmente independientes** si la combinación lineal $c_1 \cdot v_1 + c_2 \cdot v_2 + \ldots + c_n \cdot v_n = 0$ implica que todos los escalares $c_1, c_2, \ldots, c_n$ son nulos.
+
+### Ejemplos
+
+- Sea $S = \lbrace (2, 1); (1, -2); (1, 3) \rbrace$.
+  - Como $(2, 1) = 1(1, -2) + 1(1, 3)$, podemos decir que $S$ tiene vectores redundantes y por lo tanto no es linealmente independiente.
+  - Se puede ver que $(0, 0) = (1, -2) + (1, 3) - (2, 1)$, es decir, $c_1 = 1$, $c_2 = 1$ y $c_3 = -1$ son escalares no todos nulos que cumplen la combinación lineal $c_1 \cdot v_1 + c_2 \cdot v_2 + c_3 \cdot v_3 = 0$. Por lo tanto, $S$ es linealmente dependiente.
+- Sea $S = \lbrace (1, 1, 0); (-1, 0, 1); (1, 0, 0) \rbrace$.
+  - $(0, 0, 0) = c_1(1, 1, 0) + c_2(-1, 0, 1) + c_3(1, 0, 0)$
+  - $(0, 0, 0) = (c_1, c_1, 0) + (-c_2, 0, c_2) + (c_3, 0, 0)$
+  - $(0, 0, 0) = (c_1 - c_2 + c_3, c_1, c_2)$
+  - $c_1 = 0$
+  - $c_2 = 0$
+  - $c_1 - c_2 + c_3 = 0 \Rightarrow 0 - 0 + c_3 = 0 \Rightarrow c_3 = 0$
+  - Claramente los escalares son todos nulos y por lo tanto el conjunto es linealmente independiente.
+
+## Base
+
+### Concepto
+
+- Como dijimos, se busca un conjunto generador minimal, es decir, un conjunto sin ningún vector redundante. Vimos que esto se puede lograr si los vectores son independientes linealmente.
+- Un conjunto generador minimal con vectores linealmente independientes es un conjunto "básico" de vectores que provee las piezas para construir el espacio vectorial $V$.
+
+### Definición
+
+Un conjunto de vectores $v_1, v_2, \ldots, v_n$ forma una base del espacio vectorial $V$ si y solo si:
+
+1. $v_1, v_2, \ldots, v_n$ son linealmente independientes.
+2. $v_1, v_2, \ldots, v_n$ generan $V$, es decir, $gen(v_1, v_2, \ldots, v_n) = V$.
+
+### Ejemplo
+
+- Anteriormente se probó que $S = \lbrace (1, -1); (-2, 1) \rbrace$ genera todo $\mathbb{R}^2$. Por lo tanto, si probamos además que los vectores de $S$ son linealmente independientes, podemos concluir que $S$ es una base de $\mathbb{R}^2$.
+- $(0, 0) = c_1(1, -1) + c_2(-2, 1) = (c_1 - 2c_2, -c_1 + c_2)$
+- $c_1 - 2c_2 = 0$
+- $-c_1 + c_2 = 0$
+- $c_2 = c_1$
+- $c_1 - 2c_1 = 0 \Rightarrow -c_1 = 0 \Rightarrow c_1 = 0 \Rightarrow c_2 = 0$
+- Por lo tanto, los vectores de $S$ son linealmente independientes y como además generan todo $\mathbb{R}^2$, podemos concluir que $S$ es una base de $\mathbb{R}^2$.
+
+### Teorema y corolario
+
+- Si $B = \lbrace v_1, v_2, \ldots, v_n \rbrace$ es una base de un espacio vectorial $V$, entonces todo conjunto $M = \lbrace w_1, w_2, \ldots, w_m \rbrace$ con $m > n$ vectores de $V$ es **linealmente dependiente**.
+- Si $B = \lbrace v_1, v_2, \ldots, v_n \rbrace$ y $B' = \lbrace w_1, w_2, \ldots, w_m \rbrace$ son dos bases de un espacio vectorial $V$, entonces $n = m$. Es decir, todas las bases de un espacio vectorial $V$ finitamente generado tienen la misma cantidad de vectores.
+
+## Dimensión
+
+### Definición
+
+- Si una base de un espacio vectorial $V$ tiene $n$ vectores, se dice que $V$ es de **dimensión** $n$ y se denota $\dim(V) = n$.
+- El subespacio vectorial $\lbrace 0 \rbrace$ tiene dimensión $0$ y se dice que es de **dimensión nula**.
+- Un espacio vectorial $V$ se dice de dimensión **finita** si existe un conjunto finito de vectores que lo generan. En caso contrario, se dice que $V$ es de dimensión **infinita**.
+
+### Teorema
+
+Si $V$ es un espacio vectorial de dimensión $n > 0$, entonces:
+
+1. Cualquier conjunto de $n$ vectores linealmente independientes de $V$ generan todo $V$ y por lo tanto forman una base de $V$.
+2. Todo conjunto de $n$ vectores que generan $V$ es linealmente independiente y por lo tanto forma una base de $V$.
+
+Es decir, si sabemos la dimensión del espacio vectorial y tenemos la cantidad necesaria de vectores, no hace falta probar las dos condiciones para que un conjunto de vectores sea una base, basta con probar una de ellas.
+
+### Ejemplo
+
+- Se demostró previamente que $S = \lbrace (1, 1, 0); (-1, 0, 1); (1, 0, 0) \rbrace$ es un conjunto de vectores linealmente independientes de $\mathbb{R}^3$.
+- Como son tres vectores y la dimensión de $\mathbb{R}^3$ es justamente $3$, por el teorema podemos concluir que $S$ genera todo $\mathbb{R}^3$ y por lo tanto es una base de $\mathbb{R}^3$.
+
+## Transformaciones Lineales
+
+### Definición
+
+### Ejemplos
+
+### Propiedades
+
+### Núcleo e Imagen
 
 ---
 

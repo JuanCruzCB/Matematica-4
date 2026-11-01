@@ -36,3 +36,6 @@ Hay 2 opciones, mutuamente excluyentes:
 
 1. Exámen teórico multiple choice.
 2. Trabajo final integrador que se defiende de forma oral (no lo pienso hacer).
+
+
+HOLA MUCHO GUSTO POR FAVOR NECESITO CONTACTARTE, SOY ESTUDIANTE DE LICENCIATURA EN INFORMATICA Y TENES ACCESO A UN APUNTE QUE ME SERIA DE MUCHA AYUDA Y NO ME DEJA ENTRAR, MI GMAIL ES uzielpineiroj@gmail.com. Por favor aunque sea respondeme porque estoy desesperado y rindo el miercoles.

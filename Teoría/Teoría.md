@@ -260,7 +260,7 @@
   - [Definición](#definición-21)
   - [Ejemplo](#ejemplo-2)
   - [Propiedad del neutro](#propiedad-del-neutro)
-  - [Núcleo e Imágen](#núcleo-e-imágen)
+  - [Núcleo e Imagen](#núcleo-e-imagen)
   - [Subgrupos](#subgrupos-1)
 - [6. Álgebra Lineal](#6-álgebra-lineal)
   - [Espacios Vectoriales](#espacios-vectoriales)
@@ -299,7 +299,18 @@
     - [Definición](#definición-30)
     - [Ejemplos](#ejemplos-6)
     - [Propiedades](#propiedades-5)
-    - [Núcleo e Imagen](#núcleo-e-imagen)
+    - [Núcleo e Imagen](#núcleo-e-imagen-1)
+      - [Definiciones](#definiciones)
+      - [Ejemplo](#ejemplo-6)
+      - [Teorema de Núcleo e Imagen](#teorema-de-núcleo-e-imagen)
+      - [Teorema de dimensión](#teorema-de-dimensión)
+    - [Conservación de la independencia lineal](#conservación-de-la-independencia-lineal)
+    - [Determinación de una transformación lineal](#determinación-de-una-transformación-lineal)
+      - [Definición](#definición-31)
+      - [Ejemplo](#ejemplo-7)
+    - [Representación matricial](#representación-matricial)
+      - [Definición](#definición-32)
+      - [Ejemplo](#ejemplo-8)
 - [Resumen](#resumen)
 
 ---
@@ -2189,7 +2200,7 @@ Sean $(G, \ast)$ y $(H, \otimes)$ dos grupos y $f : G \to H$ un morfismo entre e
 1. $f(e_G) = e_H$, donde $e_G$ y $e_H$ son los elementos neutros de $G$ y $H$, respectivamente.
 2. $\forall a \in G, f(a^{-1}) = (f(a))^{-1}$
 
-## Núcleo e Imágen
+## Núcleo e Imagen
 
 - Sean los grupos $(G, \ast)$ y $(H, \otimes)$ y $f : G \to H$ un morfismo entre ellos. Entonces se definen dos subconjuntos de $G$ y $H$ respectivamente:
   - $Nu(f) = \lbrace a \in G \mid f(a) = e_H \rbrace \subset G$
@@ -2414,12 +2425,154 @@ Es decir, si sabemos la dimensión del espacio vectorial y tenemos la cantidad n
 
 ### Definición
 
+- Una transformación lineal es una función $L : V \to W$, donde $V$ y $W$ son espacios vectoriales, que satisface dos propiedades:
+  1. $\forall u, v \in V, L(u + v) = L(u) + L(v)$
+  2. $\forall v \in V, \forall \alpha \in K, L(\alpha \cdot v) = \alpha \cdot L(v)$ o equivalentemente $\forall u, v \in V, \forall \alpha, \beta \in K, L(\alpha u + \beta v) = \alpha L(u) + \beta L(v)$
+
+- Es decir, dada una función entre dos espacios vectoriales, para probar que es en efecto una transformación lineal, basta con probar que se respetan las dos propiedades anteriores.
+
 ### Ejemplos
+
+- Sea $L : \mathbb{R}^2 \to \mathbb{R}^3$ definida por $L(x, y) = (x, y, x + y)$. Probar que $L$ es una transformación lineal.
+  - Propiedad 1:
+    - Sea $(x_1, y_1), (x_2, y_2) \in \mathbb{R}^2$
+    - **$L((x_1, y_1) + (x_2, y_2)) =$**
+    - $L((x_1 + x_2, y_1 + y_2)) =$
+    - $((x_1 + x_2), (y_1 + y_2), ((x_1 + x_2) + (y_1 + y_2))) =$
+    - $((x_1 + x_2), (y_1 + y_2), (x_1 + y_1 + (x_2 + y_2))) =$
+    - $(x_1, y_1, x_1 + y_1) + (x_2, y_2, x_2 + y_2) =$
+    - **$L((x_1, y_1)) + L((x_2, y_2))$**
+  - Propiedad 2:
+    - Sea $(x, y) \in \mathbb{R}^2$ y $\alpha \in \mathbb{R}$.
+    - **$L(\alpha \cdot (x, y)) =$**
+    - $L((\alpha \cdot x, \alpha \cdot y)) =$
+    - $(\alpha \cdot x, \alpha \cdot y, \alpha \cdot x + \alpha \cdot y)$
+    - $(\alpha \cdot x, \alpha \cdot y, \alpha \cdot (x + y))$
+    - $\alpha \cdot (x, y, x + y)$
+    - **$\alpha \cdot L(x, y)$**
+- Transformación Identidad:
+  - Sea $L : V \to V$ definida por $L(v) = v$. Probar que $L$ es una transformación lineal.
+  - Propiedad 1:
+    - Sea $u, v \in V$
+    - **$L(u + v) = u + v = L(u) + L(v)$**
+  - Propiedad 2:
+    - Sea $v \in V$ y $\alpha \in K$
+    - **$L(\alpha \cdot v) = \alpha \cdot v = \alpha \cdot L(v)$**
+- Sea $L : \mathbb{R}^2 \to \mathbb{R}^2$ definida por $L(x, y) = (x + y, x \cdot y)$. Probar que $L$ no es una transformación lineal.
+  - Propiedad 1:
+    - Sea $(x_1, y_1), (x_2, y_2) \in \mathbb{R}^2$
+    - **$L((x_1, y_1) + (x_2, y_2)) =$**
+    - $L((x_1 + x_2, y_1 + y_2)) =$
+    - $((x_1 + x_2) + (y_1 + y_2), (x_1 + x_2) \cdot (y_1 + y_2))$
+    - $((x_1 + y_1) + (x_2 + y_2), x_1y_1 + x_1y_2 + x_2y_1 + x_2y_2)$
+    - **$L((x_1, y_1)) + L((x_2, y_2)) = (x_1 + y_1, x_1y_1) + (x_2 + y_2, x_2y_2) = ((x_1 + y_1) + (x_2 + y_2), x_1y_1 + x_2y_2)$**
+    - Como $x_1y_2 + x_2y_1 \neq 0$ en general, se concluye que $L((x_1, y_1) + (x_2, y_2)) \neq L((x_1, y_1)) + L((x_2, y_2))$ y por lo tanto $L$ no cumple la propiedad 1.
 
 ### Propiedades
 
+- Dada una transformación lineal $L : V \to W$, se cumplen las siguientes propiedades:
+
+1. $L(0_v) = 0_w$, donde $0_v$ y $0_w$ son los elementos neutros de $V$ y $W$, respectivamente.
+2. $\forall v \in V, L(-v) = -L(v)$
+3. Si $v_1, v_2, \ldots, v_n \in V$ entonces $L(c_1 v_1 + c_2 v_2 + \ldots + c_n v_n) = c_1 L(v_1) + c_2 L(v_2) + \ldots + c_n L(v_n)$
+
+- Como toda transformación lineal cumple estas tres propiedades, se puede usar cualquiera de ellos para probar que una función no es una transformación lineal. Si una función $L$ no cumple alguna de estas propiedades, entonces no es una transformación lineal.
+- Sin embargo, que una función $L$ cumpla alguna de las tres propiedades no garantiza que $L$ sea una transformación lineal. Para probar que $L$ es una transformación lineal, se deben probar las dos propiedades de la definición.
+
 ### Núcleo e Imagen
+
+#### Definiciones
+
+- Sea $L : V \to W$ una transformación lineal entre los espacios vectoriales $V$ y $W$. Entonces se definen dos subconjuntos de $V$ y $W$ respectivamente:
+  - $Nu(L) = \lbrace v \in V \mid L(v) = 0_w \rbrace \subset V$
+    - Es el conjunto de vectores $v \in V$ que son transformados o enviados al vector nulo de $W$.
+  - $Im(L) = \lbrace w \in W \mid \exists v \in V, L(v) = w \rbrace \subset W$
+    - Es el conjunto de vectores $w \in W$ que son imagen por $L$ de elementos $v \in V$.
+
+#### Ejemplo
+
+- Sea $L : \mathbb{R}^3 \to \mathbb{R}^2$ definida por $L((x, y, z)) = (z, x + y)$. Hallar el núcleo y la imagen de $L$.
+  - Núcleo:
+    - $Nu(L) = \lbrace (x, y, z) \in \mathbb{R}^3 \mid L((x, y, z)) = (0, 0) \rbrace$
+    - $(z, x + y) = (0, 0) \Rightarrow z = 0 \land x + y = 0 \Rightarrow y = -x$
+    - $Nu(L) = \lbrace (x, -x, 0) \in \mathbb{R}^3 \mid x \in \mathbb{R} \rbrace$
+  - Imagen:
+    - $Im(L) = \lbrace (z, x + y) \in \mathbb{R}^2 \mid \exists (x, y, z) \in \mathbb{R}^3, L((x, y, z)) = (z, x + y) \rbrace$
+    - Como $z \in \mathbb{R}$ y $x + y \in \mathbb{R}$, ambas componentes pueden tomar cualquier valor real.
+    - Por lo tanto $Im(L) = \mathbb{R}^2$
+
+#### Teorema de Núcleo e Imagen
+
+- Si $L : V \to W$ es una transformación lineal entre los espacios vectoriales $V$ y $W$, entonces:
+  - El núcleo $Nu(L)$ es un subespacio vectorial de $V$.
+  - La imagen $Im(L)$ es un subespacio vectorial de $W$.
+
+#### Teorema de dimensión
+
+- Si $L : V \to W$ es una transformación lineal entre los espacios vectoriales $V$ y $W$, entonces:
+  - $\dim(V) = \dim(Nu(L)) + \dim(Im(L))$
+
+### Conservación de la independencia lineal
+
+- Una transformación lineal inyectiva conserva la independencia lineal.
+- Una transformación lineal sobreyectiva cubre todo el codominio, es decir, la imagen de la transformación lineal es el espacio vectorial $W$.
+
+### Determinación de una transformación lineal
+
+#### Definición
+
+- Si $L : V \to W$ es una transformación lineal con $V$ un espacio vectorial de dimensión finita $n$ y $B = \lbrace v_1, v_2, \ldots, v_n \rbrace$ una base cualquiera de $V$, entonces $L$ queda completamente determinada por los $n$ vectores $\lbrace L(v_1), L(v_2), \ldots, L(v_n) \rbrace$, es decir, por las $n$ imágenes de los vectores de la base $B$.
+- Esto nos dice que podemos conocer una transformación lineal $L$ conociendo solamente cómo se comporta con los vectores de una base cualquiera de $V$.
+
+#### Ejemplo
+
+Hallar $L : \mathbb{R}^3 \to \mathbb{R}^2$ sabiendo que:
+
+- $L(1, 0, 0) = (1, 0)$
+- $L(0, 1, 0) = (-1, -6)$
+- $L(0, 0, 1) = (0, 4)$
+
+1. Tenemos que encontrar $L((x, y, z))$.
+2. Dado $(x, y, z) \in \mathbb{R}^3$, escribimos el vector en la base canónica de $\mathbb{R}^3$:
+3. $(x, y, z) = x(1, 0, 0) + y(0, 1, 0) + z(0, 0, 1)$
+4. Aplicamos la transformación lineal $L$ para encontrar su valor:
+   1. $L((x, y, z)) =$
+   2. $L(x(1, 0, 0) + y(0, 1, 0) + z(0, 0, 1)) =$
+   3. $x \cdot L((1, 0, 0)) + y \cdot L((0, 1, 0)) + z \cdot L((0, 0, 1))$
+   4. $x \cdot (1, 0) + y \cdot (-1, -6) + z \cdot (0, 4)$
+   5. $(x, 0) + (-y, -6y) + (0, 4z)$
+   6. $(x - y + 0, 0 -6y + 4z)$
+   7. $(x - y, -6y + 4z)$
+5. Por lo tanto, $L((x, y, z)) = (x - y, -6y + 4z)$ es la transformación lineal buscada.
+
+### Representación matricial
+
+#### Definición
+
+- Sea $L : V \to W$ una transformación lineal entre los espacios vectoriales $V$ y $W$, donde:
+  - $V$ tiene dimensión $n$
+  - $W$ tiene dimensión $m$
+  - Sea $B_V = \lbrace v_1, v_2, \ldots, v_n \rbrace$ una base de $V$
+  - Sea $B_W = \lbrace w_1, w_2, \ldots, w_m \rbrace$ una base de $W$
+- Primero evaluamos cómo actúa $L$ sobre cada vector de la base $B_V$ y luego escribimos al vector resultante (que pertenece al subespacio $W$) en términos de los vectores de la base $B_W$:
+  - $L(v_j) = w = a_{1j} w_1 + a_{2j} w_2 + \ldots + a_{ij} w_i + \ldots a_{mj} w_m$.
+- Con las coordenadas $a_{ij}$ formamos la columna $j$ de la matriz que representa a $L$ en las bases $B_V$ y $B_W$:
+  - $[L]_{B_V B_W} = \begin{bmatrix} a_{11} & a_{12} & \ldots & a_{1m} \\ a_{21} & a_{22} & \ldots & a_{2m} \\ \vdots & \vdots & \ddots & \vdots \\ a_{n1} & a_{n2} & \ldots & a_{nm} \end{bmatrix}$
+
+#### Ejemplo
+
+- Sea $L : \mathbb{R}^3 \to \mathbb{R}^3$ definida por $L((x, y, z)) = \begin{bmatrix} 3x \\ y - z \\ 2z + x \end{bmatrix}$. Hallar la matriz asociada a $L$ en las base $B$ y la base canónica de $\mathbb{R}^3$:
+  - $B = \lbrace \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}$; $\begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix}$; $\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} \rbrace$
+  - $B_c = \lbrace \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}$; $\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}$; $\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \rbrace$
+- Empezamos evaluando como actúa $L$ sobre los vectores de la base $B$ y luego escribimos el vector resultante en la base canónica.
+  - $L(\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}) = \begin{bmatrix} 3 \cdot 1 \\ 1 - 1 \\ 2 \cdot 1 + 1 \end{bmatrix} = \begin{bmatrix} 3 \\ 0 \\ 3 \end{bmatrix} = 3 \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} + 0 \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} + 3 \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}$
+  - $L(\begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix}) = \begin{bmatrix} 3 \cdot 1 \\ 0 - (-1) \\ 2 \cdot (-1) + 1 \end{bmatrix} = \begin{bmatrix} 3 \\ 1 \\ -1 \end{bmatrix} = 3 \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} + 1 \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} + (-1) \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}$
+  - $L(\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}) = \begin{bmatrix} 3 \cdot 0 \\ 1 - 0 \\ 2 \cdot 0 + 0 \end{bmatrix} = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} = 0 \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} + 1 \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} + 0 \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}$
+- Con las coordenadas de cada vector formamos las columnas de la matriz y obtenemos:
+  - $[L]_{B B_c} = \begin{bmatrix} 3 & 3 & 0 \\ 0 & 1 & 1 \\ 3 & -1 & 0 \end{bmatrix}$
 
 ---
 
 # Resumen
+
+...

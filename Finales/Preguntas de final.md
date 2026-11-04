@@ -260,21 +260,68 @@ $\dots$
 
 ### Hallar la parte real e imaginaria de $z^4$
 
-$\dots$
+1. $z^n = |z|^n e^{in \theta}$
+2. $|z| = \sqrt{(-1)^2 + 1^2} = \sqrt{2}$
+3. $\theta = \arctan(\frac{b}{a}) = \arctan(\frac{1}{-1}) = \arctan(-1) = -45 \degree = - \frac{1}{4} \pi$
+4. Como $z$ tiene parte real negativa y parte imaginaria positiva, se encuentra en el segundo cuadrante (el de la esquina superior izquierda).
+5. Como $\arctan$ solo da ángulos del primer y cuarto cuadrante, hay que corregir el ángulo.
+6. Recordar que si un número complejo $z$ se encuentra en el segundo o tercer cuadrante, se le debe sumar $\pi$ al argumento obtenido para corregirlo.
+7. $\theta = - \frac{1}{4} \pi + \pi = \frac{3}{4} \pi$
+8. $z^4 = |z|^4 e^{i (4 \theta)} = (\sqrt{2})^4 e^{i (4 \cdot \frac{3}{4} \pi)} = (\sqrt{2})^4 e^{i 3 \pi} = (2^{\frac{1}{2}})^4 e^{i 3 \pi} = 2^{\frac{4}{2}} e^{i 3 \pi} = 4 e^{i 3 \pi}$
+9. Usamos la identidad de Euler: $e^{i \theta} = \cos{\theta} + i \sin{\theta}$
+10. $4e^{i 3 \pi} = 4(\cos{3\pi} + i \sin{3\pi}) = 4(-1 + i (0)) = 4(-1 + 0i) = -4 + 0i$
+11. Por lo tanto, las partes real e imaginaria de $z^4$ son:
+    1. $Re(z^4) = -4$
+    2. $Im(z^4) = 0$
 
 ### Hallar las raíces terceras de $z$
 
-$\dots$
+1. $n = 3$
+2. $|z| = \sqrt{(-1)^2 + 1^2} = \sqrt{2}$
+3. $\theta = \arctan(\frac{b}{a}) = \arctan(\frac{1}{-1}) = \arctan(-1) = -45 \degree = - \frac{1}{4} \pi$
+4. Como $z$ tiene parte real negativa y parte imaginaria positiva, se encuentra en el segundo cuadrante (el de la esquina superior izquierda).
+5. Como $\arctan$ solo da ángulos del primer y cuarto cuadrante, hay que corregir el ángulo.
+6. Recordar que si un número complejo $z$ se encuentra en el segundo o tercer cuadrante, se le debe sumar $\pi$ al argumento obtenido para corregirlo.
+7. $\theta = - \frac{1}{4} \pi + \pi = \frac{3}{4} \pi$
+8. $w_k = \sqrt[n]{|z|} e^{i(\frac{\theta + 2k \pi}{n})}$
+9. $w_k = \sqrt[3]{\sqrt{2}} e^{i(\frac{\frac{3}{4} \pi + 2k \pi}{3})} = \sqrt[6]{2} e^{i(\frac{\frac{3}{4} \pi + 2k \pi}{3})}$
+10. $w_0 = \sqrt[6]{2} e^{i(\frac{\frac{3}{4} \pi}{3})} = \sqrt[6]{2} e^{i(\frac{3}{12} \pi)} = \sqrt[6]{2} e^{i(\frac{\pi}{4})}$
+11. $w_1 = \sqrt[6]{2} e^{i(\frac{\frac{3}{4} \pi + 2 \pi}{3})} = \sqrt[6]{2} e^{i(\frac{\frac{11}{4} \pi}{3})} = \sqrt[6]{2} e^{i(\frac{11}{12} \pi)}$
+12. $w_2 = \sqrt[6]{2} e^{i(\frac{\frac{3}{4} \pi + 4 \pi}{3})} = \sqrt[6]{2} e^{i(\frac{\frac{19}{4} \pi}{3})} = \sqrt[6]{2} e^{i(\frac{19}{12} \pi)}$
+13. Por lo tanto, las raíces terceras de $z$ son:
+    1. $w_0 = \sqrt[6]{2} e^{i(\frac{\pi}{4})}$
+    2. $w_1 = \sqrt[6]{2} e^{i(\frac{11}{12} \pi)}$
+    3. $w_2 = \sqrt[6]{2} e^{i(\frac{19}{12} \pi)}$
 
 ## Hallar la parte real e imaginaria de $\frac{7 + 4i}{-5 + 2i}$ (2016-04)
 
-$\dots$
+1. $\frac{z_1}{z_2} = z_1 \cdot z_2^{-1}$
+2. $z^{-1} = \frac{\overline{z}}{z \cdot \overline{z}}$
+3. $\frac{7 + 4i}{-5 + 2i} = (7 + 4i) \cdot \frac{-5 -2i}{(-5 + 2i)(-5 -2i)} = \frac{(7 + 4i)(-5 -2i)}{(-5 + 2i)(-5 -2i)} = \frac{-35 -14i -20i - 8i^2}{25 + 10i - 10i -4i^2} = \frac{-35 -34i -8i^2}{25 -4i^2} = \frac{-35 -34i -8 (-1)}{25 -4(-1)} = \frac{-27 - 34i}{29}$
+4. $Re(\frac{7 + 4i}{-5 + 2i}) = \frac{-27}{29}$
+5. $Im(\frac{7 + 4i}{-5 + 2i}) = \frac{-34}{29}$
 
 ## Dado $z = 3 + 3i$ (2015-09)
 
 ### Hallar la parte real e imaginaria de $z^5$
 
-$\dots$
+1. $z^n = |z|^n e^{in \theta}$
+2. $|z| = \sqrt{3^2 + 3^2} = \sqrt{18}$
+3. $\theta = \arctan(\frac{b}{a}) = \arctan(\frac{3}{3}) = \arctan(1) = 45 \degree = \frac{1}{4} \pi$
+4. Como $z$ tiene parte real positiva y parte imaginaria positiva, se encuentra en el primer cuadrante (el de la esquina superior derecha).
+5. Como $\arctan$ solo da ángulos del primer y cuarto cuadrante, no hace falta corregir el ángulo sumándole $\pi$.
+6. $z^5 = |z|^5 e^{i (5 \theta)} = (\sqrt{18})^5 e^{i (\frac{5}{4} \pi)} = (\sqrt{3^2 \cdot 2})^5 e^{i (\frac{5}{4} \pi)} = (3 \sqrt{2})^5 e^{i (\frac{5}{4} \pi)} = 3^5 (\sqrt{2})^5 e^{i (\frac{5}{4} \pi)} = 243 (\sqrt{2} \sqrt{2} \sqrt{2} \sqrt{2} \sqrt{2}) e^{i (\frac{5}{4} \pi)} = 243 (\sqrt{2 \cdot 2 \cdot 2 \cdot 2 \cdot 2}) e^{i (\frac{5}{4} \pi)} = 243 \sqrt{32} e^{i (\frac{5}{4} \pi)}$
+7. Usamos la identidad de Euler: $e^{i \theta} = \cos{\theta} + i \sin{\theta}$
+8. $243 \sqrt{32} e^{i (\frac{5}{4} \pi)} = 243 \sqrt{32}(\cos{\frac{5}{4}\pi} + i \sin{\frac{5}{4} \pi})$
+9. Como $\frac{5}{4} \pi = \pi + \frac{1}{4} \pi$ y $\pi$ equivale a $180 \degree$, $\frac{5}{4} \pi$ equivale a $225 \degree$, que cae en el tercer cuadrante, donde coseno y seno son negativos.
+10. $\cos \frac{5}{4} \pi = - cos \frac{1}{4} \pi = - \frac{\sqrt{2}}{2}$
+11. $\sin \frac{5}{4} \pi = - sin \frac{1}{4} \pi = - \frac{\sqrt{2}}{2}$
+12. $243 \sqrt{32}(- \frac{\sqrt{2}}{2} - i \frac{\sqrt{2}}{2})$
+    1. $- \frac{243 \sqrt{32} \sqrt{2}}{2} = - \frac{243 (8)}{2} = - 972$
+    2. $- i \frac{243 \sqrt{32} \sqrt{2}}{2} = - i \frac{243 (8)}{2} = - 972i$
+13. Por lo tanto, las partes real e imaginaria de $z^5$ son:
+    1. $Re(z^5) = -972$
+    2. $Im(z^5) = -972$
 
 ### Hallar las raíces quintas de $z$
 
@@ -402,21 +449,95 @@ $\dots$
 
 ## Analizar si el siguiente conjunto es base de $\mathbb{R}^3$: $\lbrace (0, 1, -1); (1, -1, 1); (-1, 1, 0) \rbrace$ (2016-04)
 
-$\dots$
+1. Para que un conjunto sea base de un espacio vectorial, sus elementos deben ser linealmente independientes y además el conjunto debe generar a todos los vectores posibles de dicho espacio.
+2. Probando independencia lineal:
+   1. Para que un conjunto de vectores sea linealmente independiente debe ocurrir que la única forma de que la suma de los vectores multiplicados por escalares de como resultado $0$ sea que todos los escalares sean $0$.
+   2. $c_1(0, 1, -1) + c_2(1, -1, 1) + c_3(-1, 1, 0) = 0$
+   3. $(0, c_1, -c_1) + (c_2, -c_2, c_2) + (-c_3, c_3, 0) = 0$
+   4. $(c_2 - c_3, c_1 - c_2 + c_3, -c_1 + c_2) = 0$
+   5. $\begin{cases} c_2 - c_3 & = 0 \\ c_1 - c_2 + c_3 & = 0 \\ -c_1 + c_2 & = 0 \end{cases}$
+   6. $-c_1 + c_2 = 0 \Rightarrow c_1 = c_2$
+   7. $c_1 - c_2 + c_3 = 0 \Rightarrow c_2 - c_2 + c_3 = 0 \Rightarrow c_3 = 0$
+   8. $c_2 - c_3 = 0 \Rightarrow c_2 - 0 = 0 \Rightarrow c_2 = 0$
+   9. Finalmente, como sabemos que $c_2 = c_1$ y $c_2 = 0$, $c_1 = 0$
+   10. Como todos los escalares son $0$, los vectores son linealmente independientes.
+3. Probando que los vectores generan a todo el espacio vectorial $\mathbb{R}^3$:
+   1. Sea $(x, y, z) \in \mathbb{R}^3$.
+   2. $(x, y, z) = (c_2 - c_3, c_1 - c_2 + c_3, -c_1 + c_2)$
+   3. $\begin{cases} x = c_2 - c_3 \\ y = c_1 - c_2 + c_3 \\ z = -c_1 + c_2 \end{cases}$
+   4. Sumar las tres ecuaciones: $x + y + z = (c_2 - c_3) + (c_1 - c_2 + c_3) + (-c_1 + c_2) = c_2$
+   5. Sustituyendo:
+      1. $c_2 = x + y + z$
+      2. $c_1 = c_2 - z \Rightarrow c_1 = x + y + z - z \Rightarrow c_1 = x + y$
+      3. $c_3 = c_2 - x \Rightarrow c_3 = x + y + z - x \Rightarrow c_3 = y + z$
+   6. Verificar en la segunda ecuación:
+      1. $c_1 - c_2 + c_3 \Rightarrow (x + y) - (x + y + z) + (y + z) = y$
+   7. Finalmente se tiene:
+      1. $c_1 = x + y$
+      2. $c_2 = x + y + z$
+      3. $c_3 = y + z$
+   8. Como existen escalares $c_1, c_2, c_3$ tales que cualquier vector de $\mathbb{R}^3$ puede ser generado a partir de una combinación lineal de los vectores del conjunto dado, éste conjunto genera todo $\mathbb{R}^3$.
+4. Como ambas condiciones se cumplen, el conjunto dado es efectivamente una base de $\mathbb{R}^3$.
 
 ## Analizar si el siguiente conjunto es base de $\mathbb{R}^3$: $\lbrace (0, 2, -1); (1, 1, 1); (1, 3, 0) \rbrace$ (2015-09)
 
-$\dots$
+1. Para que un conjunto sea base de un espacio vectorial, sus elementos deben ser linealmente independientes y además el conjunto debe generar a todos los vectores posibles de dicho espacio.
+2. Viendo el conjunto dado, se puede ver fácilmente que el tercer vector es el resultado de sumar el primero con el segundo: $(0, 2, -1) + (1, 1, 1) = (1, 3, 0)$. Construimos un contraejemplo para probar que los vectores no son linealmente independientes:
+   1. Sea $c_1 = 1, c_2 = 1, c_3 = -1$
+   2. $c_1(0, 2, -1) + c_2(1, 1, 1) + c_3(1, 3, 0)$
+   3. $1(0, 2, -1) + 1(1, 1, 1) + (-1)(1, 3, 0)$
+   4. $(0, 2, -1) + (1, 1, 1) + (-1, -3, 0)$
+   5. $(0 + 1 - 1, 2 + 1 - 3, -1 + 1 + 0) = (0, 0, 0)$
+3. Como se ha encontrado una combinación lineal que da como resultado el vector nulo siendo que no todos los escalares son nulos, los vectores no son linealmente independientes.
+4. Como el conjunto presenta vectores linealmente dependientes, no se cumple una de las dos condiciones obligatorias de la definición de base y por ende el conjunto no puede ser una base de $\mathbb{R}^3$.
 
 ## Analizar si las siguientes aplicaciones entre espacios vectoriales son transformaciones lineales. En caso afirmativo hallar Núcleo e Imagen. (2016-04)
 
 ### $L : \mathbb{R}^2 \to \mathbb{R}^2$ definida por $L(x, y) = (x - 2, y + 3x)$
 
-$\dots$
+1. Para que una función $L : V \to W$ sea una transformación lineal debe cumplir dos condiciones:
+   1. Para todo par de vectores $u, v \in V$ se debe cumplir $L(u + v) = L(u) + L(v)$
+   2. Para todo vector $v \in V$ se debe cumplir $L(\alpha v) = \alpha (L(v))$ con $\alpha$ un escalar real
+2. Sean $u = (0, 0)$ y $v = (0, 0)$ ambos el vector nulo de $\mathbb{R}^2$.
+3. $L((0, 0) + (0, 0)) = L(0, 0) = (0 - 2, 0 + 3(0)) = (-2, 0)$
+4. $L(0, 0) + L(0, 0) = (-2, 0) + (-2, 0) = (-4, 0)$
+5. Como se ha encontrado un contraejemplo tal que $u, v \in V$ pero $L(u + v) \neq L(u) + L(v)$, la función $L$ no es una transformación lineal.
 
 ### $L : \mathbb{R}^3 \to \mathbb{R}^3$ definida por $L(x, y, z) = (x, y + x, z)$
 
-$\dots$
+1. Para que una función $L : V \to W$ sea una transformación lineal debe cumplir dos condiciones:
+   1. Para todo par de vectores $u, v \in V$ se debe cumplir $L(u + v) = L(u) + L(v)$
+   2. Para todo vector $v \in V$ se debe cumplir $L(\alpha v) = \alpha (L(v))$ con $\alpha$ un escalar real
+2. Probando la primer condición:
+   1. Sean $u = (x_1, y_1, z_1)$ y $v = (x_2, y_2, z_2)$
+   2. $L(u + v) = L((x_1, y_1, z_1) + (x_2, y_2, z_2)) = L((x_1 + x_2, y_1 + y_2, z_1 + z_2)) = (x_1 + x_2, y_1 + y_2 + x_1 + x_2, z_1 + z_2)$
+   3. $L(u) + L(v) = L(x_1, y_1, z_1) + L(x_2, y_2, z_2) = (x_1, y_1 + x_1, z_1) + (x_2, y_2 + x_2, z_2) = (x_1 + x_2, y_1 + x_1 + y_2 + x_2, z_1 + z_2)$
+   4. Se verifica que $L(u + v) = L(u) + L(v)$
+3. Probando la segunda condición:
+   1. Sea $v = (x, y, z)$
+   2. $L(\alpha v) = L(\alpha (x, y, z)) = L(\alpha x, \alpha y, \alpha z) = (\alpha x, \alpha y + \alpha x, \alpha z)$
+   3. $\alpha (L(v)) = \alpha (L(x, y, z)) = \alpha (x, y + x, z) = (\alpha x, \alpha y + \alpha x, \alpha z)$
+   4. Se verifica que $L(\alpha v) = \alpha (L(v))$
+4. Por lo tanto queda probado que $L$ es una transformación lineal.
+5. Hallar Núcleo:
+   1. Por definición $Nu(L) = \lbrace v \in V \mid L(v) = 0_w \rbrace$ donde $0_w$ es el vector nulo del codominio
+   2. $Nu(L) = \lbrace v \in V \mid L(v) = (0, 0, 0) \rbrace$
+   3. $Nu(L) = \lbrace (x, y, z) \in \mathbb{R}^3 \mid L((x, y, z)) = (0, 0, 0) \rbrace$
+   4. $(x, y + x, z) = (0, 0, 0)$
+   5. Claramente tanto $x$ como $z$ deben ser $0$ obligatoriamente.
+   6. Solo nos queda la segunda componente: $y + x = 0$
+   7. Reemplazando $x$: $y + 0 = 0 \Rightarrow y = 0$
+   8. Por lo tanto $Nu(L) = \lbrace (0, 0, 0) \rbrace$
+6. Hallar Imagen:
+   1. Por definición $Im(L) = \lbrace w \in W \mid \exists v \in V, L(v) = w \rbrace$
+   2. $Im(L) = \lbrace (a, b, c) \in \mathbb{R}^3 \mid \exists (x, y, z) \in \mathbb{R}^3, L(x, y, z) = (a, b, c) \rbrace$
+   3. $L(x, y, z) = (x, y + x, z)$
+   4. $(x, y + x, z) = (a, b, c)$
+   5. $\begin{cases} x & = a \\ y + x & = b \\ z & = c \end{cases}$
+   6. Reemplazando en la segunda ecuación: $y + x = b \Rightarrow y + a = b \Rightarrow y = b - a$
+   7. Por lo tanto tenemos: $x = a, y = b - a, z = c$
+   8. Entonces, para cualquier $(a, b, c) \in \mathbb{R}^3$ el vector $(x, y, z) = (a, b - a, c)$ cumple que $L(x, y, z) = (a, b, c)$
+   9. Por lo tanto $Im(L) = \mathbb{R}^3$
 
 ## Analizar si las siguientes aplicaciones entre espacios vectoriales son transformaciones lineales. En caso afirmativo hallar Núcleo e Imagen. (2015-09)
 

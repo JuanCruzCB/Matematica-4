@@ -403,21 +403,81 @@ $\dots$
 
 ## Demostrar que la composición de transformaciones lineales es una transformación lineal. (2026-03)
 
-$\dots$
+1. Sea $L : V \to W$ una transformación lineal entre un espacio vectorial $V$ y otro espacio vectorial $W$.
+2. Sea $G : W \to Y$ una transformación lineal entre el espacio vectorial $W$ y otro espacio vectorial $Y$.
+3. Se quiere demostrar que la composición de transformaciones lineales $G \circ L : V \to Y$ es una transformación lineal.
+4. Recordando la definición: Para que una función $L : V \to W$ sea una transformación lineal debe cumplir dos condiciones:
+   1. Para todo par de vectores $u, v \in V$ se debe cumplir $L(u + v) = L(u) + L(v)$
+   2. Para todo vector $v \in V$ se debe cumplir $L(\alpha v) = \alpha (L(v))$ con $\alpha$ un escalar real
+5. Como $L$ es una TL se cumple:
+   1. $\forall u, v \in V, L(u + v) = L(u) + L(v)$
+   2. $\forall v \in V, \forall \alpha \in \mathbb{R}, L(\alpha v) = \alpha (L(v))$
+6. Como $G$ es una TL se cumple:
+   1. $\forall w, z \in W, G(w + z) = G(w) + G(z)$
+   2. $\forall w \in W, \forall \alpha \in \mathbb{R}, G(\alpha w) = \alpha (G(w))$
+7. Probar que $G \circ L$ es una TL:
+   1. Probar que $(G \circ L)(u + v) = (G \circ L)(u) + (G \circ L)(v) \quad \forall u, v \in V$
+      1. Sean $u, v \in V$
+      2. Por definición de composición: $(G \circ L)(u + v) = G(L(u + v))$
+      3. Por 5.1: $G(L(u + v)) = G(L(u) + L(v))$
+      4. Por 6.1: $G(L(u) + L(v)) = G(L(u)) + G(L(v))$
+      5. Reescribiendo la expresión $G(L(u)) + G(L(v)) = (G \circ L)(u) + (G \circ L)(v)$
+   2. Probar que $(G \circ L)(\alpha v) = \alpha (G \circ L)(v) \quad \forall v \in V,  \forall \alpha \in \mathbb{R}$
+      1. Sean $v \in V$ y $\alpha \in \mathbb{R}$
+      2. Por definición de composición:$(G \circ L)(\alpha v) = G(L(\alpha v))$
+      3. Por 5.2: $G(L(\alpha v)) = G(\alpha L(v))$
+      4. Por 6.2: $G(\alpha L(v)) = \alpha G (L(v))$
+      5. Reescribiendo la expresión $\alpha G (L(v)) = \alpha (G \circ L)(v)$
+   3. Como $G \circ L : V \to Y$ cumple las dos propiedades fundamentales de las transformaciones lineales, la composición de transformaciones lineales es una transformación lineal.
 
 ## Dados los siguientes conjuntos, definir si son subespacios vectoriales. Si lo son, dar base de los mismos. (2025-10)
 
+Dado un espacio vectorial $V$, un conjunto $S$ es un subespacio de $V$ si:
+
+1. $S \neq \emptyset$
+2. $S \subseteq V$
+3. $S$ es un espacio vectorial. Como $S \subseteq V$, seis de las ocho propiedades se "heredan" de $V$, y basta con verificar solo dos:
+   1. $\forall u, v \in S, u + v \in S$
+   2. $\forall v \in S, \forall \alpha \in K, \alpha v \in S$
+
 ### $S = \lbrace (x, y, z) \mid x \leq z \rbrace$
 
-$\dots$
+1. Se cumple $S \neq \emptyset$ porque por ejemplo $u = (0, 0, 3) \in S$ ya que $0 \leq 3$
+2. Claramente $S \subseteq \mathbb{R}^3$
+3. Se cumple $\forall u, v \in S, u + v \in S$?
+   1. Sean $u = (a, b, c) \in S$ y $v = (d, e, f) \in S$
+   2. Como $u \in S$, se sabe que $a \leq c$
+   3. Como $v \in S$, se sabe que $d \leq f$
+   4. Sumando $d$ de ambos lados a la primer desigualdad obtenida: $a + d \leq c + d$
+   5. Sumando $c$ de ambos lados a la segunda desigualdad obtenida: $c + d \leq c + f$
+   6. Por transitividad de $\leq$ en $\mathbb{R}$: $a + d \leq c + f$
+   7. $u + v = (a, b, c) + (d, e, f) = (a + d, b + e, c + f)$
+   8. Como se sabe que $a + d \leq c + f$, por definición $u + v \in S$
+4. Se cumple $\forall v \in S, \forall \alpha \in \mathbb{R}, \alpha v \in S$?
+   1. Sea $\alpha = -1$ y sea $u = (0, 0, 1)$
+   2. $u \in S$ porque $0 \leq 1$ se cumple.
+   3. $\alpha u = -1(0, 0, 1) = (0, 0, -1)$
+   4. Sin embargo, como $0 \nleq -1$, $\alpha u \notin S$
+5. Como el producto por escalar no es cerrado en $S$, éste no es un subespacio vectorial de $\mathbb{R}^3$.
 
 ### $S = \lbrace (x, y) \mid x + y = 1 \rbrace$
 
-$\dots$
+1. Se cumple $S \neq \emptyset$ porque por ejemplo $u = (1, 0) \in S$ ya que $1 + 0 = 1$
+2. Claramente $S \subseteq \mathbb{R}^2$
+3. Se cumple $\forall u, v \in S, u + v \in S$?
+   1. Sea $u = (0, 1)$ y $v = (1, 0)$
+   2. $u \in S$ porque $0 + 1 = 1$ y $v \in S$ porque $1 + 0 = 1$
+   3. $u + v = (0, 1) + (1, 0) = (1, 1)$
+   4. Se tiene que $x = 1, y = 1$, pero $x + y = 2 \neq 1$
+   5. Por lo tanto $u + v \notin S$ y la suma no es cerrada en $S$.
+4. Como $S$ no cumple la condición de clausura de la suma, se sigue que $S$ no es un espacio vectorial, y por lo tanto no puede ser un subespacio vectorial.
 
 ## Definir base (2025-10)
 
-$\dots$
+Dado un espacio vectorial $V$, una base de $V$ es un conjunto de vectores $S = \lbrace v_1, v_2, \ldots, v_n \rbrace$ tal que dichos vectores:
+
+1. Son linealmente independientes, es decir que ninguno puede ser escrito como combinación lineal de uno o más de los otros, o equivalentemente $c_1 v_1 + c_2 v_2 + \ldots + c_n v_n = 0$ solo si todos los coeficientes $c_i$ son nulos.
+2. Generan todo el espacio vectorial, es decir $gen(S) = V$, donde $gen(S)$ es el conjunto de todas las combinaciones lineales posibles de vectores de $S$.
 
 ## Demostrar que dada cualquier transformación lineal $L : V \to W$ (con $V, W$ espacios vectoriales) el núcleo $L$ forma un subespacio de $V$ (2024-03)
 

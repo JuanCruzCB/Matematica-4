@@ -365,15 +365,103 @@ $\dots$
 
 ## Demostrar que un entero $a$ es congruente $\mod m$ con el resto de su división por $m$ (2026-04)
 
-$\dots$
+1. Recordando definiciones, con $a, b, c \in \mathbb{Z}$:
+   1. $a \equiv_m b \Leftrightarrow m \mid (a - b)$
+   2. $a \mid b \Leftrightarrow b = a \cdot c$
+2. Sean $a, m, r, q \in \mathbb{Z}$
+3. Se quiere probar $a \equiv_m r$
+4. Sabemos que dado cualquier entero $a$ se cumple que: $a = mq + r$ con $0 \leq r < |m|$
+5. Reescribiendo la expresión: $a - r = mq$
+6. Como $q \in \mathbb{Z}$ y $a - r = mq$, por definición de divisibilidad: $m \mid (a - r)$
+7. Por definición de congruencia: $a \equiv_m r$
 
 ## Demostrar que dos números son congruentes modulo $m$ sí y solo si sus restos en la división por $m$ son iguales. (2025-10)
 
-$\dots$
+1. Recordando definiciones, con $a, b, c \in \mathbb{Z}$:
+   1. $a \equiv_m b \Leftrightarrow m \mid (a - b)$
+   2. $a \mid b \Leftrightarrow b = a \cdot c$
+2. Sean $a, b, m, r, q \in \mathbb{Z}$
+3. Se quiere probar $a \equiv_m b \Leftrightarrow r_1 = r_2$ donde $r_1, r_2$ son los restos de $a$ y $b$ respectivamente en la división por $m$.
+4. Como tenemos un bicondicional, debemos probar ambas direcciones:
+   1. $a \equiv_m b \Rightarrow r_1 = r_2$:
+      1. Sea $a \equiv_m b$
+      2. Por definición de congruencia: $m \mid (a - b)$
+      3. Por definición de divisibilidad: $(a - b) = mc$
+      4. $a = mq + r_1$ con $0 \leq r_1 < |m|$
+      5. $b = mn + r_2$ con $0 \leq r_2 < |m|$
+      6. Sustituyendo: $(mq + r_1) - (mn + r_2) = mc$
+      7. $mq + r_1 - mn - r_2 = mc$
+      8. $r_1 - r_2 = mc - mq + mn$
+      9. $r_1 - r_2 = m(c - q + n)$
+      10. Llamemos $k$ al entero $c - q + n$
+      11. $r_1 - r_2 = mk$
+      12. Por definición de divisibilidad: $m \mid (r_1 - r_2)$
+      13. Sabemos que $0 \leq r_1 < |m|$ y $0 \leq r_2 < |m|$
+      14. Como ambos restos están entre $0$ y $|m| - 1$, necesariamente se cumple que $-|m| < r_1 - r_2 < |m|$
+      15. Sustituyendo: $-|m| < mk < |m|$
+      16. Como $m \neq 0$ y $k \in \mathbb{Z}$, $k$ debe ser necesariamente $0$. Si $k > 0$, seria imposible que $mk < |m|$. Si $k < 0$, seria imposible que $-|m| < mk$.
+      17. Como $k = 0$, reemplazamos: $r_1 - r_2 = m(0) \Rightarrow r_1 - r_2 = 0 \Rightarrow r_1 = r_2$
+   2. $r_1 = r_2 \Rightarrow a \equiv_m b$:
+      1. $a = mq + r_1$ con $0 \leq r_1 < |m|$
+      2. $b = mn + r_2$ con $0 \leq r_2 < |m|$
+      3. Asumimos por hipótesis $r_1 = r_2 = r$
+      4. $r = a - mq$ y además $r = b - mn$
+      5. Reemplazando: $a - mq = b - mn$
+      6. Trabajando la expresión: $a - b = mq - mn \Rightarrow a - b = m(q - n)$
+      7. Sea $c = q - n$. Como la resta es cerrada en los enteros, se cumple $c \in \mathbb{Z}$
+      8. $a - b = mc$
+      9. Como $c \in \mathbb{Z}$, por definición de divisibilidad: $m \mid (a - b)$
+      10. Por definición de congruencia: $a \equiv_m b$
+5. Así, queda probado que $a \equiv_m b \Leftrightarrow r_1 = r_2$ donde $r_1, r_2$ son los restos de $a$ y $b$ respectivamente en la división por $m$.
 
 ## Construir las tablas para la suma y producto en $Z_6$ y decidir si existen elementos que no tengan opuesto y/o inverso (en caso de existir mencionar cuales son y justificar) (2023-05)
 
-$\dots$
+1. $Z_6$ representa al conjunto de todos los números enteros módulo $6$, es decir, el conjunto de todos los restos posibles en la división de un número entero por $6$. Por lo tanto, $Z_6 = \lbrace \overline{0}, \overline{1}, \overline{2}, \overline{3}, \overline{4}, \overline{5} \rbrace$.
+2. Tabla para la suma en $Z_6$:
+
+   | $+$            | $\overline{0}$ | $\overline{1}$ | $\overline{2}$ | $\overline{3}$ | $\overline{4}$ | $\overline{5}$ |
+   | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+   | $\overline{0}$ | $\overline{0}$ | $\overline{1}$ | $\overline{2}$ | $\overline{3}$ | $\overline{4}$ | $\overline{5}$ |
+   | $\overline{1}$ | $\overline{1}$ | $\overline{2}$ | $\overline{3}$ | $\overline{4}$ | $\overline{5}$ | $\overline{0}$ |
+   | $\overline{2}$ | $\overline{2}$ | $\overline{3}$ | $\overline{4}$ | $\overline{5}$ | $\overline{0}$ | $\overline{1}$ |
+   | $\overline{3}$ | $\overline{3}$ | $\overline{4}$ | $\overline{5}$ | $\overline{0}$ | $\overline{1}$ | $\overline{2}$ |
+   | $\overline{4}$ | $\overline{4}$ | $\overline{5}$ | $\overline{0}$ | $\overline{1}$ | $\overline{2}$ | $\overline{3}$ |
+   | $\overline{5}$ | $\overline{5}$ | $\overline{0}$ | $\overline{1}$ | $\overline{2}$ | $\overline{3}$ | $\overline{4}$ |
+   1. El elemento **opuesto** es tal que $a + (-a) = e$ siendo $e$ el elemento neutro tal que $a + e = e + a = a$
+   2. Sabemos que $e = \overline{0}$.
+   3. Todos los elementos tienen opuesto porque para cada $\overline{x}$ en $Z_6$, todos tienen a otro elemento (o a sí mismo) tal que al sumarse entre sí se tiene como resultado el elemento neutro $e = \overline{0}$.
+   4. El opuesto de $\overline{0}$ es $\overline{0}$
+   5. El opuesto de $\overline{1}$ es $\overline{5}$
+   6. El opuesto de $\overline{2}$ es $\overline{4}$
+   7. El opuesto de $\overline{3}$ es $\overline{3}$
+   8. El opuesto de $\overline{4}$ es $\overline{2}$
+   9. El opuesto de $\overline{5}$ es $\overline{1}$
+
+3. Tabla para el producto en $Z_6$:
+
+   | $\cdot$        | $\overline{0}$ | $\overline{1}$ | $\overline{2}$ | $\overline{3}$ | $\overline{4}$ | $\overline{5}$ |
+   | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+   | $\overline{0}$ | $\overline{0}$ | $\overline{0}$ | $\overline{0}$ | $\overline{0}$ | $\overline{0}$ | $\overline{0}$ |
+   | $\overline{1}$ | $\overline{0}$ | $\overline{1}$ | $\overline{2}$ | $\overline{3}$ | $\overline{4}$ | $\overline{5}$ |
+   | $\overline{2}$ | $\overline{0}$ | $\overline{2}$ | $\overline{4}$ | $\overline{0}$ | $\overline{2}$ | $\overline{4}$ |
+   | $\overline{3}$ | $\overline{0}$ | $\overline{3}$ | $\overline{0}$ | $\overline{3}$ | $\overline{0}$ | $\overline{3}$ |
+   | $\overline{4}$ | $\overline{0}$ | $\overline{4}$ | $\overline{2}$ | $\overline{0}$ | $\overline{4}$ | $\overline{2}$ |
+   | $\overline{5}$ | $\overline{0}$ | $\overline{5}$ | $\overline{4}$ | $\overline{3}$ | $\overline{2}$ | $\overline{1}$ |
+   1. El elemento **inverso** es tal que $a \cdot a^{-1} = a^{-1} \cdot a = e$ siendo $e$ el elemento neutro tal que $a \cdot e = e \cdot a = a$
+   2. Sabemos que $e = \overline{1}$.
+   3. No todos los elementos tienen inverso:
+   4. $\overline{0}$ no tiene inverso porque nunca ocurre que $\overline{0} \cdot \overline{x} = e = \overline{1}$
+   5. $\overline{1}$ sí tiene inverso, sí mismo, porque $\overline{1} \cdot \overline{1} = e = \overline{1}$
+   6. $\overline{2}$ no tiene inverso porque nunca ocurre que $\overline{2} \cdot \overline{x} = e = \overline{1}$
+   7. $\overline{3}$ no tiene inverso porque nunca ocurre que $\overline{3} \cdot \overline{x} = e = \overline{1}$
+   8. $\overline{4}$ no tiene inverso porque nunca ocurre que $\overline{4} \cdot \overline{x} = e = \overline{1}$
+   9. $\overline{5}$ sí tiene inverso, sí mismo, porque $\overline{5} \cdot \overline{5} = e = \overline{1}$
+
+En conclusión:
+
+1. Todos los elementos de $Z_6$ tienen opuesto.
+2. $\overline{1}$ y $\overline{5}$ tienen inverso.
+3. $\overline{0}$, $\overline{2}$, $\overline{3}$, $\overline{4}$ no tienen inverso.
 
 ---
 

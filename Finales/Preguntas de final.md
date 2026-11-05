@@ -481,11 +481,58 @@ Dado un espacio vectorial $V$, una base de $V$ es un conjunto de vectores $S = \
 
 ## Demostrar que dada cualquier transformación lineal $L : V \to W$ (con $V, W$ espacios vectoriales) el núcleo $L$ forma un subespacio de $V$ (2024-03)
 
-$\dots$
+1. Sea $L : V \to W$ una transformación lineal de un espacio vectorial $V$ a otro espacio vectorial $W$.
+2. Por definición, el núcleo de $L$ se define como $Nu(L) = \lbrace v \in V \mid L(v) = 0_W \rbrace$ donde $0_W$ es el vector nulo de $W$.
+3. Para que $Nu(L)$ sea un subespacio vectorial de $V$ se debe cumplir:
+   1. $Nu(L) \neq \emptyset$
+   2. $Nu(L) \subset V$
+   3. $\forall u, v \in Nu(L), u + v \in Nu(L)$
+   4. $\forall v \in Nu(L), \forall \alpha \in \mathbb{R}, \alpha v \in Nu(L)$
+4. Probando que $Nu(L)$ es un subespacio vectorial de $V$:
+   1. $Nu(L) \neq \emptyset$:
+      1. Necesitamos encontrar un vector $v \in V$ que cumpla $L(v) = 0_W$
+      2. Sea $v \in V$.
+      3. Por propiedad del producto por escalar de las transformaciones lineales: $L(\alpha v) = \alpha L(v)$
+      4. Con $\alpha = 0$, se tiene $L(0v) = 0 L(v)$
+      5. Sabemos que $0v = 0_V$ porque estamos multiplicando un vector arbitrario de $V$ por el escalar $0$.
+      6. Sabemos que $0 L(v) = 0_W$ porque estamos multiplicando un vector arbitrario de $W$ por el escalar $0$.
+      7. Por lo tanto, reemplazando: $L(0_V) = 0_W$ y por consiguiente hemos encontrado un vector $v = 0_V$ tal que $0_V \in Nu(L)$ lo cual implica $Nu(L) \neq \emptyset$.
+   2. $Nu(L) \subset V$:
+      1. Se cumple trivialmente ya que $Nu(L)$ está justamente formado por vectores que provienen de $V$.
+   3. $\forall u, v \in Nu(L), u + v \in Nu(L)$:
+      1. Sean $u, v \in Nu(L)$.
+      2. Se sabe que $L(u) = 0_W$.
+      3. Se sabe que $L(v) = 0_W$.
+      4. Por propiedad de la suma de las transformaciones lineales: $L(u + v) = L(u) + L(v)$
+      5. Reemplazando: $L(u) + L(v) = 0_W + 0_W = 0_W$
+      6. Por lo tanto $u + v \in Nu(L)$
+   4. $\forall v \in Nu(L), \forall \alpha \in \mathbb{R}, \alpha v \in Nu(L)$:
+      1. Sea $v \in Nu(L)$ y $\alpha \in \mathbb{R}$.
+      2. Se sabe que $L(v) = 0_W$
+      3. Por propiedad del producto por escalar de las transformaciones lineales: $L(\alpha v) = \alpha L(v)$
+      4. Reemplazando: $\alpha L(v) = \alpha 0_W = 0_W$
+      5. Por lo tanto $\alpha v \in Nu(L)$
+   5. Por lo tanto queda probado que $Nu(L)$ es un subespacio vectorial de $V$.
 
-## Hallar $L(x,y)$ en $\mathbb{R}^2$ sabiendo que $L(1,1) = (4, -1)$ y $L(-1, 0) = (3, 2)$. Justificar los pasos que realice (2023-05)
+## Hallar $L(x, y)$ en $\mathbb{R}^2$ sabiendo que $L(1, 1) = (4, -1)$ y $L(-1, 0) = (3, 2)$. Justificar los pasos que realice (2023-05)
 
-$\dots$
+1. Tenemos que encontrar $L((x, y))$
+2. Chequear que los vectores $(1, 1)$ y $(-1, 0)$ son linealmente independientes:
+   1. Existe $c \in \mathbb{R}$ tal que $c(1, 1) = (-1, 0)$?
+   2. Es imposible que exista porque para que la primer componente del vector de la derecha sea $-1$, $c$ debe ser $-1$. Pero si $c$ es $-1$, la segunda componente del vector de la derecha es $-1$ y no $0$. Además ninguno de los dos vectores es nulo.
+   3. Como no es posible expresar un vector como combinación lineal del otro, los vectores son linealmente independientes.
+3. Por teorema se sabe que si $dim(V) = n$ y tenemos $n$ vectores linealmente independientes, entonces los vectores forman una base. Como tenemos $2$ vectores y esto matchea con la dimensión de $\mathbb{R}^2$ que es $2$, estos vectores son una base.
+4. Como los vectores forman una base, generan todo el espacio vectorial $\mathbb{R}^2$ y se tiene que $(x, y) = c_1(1, 1) + c_2(-1, 0)$
+5. $(x, y) = c_1(1, 1) + c_2(-1, 0) = (c_1, c_1) + (-c_2, 0) = (c_1 - c_2, c_1)$
+6. $\begin{cases} x = c_1 - c_2 \\ y = c_1 \end{cases}$
+7. $c_1 = y$
+8. $c_2 = c_1 - x \Rightarrow c_2 = y - x$
+9. Por propiedad de la suma de la transformación lineal: $L(y(1, 1) + (y - x)(-1, 0)) = L(y(1, 1)) + L((y - x)(-1, 0))$
+10. Por propiedad del producto por escalar de la transformación lineal: $y L(1, 1) + (y - x) L(-1, 0)$
+11. Reemplazando: $y (4, -1) + (y - x)(3, 2)$
+12. Distribuyendo: $(4y, -y) + (3y - 3x, 2y -2x)$
+13. Sumando: $(4y, -y) + (3y - 3x, 2y -2x) = (7y - 3x, y - 2x)$
+14. Por lo tanto la transformación lineal $L$ está definida como $L(x, y) = (7y - 3x, y - 2x)$.
 
 ## Decidir si los siguientes conjuntos son subespacios. En caso afirmativo hallar una base. Justificar: (2016-04)
 

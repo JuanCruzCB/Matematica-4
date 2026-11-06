@@ -353,11 +353,42 @@ $\dots$
 
 ## Demostrar que las matrices simétricas $2 \times 2$ son un subgrupo de las matrices $2 \times 2$ respecto a la suma. (2026-04)
 
-$\dots$
+1. Sea $G_1 = (\mathbb{R}_S^{2 \times 2}, +)$ un grupo conformado por:
+   1. Las matrices $2 \times 2$ simétricas, es decir que cada matriz del conjunto es igual a su matriz transpuesta.
+   2. La operación de suma de matrices típica.
+2. Sea $G_2 = (\mathbb{R}^{2 \times 2}, +)$ un grupo conformado por:
+   1. Las matrices $2 \times 2$.
+   2. La operación de suma de matrices típica.
+3. Se quiere probar que $G_1$ es un subgrupo de $G_2$. Para esto se debe verificar:
+   1. $G_1 \subseteq G_2$
+      1. Sea $m = \begin{pmatrix} a & b \\ b & c \end{pmatrix} \in G_1$ con $a, b, c \in \mathbb{R}$. Como $m$ es $2 \times 2$ y además todos sus elementos son reales, $m \in G_2$
+   2. $e \in G_1$ (con $e$ el neutro de $G_2$)
+      1. El elemento neutro de $G_2$ para la suma es: $\begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}$
+      2. Como existen $a, b, c \in \mathbb{R}$ tales que $a = b = c = 0$, se puede construir la matriz $\begin{pmatrix} a & b \\ b & c \end{pmatrix} = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix} \in G_1$
+   3. $\forall a, b \in G_1, a + b \in G_1$
+      1. Sea $m_1 = \begin{pmatrix} a_1 & b_1 \\ b_1 & c_1 \end{pmatrix} \in G_1$.
+      2. Sea $m_2 = \begin{pmatrix} a_2 & b_2 \\ b_2 & c_2 \end{pmatrix} \in G_1$.
+      3. $m_1 + m_2 = \begin{pmatrix} a_1 & b_1 \\ b_1 & c_1 \end{pmatrix} + \begin{pmatrix} a_2 & b_2 \\ b_2 & c_2 \end{pmatrix} = \begin{pmatrix} a_1 + a_2 & b_1 + b_2 \\ b_1 + b_2 & c_1 + c_2 \end{pmatrix}$
+      4. Sean $a_3 = a_1 + a_2$, $b_3 = b_1 + b_2$, $c_3 = c_1 + c_2$.
+      5. Como la suma es cerrada en los reales, $a_3, b_3, c_3 \in \mathbb{R}$ y por lo tanto $\begin{pmatrix} a_1 + a_2 & b_1 + b_2 \\ b_1 + b_2 & c_1 + c_2 \end{pmatrix} = \begin{pmatrix} a_3 & b_3 \\ b_3 & c_3 \end{pmatrix} \in G_1$
+   4. $\forall a \in G_1, a^{-1} \in G_1$
+      1. Sea $m = \begin{pmatrix} a & b \\ b & c \end{pmatrix} \in G_1$.
+      2. Sea $m^{-1} = \begin{pmatrix} -a & -b \\ -b & -c \end{pmatrix}$
+      3. Como $-a, -b, -c \in \mathbb{R}$, $m^{-1} \in G_1$
+      4. Además: $m + m^{-1} = \begin{pmatrix} a & b \\ b & c \end{pmatrix} + \begin{pmatrix} -a & -b \\ -b & -c \end{pmatrix} = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix} = e \in G_1$.
+4. Por lo tanto queda probado que el grupo de las matrices simétricas $2 \times 2$ con la suma es un subgrupo de las matrices $2 \times 2$ con la suma.
 
 ## Demostrar que todo grupo cíclico es conmutativo (2024-03)
 
-$\dots$
+1. Sea $(G, \ast)$ un grupo cíclico.
+2. Por definición: existe un elemento $a \in G$ tal que para todo elemento $b \in G$ existe $k \in \mathbb{Z}$ tal que $b = a^k$. $a$ se denomina elemento generador y se denota $G = \langle a \rangle$
+3. Sean $x, y \in G$.
+4. Por definición de elemento generador, se sabe que $x = a^{k_1}$ y que $y = a^{k_2}$ con $k_1, k_2 \in \mathbb{Z}$
+5. $x \ast y = a^{k_1} \ast a^{k_2} = a^{k_1 + k_2}$ (por ley de exponentes)
+6. $y \ast x = a^{k_2} \ast a^{k_1} = a^{k_2 + k_1}$ (por ley de exponentes)
+7. Como la suma de enteros es conmutativa, se tiene que $k_1 + k_2 = k_2 + k_1$ y por lo tanto $a^{k_1 + k_2} = a^{k_2 + k_1}$
+8. De 5, 6 y 7 se deduce $x \ast y = y \ast x$ y por lo tanto $G$ es conmutativo.
+9. Así, queda probado que todo grupo cíclico es conmutativo.
 
 ---
 

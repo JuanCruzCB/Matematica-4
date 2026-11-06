@@ -467,15 +467,37 @@ En conclusión:
 
 # Morfismos
 
-## Sea $(G_1, *)$ un grupo y $(G_2, °)$ otro grupo. Sea $f: G_1 \to G_2$ un morfismo. Probar: (2025-12)
+## Sea $(G_1, \ast)$ un grupo y $(G_2, \circ)$ otro grupo. Sea $f: G_1 \to G_2$ un morfismo. Probar: (2025-12)
 
 ### $f(e_1) = e_2$, donde $e_1$ es el elemento neutro de $G_1$ y $e_2$ es el elemento neutro de $G_2$
 
-$\dots$
+1. Sea $f : G_1 \to G_2$ un morfismo.
+2. Por definición, $\forall a, b \in G_1, f(a \ast b) = f(a) \circ f(b)$
+3. Sea $e_1$ el elemento neutro de $G_1$.
+4. Por definición de morfismo: $f(e_1 \ast e_1) = f(e_1) \circ f(e_1)$
+5. Por definición, $\forall a \in G_1, a \ast e_1 = e_1 \ast a = a$.
+6. Reemplazando: $f(e_1) = f(e_1) \circ f(e_1)$
+7. Como $G_2$ es un grupo, todos sus elementos tienen inverso. En particular, $f(e_1) \in G_2$ tiene inverso $f(e_1)^{-1}$.
+8. Agregamos este inverso de ambos lados de la igualdad: $f(e_1)^{-1} \circ f(e_1) = f(e_1)^{-1} \circ (f(e_1) \circ f(e_1))$
+9. Por asociatividad del operador $\circ$ de $G_2$: $f(e_1)^{-1} \circ f(e_1) = (f(e_1)^{-1} \circ f(e_1)) \circ f(e_1)$
+10. Como para todo elemento $a \in G_2$ se cumple que $a \circ a^{-1} = a^{-1} \circ a = e_2$, podemos simplificar la expresión: $e_2 = e_2 \circ f(e_1)$
+11. Por definición de elemento neutro: $e_2 = f(e_1)$
+12. Reordenando la igualdad: $f(e_1) = e_2$
 
 ### $f(a^{-1}) = f(a)^{-1}$
 
-$\dots$
+1. Sea $f : G_1 \to G_2$ un morfismo.
+2. Por definición, $\forall a, b \in G_1, f(a \ast b) = f(a) \circ f(b)$
+3. Sea $a \in G_1$ y sea $a^{-1}$ el inverso de $a$ tal que $a \ast a^{-1} = a^{-1} \ast a = e_1$
+4. Por definición de morfismo: $f(a \ast a^{-1}) = f(a) \circ f(a^{-1})$
+5. Por definición de elemento inverso: $f(e_1) = f(a) \circ f(a^{-1})$
+6. Por lo probado en el ejercicio anterior: $e_2 = f(a) \circ f(a^{-1})$
+7. Agregamos $f(a)^{-1}$ de ambos lados de la igualdad: $f(a)^{-1} \circ e_2 = f(a)^{-1} \circ (f(a) \circ f(a^{-1}))$
+8. Por definición de elemento neutro simplificamos: $f(a)^{-1} = f(a)^{-1} \circ (f(a) \circ f(a^{-1}))$
+9. Por asociatividad reordenamos: $f(a)^{-1} = (f(a)^{-1} \circ f(a)) \circ f(a^{-1})$
+10. Por definición de elemento inverso simplificamos: $f(a)^{-1} = e_2 \circ f(a^{-1})$
+11. Por definición de elemento neutro simplificamos: $f(a)^{-1} = f(a^{-1})$
+12. Reordenando la igualdad: $f(a^{-1}) = f(a)^{-1}$
 
 ---
 
@@ -483,11 +505,52 @@ $\dots$
 
 ## Probar que una transformación lineal inyectiva mantiene la independencia lineal. (2025-12)
 
-$\dots$
+1. Recordatorio: Una función $f$ se considera inyectiva si $f(a) = f(b) \Rightarrow a = b \quad \forall a, b \in D(f)$. Es decir, no puede ocurrir que dos elementos distintos del dominio tengan la misma imagen en el codominio.
+2. Sea $L : V \to W$ una transformación lineal inyectiva entre un espacio vectorial $V$ y otro espacio vectorial $W$. Si $\lbrace v_1, v_2, \ldots, v_n \rbrace$ es linealmente independiente en $V$, entonces $\lbrace L(v_1), L(v_2), \ldots, L(v_n) \rbrace$ es linealmente independiente en $W$.
+3. Como $L$ es una TL, se cumple:
+   1. $\forall u, v \in V, L(u + v) = L(u) + L(v)$
+   2. $\forall v \in V, \forall \alpha \in \mathbb{R}, L(\alpha v) = \alpha (L(v))$
+   3. Además, como es inyectiva, se cumple que $L(u) = L(v) \Rightarrow u = v$
+4. Definición de independencia lineal: un conjunto de vectores $v_1, v_2, \ldots, v_n$ es linealmente independiente si la única forma de que $c_1 v_1 + c_2 v_2 + \ldots + c_n v_n = 0$ es que todos los coeficientes sean nulos, donde $0$ es el vector nulo del espacio que se esté usando.
+5. Sean $c_1, c_2, \ldots, c_n \in \mathbb{R}$ tales que $c_1 L(v_1) + c_2 L(v_2) + \ldots + c_n L(v_n) = 0_W$
+6. Por 4.2 se tiene: $L(c_1 v_1) + L(c_2 v_2) + \ldots + L(c_n v_n) = 0_W$
+7. Por 4.1 se tiene: $L(c_1 v_1 + c_2 v_2 + \ldots + c_n v_n) = 0_W$
+8. Se puede ver que $L(0_V) = L(0 \cdot 0_V) = 0 \cdot L(0_V) = 0_W$
+9. Reemplazando: $L(c_1 v_1 + c_2 v_2 + \ldots + c_n v_n) = L(0_V)$
+10. Como $L$ es inyectiva, $L(u) = L(v)$ implica $u = v$, por lo tanto tenemos que $c_1 v_1 + c_2 v_2 + \ldots + c_n v_n = 0_V$
+11. Por 3. sabemos que $\lbrace v_1, v_2, \ldots, v_n \rbrace$ son linealmente independientes y por lo tanto la única manera de que $c_1 v_1 + c_2 v_2 + \ldots + c_n v_n = 0_V$ se cumpla es que $c_1 = c_2 = \ldots = c_n = 0$
+12. La única combinación lineal de $L(v_1), L(v_2), \ldots, L(v_n)$ que da como resultado $0_W$ es la trivial, y por lo tanto $L(v_1), L(v_2), \ldots, L(v_n)$ son linealmente independientes en $W$.
 
-## Demostrar que si $S = \lbrace v_1, v_2, \ldots, v_r \rbrace$ son vectores del espacio vectorial $V$, entonces el conjunto de todas las combinaciones lineales de $v_1, v_2, \ldots, v_r$ denotado $gen(S) = \langle v_1, v_2, \ldots, v_r \rangle$ es un subespacio de $V$ (2026-04)
+## Demostrar que si $S = \lbrace v_1, v_2, \ldots, v_n \rbrace$ son vectores del espacio vectorial $V$, entonces el conjunto de todas las combinaciones lineales de $v_1, v_2, \ldots, v_n$ denotado $gen(S) = \langle v_1, v_2, \ldots, v_n \rangle$ es un subespacio de $V$ (2026-04)
 
-$\dots$
+1. Sea $V$ un espacio vectorial tal que posee el conjunto de vectores $S = \lbrace v_1, v_2, \ldots, v_n \rbrace$.
+2. Sea $gen(S) = \langle v_1, v_2, \ldots, v_n \rangle$ el conjunto de todas las combinaciones lineales de $v_1, v_2, \ldots, v_n$.
+3. Queremos probar que $gen(S)$ es un subespacio de $V$, para lo cual debemos probar cuatro cosas:
+   1. $gen(S) \neq \emptyset$
+      1. Existe la combinación lineal $0 v_1 + \ldots + 0 v_n$ tal que el resultado es $0_V$.
+      2. Como $0_V \in gen(S) \Rightarrow gen(S) \neq \emptyset$
+   2. $gen(S) \subseteq V$
+      1. Como todo elemento de $gen(S)$ tiene la forma $c_1 v_1 + \ldots + c_n v_n$ y tanto el producto por escalar como la suma son cerrados en $V$, ocurre que $c_1 v_1 + \ldots + c_n v_n = w \in V$
+      2. Por lo tanto todo elemento de $gen(S)$ está en $V$ y por ende $gen(S) \subseteq V$.
+   3. $\forall u, v \in gen(S), u + v \in gen(S)$
+      1. Sean $u, v \in gen(S)$
+      2. Por definición de $gen(S)$: $u = a_1 v_1 + \ldots + a_n v_n$
+      3. Por definición de $gen(S)$: $v = b_1 v_1 + \ldots + b_n v_n$
+      4. $u + v = (a_1 v_1 + \ldots + a_n v_n) + (b_1 v_1 + \ldots + b_n v_n) = (a_1 v_1 + b_1 v_1 + \ldots + a_n v_n + b_n v_n)$
+      5. Por asociatividad de la suma: $((a_1 v_1 + b_1 v_1) + \ldots + (a_n v_n + b_n v_n))$
+      6. Por distributiva respecto de la suma de escalares: $(v_1(a_1 + b_1) + \ldots + v_n(a_n + b_n))$
+      7. Reordenando: $((a_1 + b_1)v_1 + \ldots + (a_n + b_n)v_n)$
+      8. Como la suma de escalares $a_i + b_i$ es otro escalar real, ocurre que $c_i = a_i + b_i \in \mathbb{R}$ y la expresión es una combinación lineal: $(c_1 v_1 + \ldots + c_n v_n)$
+      9. La combinación lineal hallada pertenece a $gen(S)$ por definición.
+   4. $\forall v \in gen(S), \forall \alpha \in \mathbb{R}, \alpha v \in gen(S)$
+      1. Sea $v \in gen(S)$ y sea $\alpha \in \mathbb{R}$.
+      2. Por definición de $gen(S)$: $v = a_1 v_1 + \ldots + a_n v_n$
+      3. $\alpha v = \alpha (a_1 v_1 + \ldots + a_n v_n)$
+      4. Por distributiva del producto por escalar: $(\alpha (a_1 v_1) + \ldots + \alpha (a_n v_n))$
+      5. Por asociatividad: $((\alpha a_1) v_1 + \ldots + (\alpha a_n) v_n)$
+      6. Como el producto de dos escalares reales es otro escalar real, ocurre que $c_i = \alpha a_i \in \mathbb{R}$ y se puede reescribir la expresión: $(c_1 v_1 + \ldots + c_n v_n)$
+      7. La expresión es una combinación lineal y por lo tanto pertenece a $gen(S)$.
+4. Así, queda probado que $gen(S)$ es un subespacio de $V$.
 
 ## Demostrar que la composición de transformaciones lineales es una transformación lineal. (2026-03)
 

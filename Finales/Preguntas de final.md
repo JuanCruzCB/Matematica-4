@@ -20,75 +20,75 @@ $\dots$
 
 ### $\exists \lim_{(x,y) \to (x_0, y_0)} f(x,y)$
 
-$\dots$
+**Incorrecta**. Es condición necesaria pero no suficiente.
 
 ### $\exists f(x_0, y_0)$
 
-$\dots$
+**Incorrecta**. Es condición necesaria pero no suficiente.
 
 ### Se verifica que $\lim_{(x,y) \to (x_0, y_0)} f(x,y) = f(x_0, y_0)$
 
-$\dots$
+**Incorrecta**. Es condición necesaria pero no suficiente.
 
 ### Se verifican simultáneamente la primera y la segunda
 
-$\dots$
+**Incorrecta**. Son condiciones necesarias pero no suficientes.
 
 ### Se verifican simultáneamente la primera y la tercera
 
-$\dots$
+**Incorrecta**. Son condiciones necesarias pero no suficientes.
 
 ### Se verifican simultáneamente las tres
 
-$\dots$
+Correcto. Las tres condiciones se deben cumplir para que la función dada sea continua en el punto dado.
 
 ### Ninguna de las anteriores es correcta
 
-$\dots$
+**Incorrecta**. La anterior sí es correcta.
 
 ## Marcar las afirmaciones correctas acerca de una función real $f(x, y)$ diferenciable en un entorno a $(x_0, y_0)$: (2023-05)
 
 ### Es suficiente con que sus derivadas parciales existan
 
-$\dots$
+**Incorrecta**. No alcanza con que las derivadas parciales existan, también deben ser continuas en un entorno del punto.
 
 ### $f$ es necesariamente continua
 
-$\dots$
+**Correcta**. La función debe si o si ser continua en el punto para que sea diferenciable en ese punto. Sin embargo, que sea continua no es condición suficiente por sí sola.
 
 ### Podremos encontrar el plano tangente en $(x_0, y_0)$
 
-$\dots$
+**Correcta**. Si la función es diferenciable en el punto, entonces se puede encontrar el plano tangente en ese punto.
 
 ### Su gradiente es igual a cero
 
-$\dots$
+**Incorrecta**. Que la función sea diferenciable en el punto no implica que su gradiente sea igual a cero en ese punto.
 
 ### Es suficiente con que sus derivadas parciales sean continuas
 
-$\dots$
+**Correcta**. Si las derivadas parciales existen y son todas continuas en un entorno del punto, entonces la función es diferenciable en ese punto.
 
 ## Marcar las afirmaciones correctas acerca de la función real $f(x, y) = \sqrt{x^2 + y^2}$: (2023-05)
 
 ### Es continua en todo $\mathbb{R}^2$
 
-$\dots$
+**Correcta**. $\sqrt{x}$ está bien definida $\forall x \geq 0$ y como $\forall x \in \mathbb{R, x^2 \geq 0}$ y también $\forall y \in \mathbb{R, y^2 \geq 0}$, se cumple que $x^2 + y^2$ es siempre mayor o igual a cero.
 
 ### Es diferenciable en todo $\mathbb{R}^2$
 
-$\dots$
+**Incorrecta**. Las derivadas parciales de la función no existen en $(0, 0)$ y por ende la función no es diferenciable en ese punto.
 
 ### Es diferenciable en todo $\mathbb{R}^2 - \lbrace (0, 0) \rbrace$
 
-$\dots$
+**Correcta**. El punto $(0, 0)$ es el único donde las derivadas parciales no existen, por ende es el único donde la función no es diferenciable.
 
 ### Es derivable en todo $\mathbb{R}^2$
 
-$\dots$
+**Incorrecta**. Derivable es lo mismo que diferenciable.
 
 ### No es derivable en $(0, 0)$
 
-$\dots$
+**Correcta**. No es diferenciable/derivable en $(0, 0)$.
 
 ## Hallar el volumen del sólido acotado por arriba por el cilindro parabólico $z = x^2$ y por debajo por la región del plano $xy$ encerrada por la parábola $y = 2 - x^2$ y la recta $y = x$ (2016-04)
 

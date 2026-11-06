@@ -312,6 +312,42 @@
       - [Definición](#definición-32)
       - [Ejemplo](#ejemplo-8)
 - [Resumen](#resumen)
+- [1.1. Cálculo en dos o más variables](#11-cálculo-en-dos-o-más-variables-1)
+  - [Función de varias variables](#función-de-varias-variables)
+  - [Límite](#límite)
+  - [Continuidad](#continuidad-2)
+  - [Derivadas parciales](#derivadas-parciales-1)
+  - [Diferenciabilidad](#diferenciabilidad-1)
+  - [Plano tangente y linealización](#plano-tangente-y-linealización)
+  - [Gradiente y derivada direccional](#gradiente-y-derivada-direccional)
+  - [Extremos](#extremos)
+- [3. Teoría de números](#3-teoría-de-números-1)
+  - [Números enteros $\\mathbb{Z}$](#números-enteros-mathbbz-1)
+    - [Primos](#primos)
+    - [MCD y MCM](#mcd-y-mcm)
+  - [Números racionales $\\mathbb{Q}$](#números-racionales-mathbbq-1)
+  - [Números irracionales $\\mathbb{I}$ y reales $\\mathbb{R}$](#números-irracionales-mathbbi-y-reales-mathbbr)
+  - [Números complejos $\\mathbb{C}$](#números-complejos-mathbbc-1)
+- [4. Relaciones entre conjuntos](#4-relaciones-entre-conjuntos-1)
+  - [Relaciones](#relaciones)
+  - [Propiedades de una relación $R$ sobre $A$ ($R\\subset A\\times A$)](#propiedades-de-una-relación-r-sobre-a-rsubset-atimes-a)
+  - [Relaciones de orden](#relaciones-de-orden)
+  - [Relaciones de equivalencia](#relaciones-de-equivalencia-1)
+  - [Congruencia](#congruencia)
+- [5.1. Estructuras algebraicas](#51-estructuras-algebraicas-1)
+  - [Definiciones generales](#definiciones-generales)
+  - [Tipos de estructuras](#tipos-de-estructuras)
+  - [Grupos](#grupos-1)
+  - [Subgrupos](#subgrupos-2)
+- [5.2. Aritmética modular](#52-aritmética-modular-1)
+- [5.3. Morfismos](#53-morfismos-1)
+- [6. Álgebra lineal](#6-álgebra-lineal-1)
+  - [Espacio vectorial](#espacio-vectorial)
+  - [Subespacio vectorial](#subespacio-vectorial)
+  - [Combinación lineal y generadores](#combinación-lineal-y-generadores)
+  - [Independencia lineal](#independencia-lineal-1)
+  - [Base y dimensión](#base-y-dimensión)
+  - [Transformaciones lineales](#transformaciones-lineales-1)
 
 ---
 
@@ -2575,4 +2611,278 @@ Hallar $L : \mathbb{R}^3 \to \mathbb{R}^2$ sabiendo que:
 
 # Resumen
 
-...
+# 1.1. Cálculo en dos o más variables
+
+## Función de varias variables
+
+- $f: D \subset \mathbb{R}^n \to \mathbb{R}$ asigna a cada $n$-upla $(x_1,\dots,x_n)$ un único real.
+- **Dominio** $Dom(f)$: entradas para las que $f$ está definida. **Imagen** $Im(f)$: todos los valores de salida posibles.
+
+## Límite
+
+- $\lim_{(x,y)\to(x_0,y_0)} f(x,y)=L$ si $\forall \epsilon>0\ \exists\delta>0$ tal que $0<\sqrt{(x-x_0)^2+(y-y_0)^2}\le\delta \Rightarrow |f(x,y)-L|<\epsilon$.
+- Se puede llegar al punto por **infinitos caminos**: si dos caminos dan límites distintos, **el límite no existe**. Si dan lo mismo, hay que demostrarlo formalmente.
+- **Teorema del encaje**: si $g\le f\le h$ cerca de $(x_0,y_0)$ y $\lim g=\lim h=L$, entonces $\lim f=L$.
+- **Propiedades**: el límite de suma, producto por escalar, producto y cociente (con $M\neq0$) es la suma, producto, etc. de los límites. Si $M=0$ y $L\ne0$, el cociente no tiene límite.
+- **Coordenadas polares**: $x=r\cos\theta,\ y=r\sin\theta$; $(x,y)\to(0,0)\iff r\to0$ (para cualquier $\theta$).
+
+## Continuidad
+
+- $f$ es continua en $(x_0,y_0)$ si: (1) $f(x_0,y_0)$ está definida, (2) el límite existe, (3) $\lim f = f(x_0,y_0)$.
+- Suma, resta, producto y cociente (con denominador $\ne0$) de continuas son continuas. La composición de continuas es continua.
+
+## Derivadas parciales
+
+- $\dfrac{\partial f}{\partial x}=\lim_{h\to0}\dfrac{f(x+h,y)-f(x,y)}{h}$, análogamente para $y$. En la práctica: derivar respecto de una variable tratando a la otra como constante.
+
+## Diferenciabilidad
+
+- $f$ es **diferenciable** en $(x_0,y_0)$ si
+  $$\lim_{(x,y)\to(x_0,y_0)}\frac{f(x,y)-\left[f(x_0,y_0)+f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)\right]}{\sqrt{(x-x_0)^2+(y-y_0)^2}}=0$$
+- Diferenciable $\Rightarrow$ continua. (El recíproco **no** vale.)
+- Si existen $f_x, f_y$ y son **continuas** en un entorno del punto $\Rightarrow$ $f$ es diferenciable. (Que existan en el punto no alcanza.)
+- Suma, resta, producto por escalar, producto y cociente (con denominador $\neq 0$) de diferenciables son diferenciables.
+
+## Plano tangente y linealización
+
+- Plano tangente: $z=f(x_0,y_0)+f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)$.
+- **Linealización** $L(x,y)$: la función lineal anterior; su gráfica es el plano tangente.
+
+## Gradiente y derivada direccional
+
+- **Gradiente**: $\nabla f=(f_x,f_y)$.
+- **Derivada direccional** según un vector unitario $\vec v$: $D_{\vec v}f=\lim_{t\to0}\frac{f((x,y)+t\vec v)-f(x,y)}{t}$. Si $f$ es diferenciable: $D_{\vec v}f=\nabla f\cdot\vec v$.
+- El gradiente apunta en la **dirección de máximo crecimiento**, y la máxima razón de cambio es $|\nabla f|$.
+
+## Extremos
+
+- **Máximo/mínimo local** en $(x_0,y_0)$: $f(x_0,y_0)\ge f(x,y)$ (resp. $\le$) en un entorno. Es **global** si vale en todo el dominio.
+- **Punto crítico**: ambas derivadas parciales se anulan (**punto estacionario**) o al menos una no existe.
+- Todo extremo local (con parciales existentes) es crítico, pero no todo crítico es extremo.
+- **Teorema de Clairaut**: si las derivadas cruzadas existen y son continuas, $f_{xy}=f_{yx}$.
+- **Criterio de las derivadas segundas**: $H=f_{xx}f_{yy}-(f_{xy})^2$ en el punto crítico.
+  - $H>0$ y $f_{xx}>0$ $\Rightarrow$ mínimo local.
+  - $H>0$ y $f_{xx}<0$ $\Rightarrow$ máximo local.
+  - $H<0$ $\Rightarrow$ **punto silla**.
+  - $H=0$ $\Rightarrow$ no concluyente.
+
+# 3. Teoría de números
+
+## Números enteros $\mathbb{Z}$
+
+- Suma y producto son **cerrados**, asociativos, conmutativos, con neutro ($0$ y $1$) y el producto es distributivo respecto de la suma. Hay leyes de monotonía (al multiplicar por un negativo se invierte la desigualdad).
+- **Divisibilidad**: $b\mid a\iff\exists c\in\mathbb{Z}:\ a=b\cdot c$ ($b$ divisor de $a$, $a$ múltiplo de $b$). Propiedades: $a\mid a$, $1\mid a$, $a\mid 0$; transitiva; si $a\mid b$ y $a\mid c$ entonces $a\mid(b+c)$.
+- **División con resto**: $a=b\cdot c+r$, con $0\le r<|b|$. Cociente $c$ y resto $r$ son **únicos**.
+- **Cambio de base**: dado $b>1$, todo entero positivo se escribe de forma única como $n=a_kb^k+\dots+a_1b+a_0$ con $0\le a_i<b$.
+
+### Primos
+
+- $p\ne1$ es **primo** si sus únicos divisores son $\pm1,\pm p$; si no, es **compuesto**. Hay infinitos primos.
+- **Teorema Fundamental de la Aritmética**: todo entero distinto de $0,\pm1$ es producto finito de primos, y la factorización es única salvo el orden.
+
+### MCD y MCM
+
+- $d=\text{mcd}(a,b)$ es el único $d>0$ tal que $d\mid a$, $d\mid b$ y todo divisor común de $a$ y $b$ divide a $d$. Por factorización: producto de los factores comunes con **menor** exponente.
+- **Algoritmo de Euclides**: se divide sucesivamente ($a=c_1b+r_1$, $b=c_2r_1+r_2,\dots$); **el último resto no nulo es el mcd**.
+- **Identidad de Bézout**: existen $m,n\in\mathbb{Z}$ con $\text{mcd}(a,b)=m\,a+n\,b$.
+- $a,b$ son **coprimos** si $\text{mcd}(a,b)=1$.
+- $m=\text{mcm}[a,b]$ es el único $m>0$ tal que $a\mid m$, $b\mid m$ y todo múltiplo común de $a$ y $b$ es múltiplo de $m$.
+
+## Números racionales $\mathbb{Q}$
+
+- $\frac{a}{b}$ con $a,b\in\mathbb{Z}$, $b\neq0$. Representante canónico: **fracción irreducible**. $\mathbb{Z}\subset\mathbb{Q}$.
+- $\frac ab=\frac cd\iff ad=bc$. Orden: $\frac ab<\frac cd\iff ad<bc$ (con denominadores positivos).
+- $\frac ab+\frac cd=\frac{ad+bc}{bd}$, $\ \frac ab\cdot\frac cd=\frac{ac}{bd}$, inverso $\left(\frac ab\right)^{-1}=\frac ba$ si $a\ne0$. Todas las operaciones son cerradas.
+- **Densidad**: entre dos racionales siempre hay otro (por ejemplo $\frac{x+y}{2}$).
+
+## Números irracionales $\mathbb{I}$ y reales $\mathbb{R}$
+
+- **Irracional**: no se puede escribir como $\frac mn$ con $m,n\in\mathbb{Z}$ (ej.: $\sqrt2,\pi,e$).
+- $\mathbb{R}=\mathbb{Q}\cup\mathbb{I}$; con suma y producto forma un **cuerpo**. Restricciones: no se divide por $0$, no hay raíces pares de negativos ni logaritmos de negativos.
+- Racional $\pm$ irracional, racional no nulo $\times$ irracional, cociente racional no nulo / irracional e inverso de irracional **siempre** dan irracional. La suma o el producto de dos irracionales **no siempre** es irracional.
+
+## Números complejos $\mathbb{C}$
+
+- $i^2=-1$. $\mathbb{C}=\{a+ib\mid a,b\in\mathbb{R}\}$ (forma binómica). $\text{Re}(z)=a$, $\text{Im}(z)=b$.
+- Igualdad: igual parte real e igual parte imaginaria. **Conjugado**: $\overline z=a-ib$.
+- **Suma**: $(a_1+a_2)+i(b_1+b_2)$. **Producto**: $(a_1a_2-b_1b_2)+i(a_1b_2+a_2b_1)$.
+- **Inverso**: $z^{-1}=\dfrac{\overline z}{z\overline z}=\dfrac{a-ib}{a^2+b^2}$. **Cociente**: $\frac{z_1}{z_2}=z_1\cdot z_2^{-1}$.
+- **Potencias de $i$**: $i^m=i^r$ con $r=m \bmod 4$ ($i^0=1,\ i^1=i,\ i^2=-1,\ i^3=-i$).
+- **Módulo**: $|z|=\sqrt{a^2+b^2}$. **Argumento**: ángulo $\theta$ con el eje real positivo ($\tan\theta=b/a$, convención $0\le\theta<2\pi$).
+- $a=|z|\cos\theta$, $b=|z|\sin\theta$.
+- **Formas**: trigonométrica $|z|(\cos\theta+i\sin\theta)$; exponencial $|z|e^{i\theta}$; polar $|z|_\theta$.
+- **En forma exponencial**:
+  - Producto: $|z_1||z_2|\,e^{i(\theta_1+\theta_2)}$
+  - Cociente: $\frac{|z_1|}{|z_2|}\,e^{i(\theta_1-\theta_2)}$
+  - Potencia: $z^n=|z|^n e^{in\theta}$
+  - **Raíces $n$-ésimas**: $w_k=\sqrt[n]{|z|}\,e^{i\frac{\theta+2k\pi}{n}}$, con $k=0,\dots,n-1$.
+
+# 4. Relaciones entre conjuntos
+
+## Relaciones
+
+- **Relación $n$-aria** sobre $A_1,\dots,A_n$: subconjunto de $A_1\times\dots\times A_n$. (Las tablas de una base de datos relacional son relaciones $n$-arias.)
+- **Relación binaria** de $A$ en $B$: subconjunto de $A\times B$. Se escribe $xRy$ si $(x,y)\in R$.
+- **Dominio**: $Dom_R=\{x\in A\mid\exists y,\ (x,y)\in R\}$. **Imagen**: $Im_R=\{y\in B\mid\exists x,\ (x,y)\in R\}$.
+- **Inversa**: $R^{-1}=\{(y,x)\mid(x,y)\in R\}$.
+- **Compuesta**: $S\circ R=\{(x,z)\mid\exists y:\ (x,y)\in R\ \wedge\ (y,z)\in S\}$.
+- **Matriz de una relación** (conjuntos finitos): $m_{ij}=1$ si $(a_i,b_j)\in R$, y $0$ si no.
+
+## Propiedades de una relación $R$ sobre $A$ ($R\subset A\times A$)
+
+- **Reflexiva**: $\forall x,\ (x,x)\in R$.
+- **Simétrica**: $(x,y)\in R\Rightarrow(y,x)\in R$.
+- **Antisimétrica**: $(x,y)\in R\wedge(y,x)\in R\Rightarrow x=y$.
+- **Transitiva**: $(x,y)\in R\wedge(y,z)\in R\Rightarrow(x,z)\in R$.
+- Las últimas tres son implicaciones: para refutarlas hay que hallar un contraejemplo donde el antecedente sea verdadero y el consecuente falso.
+
+## Relaciones de orden
+
+- **Preorden**: reflexiva + transitiva.
+- **Orden parcial**: reflexiva + antisimétrica + transitiva (hay elementos incomparables).
+- **Orden total**: orden parcial donde todo par es **comparable** ($aRb$ o $bRa$).
+- **Conjunto ordenado** $(A,R)$; se visualiza con un **diagrama de Hasse**.
+- **Elementos extremos** (en $(A,\preceq)$, con $B\subseteq A$):
+  - **Máximo** de $A$: $a$ con $x\preceq a\ \forall x\in A$. **Mínimo**: $a\preceq x\ \forall x\in A$.
+  - **Cota superior** de $B$: $a$ con $x\preceq a\ \forall x\in B$. **Cota inferior**: $a\preceq x\ \forall x\in B$.
+  - **Supremo** de $B$: la menor de las cotas superiores. **Ínfimo**: la mayor de las cotas inferiores.
+  - **Reticulado**: conjunto ordenado donde todo par $\{a,b\}$ tiene supremo e ínfimo.
+
+## Relaciones de equivalencia
+
+- **Equivalencia**: reflexiva + simétrica + transitiva.
+- **Clase de equivalencia** de $a$: $\overline a=R(a)=\{x\in A\mid xRa\}$. Se cumple $a\in\overline a$, y $\overline a=\overline b\iff aRb$.
+- **Conjunto cociente**: $A/R=\{\overline a\mid a\in A\}$.
+- **Partición** de $A$: familia de subconjuntos no vacíos, disjuntos dos a dos, cuya unión es $A$.
+- Si $R$ es de equivalencia, $A/R$ es una partición de $A$; y toda partición define una relación de equivalencia ($aRb\iff a,b$ están en la misma parte).
+
+## Congruencia
+
+- $a\equiv b \pmod m\iff m\mid(a-b)$, es decir, $a-b=k\,m$ para algún $k\in\mathbb{Z}$.
+- Es una **relación de equivalencia** en $\mathbb{Z}$; sus clases son las **clases de congruencia** $\overline x=\{y\mid y\equiv x \pmod m\}$.
+- Todo entero es congruente con su resto al dividir por $m$; dos enteros son congruentes $\iff$ tienen el mismo resto.
+
+# 5.1. Estructuras algebraicas
+
+## Definiciones generales
+
+- **Estructura algebraica** $(A,\ast)$: conjunto $A\neq\emptyset$ con una o más operaciones **cerradas** ($\ast:A\times A\to A$).
+- Propiedades de $\ast$:
+  - **Conmutatividad**: $a\ast b=b\ast a$.
+  - **Asociatividad**: $a\ast(b\ast c)=(a\ast b)\ast c$.
+  - **Elemento neutro**: $\exists e,\ \forall a:\ a\ast e=e\ast a=a$.
+  - **Elemento inverso**: $\forall a\ \exists a':\ a\ast a'=a'\ast a=e$.
+- El neutro es **único**. Si $\ast$ es asociativa con neutro, el inverso de un elemento es único. Si además **todos** tienen inverso, vale la **propiedad cancelativa** ($a\ast b=a\ast c\Rightarrow b=c$, y análogo por derecha).
+
+## Tipos de estructuras
+
+| Estructura         | Condiciones sobre $(A,\ast)$          |
+| ------------------ | ------------------------------------- |
+| **Grupoide**       | $\ast$ binaria (cerrada)              |
+| **Semigrupo**      | grupoide + asociativa                 |
+| **Monoide**        | semigrupo + elemento neutro           |
+| **Grupo**          | monoide + todo elemento tiene inverso |
+| **Grupo abeliano** | grupo + conmutativa                   |
+
+(Si además $\ast$ es conmutativa: semigrupo/monoide **conmutativo**.)
+
+- **Anillo** $(A,+,\cdot)$: $(A,+)$ grupo conmutativo; $\cdot$ asociativa; $\cdot$ distribuye sobre $+$ por izquierda y por derecha.
+  - **Anillo conmutativo**: $\cdot$ conmutativa.
+  - **Con unidad**: $\cdot$ tiene neutro (distinto del neutro de $+$).
+  - **Dominio de integridad**: anillo conmutativo con unidad donde $a\cdot b=0\Rightarrow a=0\ \vee\ b=0$.
+- **Cuerpo**: anillo conmutativo con unidad donde todo elemento no nulo tiene inverso multiplicativo (ej.: $\mathbb{Q},\mathbb{R},\mathbb{C}$).
+- Ejemplos: $(\mathbb{Z},\cdot)$ monoide conmutativo; $(\mathbb{Q}^+,+)$ grupo conmutativo; matrices cuadradas con el producto: monoide no conmutativo.
+- **Exponentes**: $a^1=a$, $a^n=a\ast a^{n-1}$; en semigrupos $a^m\ast a^n=a^{m+n}$ y $(a^m)^n=a^{mn}$.
+
+## Grupos
+
+- **Grupo** $(G,\ast)$: asociatividad + neutro + inverso. Notación multiplicativa ($\cdot$, $1$, $a^{-1}$) o aditiva ($+$, $0$, $-a$).
+- **Propiedades**: neutro único; inverso único; cancelativas; $(a^{-1})^{-1}=a$; $(a\ast b)^{-1}=b^{-1}\ast a^{-1}$.
+- **Exponentes**: $a^{-n}=(a^{-1})^n=(a^n)^{-1}$, $a^0=e$.
+- **Producto de grupos**: $G_1\times\dots\times G_m$ es grupo con la operación coordenada a coordenada.
+- **Grupo cíclico**: existe un **generador** $a$ tal que todo $b\in G$ es $a^k$ con $k\in\mathbb{Z}$; se escribe $G=\langle a\rangle$. **Todo grupo cíclico es abeliano.** Ej.: $(\mathbb{Z},+)=\langle1\rangle$.
+- **Orden de un elemento**: $o(a)=\min\{k\in\mathbb{N}\mid a^k=e\}$. Si $G$ es cíclico de orden $m$: $G=\{e,a,\dots,a^{m-1}\}$.
+
+## Subgrupos
+
+- $(H,\ast)$ es **subgrupo** de $(G,\ast)$ si $H\subset G$ y $(H,\ast)$ es un grupo (con la **misma** operación).
+- **Criterio 1**: $e\in H$; $a,b\in H\Rightarrow a\ast b\in H$; $a\in H\Rightarrow a^{-1}\in H$.
+- **Criterio 2 (conciso)**: $e\in H$ y $a,b\in H\Rightarrow a\ast b^{-1}\in H$.
+- Todo subgrupo de un grupo cíclico es cíclico.
+
+# 5.2. Aritmética modular
+
+- Los números "vuelven a empezar" tras alcanzar el módulo $m$ (como en un reloj).
+- **Clases de congruencia**: $\overline x=\{y\in\mathbb{Z}\mid y\equiv x \pmod m\}=\{x+km\mid k\in\mathbb{Z}\}$.
+- $\mathbb{Z}_m=\mathbb{Z}/\!\equiv_m$ tiene exactamente $m$ clases: $\{\overline0,\overline1,\dots,\overline{m-1}\}$.
+- **Compatibilidad**: si $a\equiv b$ y $c\equiv d \pmod m$, entonces $a+c\equiv b+d$ y $a\cdot c\equiv b\cdot d \pmod m$.
+- **Operaciones en $\mathbb{Z}_m$**: $\overline x+\overline y=\overline{x+y}$, $\ \overline x\cdot\overline y=\overline{x\cdot y}$.
+  - La suma es asociativa, conmutativa, con neutro $\overline0$ y opuesto $\overline{-x}$.
+  - El producto es asociativo, conmutativo, con neutro $\overline1$ y distributivo sobre la suma.
+  - Por lo tanto $(\mathbb{Z}_m,+,\cdot)$ es un **anillo conmutativo con unidad**.
+- **Divisor de cero**: $\overline a\ne\overline0$ tal que $\overline a\cdot\overline b=\overline0$ para algún $\overline b\neq\overline0$.
+- **Invertible**: existe $\overline c$ con $\overline a\cdot\overline c=\overline1$.
+  - $\overline a$ es invertible $\iff \text{mcd}(a,m)=1\iff$ $\overline a$ no es divisor de $0$.
+- Si $m$ es **primo**, $\mathbb{Z}_m$ es un **cuerpo** (todo no nulo es invertible).
+- **Pequeño teorema de Fermat**: si $p$ es primo, $a^p\equiv a \pmod p$; y si $p\nmid a$, entonces $a^{p-1}\equiv1 \pmod p$.
+- **Función de Euler** $\phi(m)$: cantidad de elementos **invertibles** de $\mathbb{Z}_m$.
+- **Teorema de Euler**: si $\text{mcd}(a,m)=1$, entonces $a^{\phi(m)}\equiv1 \pmod m$.
+
+# 5.3. Morfismos
+
+- **Morfismo de grupos** $f:(G,\ast)\to(H,\otimes)$: $f(a\ast b)=f(a)\otimes f(b)$ para todo $a,b\in G$ (respeta las operaciones).
+  - **Monomorfismo**: morfismo inyectivo.
+  - **Epimorfismo**: morfismo sobreyectivo.
+  - **Isomorfismo**: morfismo biyectivo.
+- Ejemplo: $f(x)=e^x$ es morfismo de $(\mathbb{R},+)$ en $(\mathbb{R}^+,\cdot)$, porque $e^{x+y}=e^x e^y$.
+- **Propiedades**: $f(e_G)=e_H$ y $f(a^{-1})=(f(a))^{-1}$.
+- **Núcleo**: $Nu(f)=\{a\in G\mid f(a)=e_H\}$. **Imagen**: $Im(f)=\{b\in H\mid\exists a\in G,\ f(a)=b\}$.
+- $Nu(f)$ es **subgrupo** de $G$ e $Im(f)$ es **subgrupo** de $H$.
+
+# 6. Álgebra lineal
+
+## Espacio vectorial
+
+- Un **espacio vectorial** sobre un cuerpo $K$ es $(V,+,\cdot)$ con $V\neq\emptyset$, una suma interna y un producto por escalar (operación externa), ambos **cerrados**.
+- **Axiomas de la suma**: conmutativa, asociativa, neutro $0$, opuesto $-v$.
+- **Axiomas del producto por escalar**: $(\alpha\beta)v=\alpha(\beta v)$; $(\alpha+\beta)v=\alpha v+\beta v$; $\alpha(u+v)=\alpha u+\alpha v$; $1\cdot v=v$.
+- Ejemplos: $\mathbb{R}^n$; polinomios de grado $\le n$ ($\mathcal P^n$); matrices $M_{m\times n}(\mathbb{R})$.
+- **Teorema de la nulidad**: $\alpha\cdot0=0$; $0\cdot v=0$; $\alpha v=0\Rightarrow\alpha=0\vee v=0$; $(-1)v=-v$.
+
+## Subespacio vectorial
+
+- $S\subset V$ es **subespacio** si es espacio vectorial con las mismas operaciones. Basta verificar:
+  1. $S\neq\emptyset$ (en la práctica, $0\in S$).
+  2. $u,v\in S\Rightarrow u+v\in S$.
+  3. $v\in S,\ \alpha\in K\Rightarrow\alpha v\in S$.
+
+## Combinación lineal y generadores
+
+- **Combinación lineal** de $v_1,\dots,v_n$: $v=c_1v_1+\dots+c_nv_n$ con $c_i$ escalares.
+- **Espacio generado**: $gen(S)=\langle v_1,\dots,v_n\rangle$ = conjunto de **todas** las combinaciones lineales de $S$. Es un subespacio de $V$.
+- $S$ es **conjunto generador** de $V$ si $gen(S)=V$.
+
+## Independencia lineal
+
+- $v_1,\dots,v_n$ son **linealmente independientes** si $c_1v_1+\dots+c_nv_n=0\Rightarrow$ todos los $c_i=0$.
+- Son **linealmente dependientes** si existen escalares **no todos nulos** con esa combinación igual a $0$ (equivale a que algún vector sea combinación lineal de los demás, es decir, redundante).
+
+## Base y dimensión
+
+- **Base** de $V$: conjunto **linealmente independiente** que **genera** $V$ (generador minimal).
+- Si $B$ es base con $n$ vectores, todo conjunto de $m>n$ vectores es linealmente dependiente. **Todas las bases tienen la misma cantidad de vectores.**
+- **Dimensión**: $\dim(V)=n$ si una base tiene $n$ vectores. $\dim\{0\}=0$. Es de dimensión **finita** si tiene un generador finito.
+- Si $\dim V=n$: cualquier conjunto de $n$ vectores LI genera $V$, y cualquier conjunto de $n$ generadores es LI. **Basta probar una de las dos condiciones.**
+
+## Transformaciones lineales
+
+- $L:V\to W$ es **lineal** si:
+  1. $L(u+v)=L(u)+L(v)$.
+  2. $L(\alpha v)=\alpha L(v)$.
+- **Propiedades**: $L(0_V)=0_W$; $L(-v)=-L(v)$; $L(\sum c_iv_i)=\sum c_iL(v_i)$. (Si una función falla alguna, no es lineal; cumplirlas **no** alcanza para probar que lo es: hay que probar las dos de la definición.)
+- **Núcleo**: $Nu(L)=\{v\in V\mid L(v)=0_W\}$. **Imagen**: $Im(L)=\{w\in W\mid\exists v,\ L(v)=w\}$.
+- $Nu(L)$ es subespacio de $V$; $Im(L)$ es subespacio de $W$.
+- **Teorema de la dimensión**: $\dim V=\dim Nu(L)+\dim Im(L)$.
+- Una transformación lineal **inyectiva** conserva la independencia lineal; una **sobreyectiva** tiene $Im(L)=W$.
+- **Determinación**: si $B=\{v_1,\dots,v_n\}$ es base de $V$, $L$ queda completamente determinada por $L(v_1),\dots,L(v_n)$.
+- **Representación matricial** $[L]_{B_VB_W}$ (con $\dim V=n$, $\dim W=m$): la matriz de $m\times n$ cuya columna $j$ son las coordenadas de $L(v_j)$ en la base $B_W$.

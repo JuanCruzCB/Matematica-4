@@ -2,7 +2,21 @@
 
 ## Dada una función $f(x, y)$ cuyo dominio es continuo en un subdominio $D \in \mathbb{R}^2$, sus derivadas parciales segundas existen y son continuas. Determinar la matriz Hessiana y definir cómo se relaciona con los extremos de la función. (2026-04)
 
-$\dots$
+1. Sea $f : D \subset \mathbb{R}^2 \to \mathbb{R}$ una función $f(x, y)$ tal que $f$ es continua en todo $D$.
+2. Sus derivadas parciales segundas existen y son continuas.
+3. La matriz Hessiana es una matriz cuadrada $n \times n$, donde $n$ es igual a la dimensión del dominio que se esté usando, que contiene todas las derivadas parciales segundas de la función.
+4. Para $f$, la matriz tiene la forma: $\begin{pmatrix} f_{xx} & f_{xy} \\ f_{yx} & f_{yy} \end{pmatrix}$
+   1. $f_{xx}$ es la derivada parcial segunda con respecto a la variable $x$
+   2. $f_{xy}$ es la derivada parcial segunda respecto a $x$ y luego respecto a $y$
+   3. $f_{yx}$ es la derivada parcial segunda respecto a $y$ y luego respecto a $x$
+   4. $f_{yy}$ es la derivada parcial segunda con respecto a la variable $y$
+5. La matriz se relaciona con los puntos extremos de la función de la siguiente manera:
+   1. Sea $P = (x_0, y_0)$ un punto interior de $D$ tal que $\nabla f(P) = (0, 0)$ (punto crítico)
+   2. Sea $H = f_{xx}(P) \cdot f_{yy}(P) - (f_{xy}(P))^2$
+   3. Si $H > 0$ y $f_{xx}(P) > 0$, $f$ tiene un mínimo local en $P$.
+   4. Si $H > 0$ y $f_{xx}(P) < 0$, $f$ tiene un máximo local en $P$.
+   5. Si $H < 0$ $f$ no tiene ni un mínimo local ni un máximo local en $P$. Se lo llama punto silla.
+   6. Si $H = 0$ el criterio no decide.
 
 ## Explicar el concepto de diferenciabilidad. Dar ejemplos. (2026-03)
 

@@ -154,7 +154,46 @@ No es posible ordenar a los números complejos.
 
 ## Sean $a, b \in \mathbb{Z}$ y sea $p$ un número primo. Demostrar que si $p \mid ab$ entonces $p \mid a$ o $p \mid b$. Mostrar que esto NO se cumple si $p$ no es primo. (2026-03)
 
-$\dots$
+1. Se quiere probar que $p \mid ab \Rightarrow (p \mid a) \lor (p \mid b)$ con $a, b \in \mathbb{Z}$ y $p$ primo.
+2. Por hipótesis, asumimos que $p \mid ab$ es verdadero.
+3. Lo anterior implica que existe $k \in \mathbb{Z}$ tal que $a b = k p$
+4. Como $p$ es primo, $p > 1$ y además sus únicos divisores son $1$, $-1$, $p$ y $-p$.
+5. Sea $d = MCD(a, p)$
+6. Por definición de $MCD$, lo anterior implica $d \mid p$ y además $d > 0$
+7. Como $d > 0$ y $p > 1$, necesariamente $d = p$ o $d = 1$
+   1. Caso 1, $d = p$:
+      1. Como $d \mid a$ (por definición), y $d = p$, entonces $p \mid a$
+   2. Caso 2, $d = 1$:
+      1. Por la identidad de Bezout, si $MCD(x, y) = 1$, entonces existen $c_1, c_2 \in \mathbb{Z}$ tal que $c_1 x + c_2 y = 1$
+      2. Por la identidad de Bezout: $c_1 a + c_2 p = 1$.
+      3. Multiplicando por $b$ de ambos lados: $b c_1 a + b c_2 p = b$
+      4. Por asociatividad y conmutatividad del producto de enteros: $c_1 (a b) + c_2 (b p) = b$
+      5. Sabemos que $ab = kp$ por el paso 3.
+      6. Reemplazando: $c_1 k p + c_2 b p = b$
+      7. Factorizando: $(c_1 k + c_2 b)p = b$
+      8. Sea $m = (c_1 k + c_2 b)$, como la suma y el producto son cerrados en los enteros, $m \in \mathbb{Z}$
+      9. Reemplazando: $m p = b$
+      10. Por definición de divisibilidad: $p \mid b$
+8. En definitiva, sea cual sea el caso, siempre ocurre que o bien $p \mid a$ o $p \mid b$.
+9. Mostrar que esto no se cumple si $p$ no es primo:
+   1. Se debe dar un contraejemplo concreto.
+   2. Sea $p = 8$ tal que $8$ no es un número primo.
+   3. Sean $a = 4$ y $b = 2$.
+   4. Se cumple que $p \mid ab$ porque:
+      1. $8 \mid 4 \cdot 2$
+      2. $8 \mid 8$
+      3. Existe $k \in \mathbb{Z}$ tal que $8 = 8k$, con $k = 1$.
+   5. No se cumple $p \mid a$ porque:
+      1. $a = k_1 p$
+      2. $4 = 8 k_1$
+      3. No existe $k_1 \in \mathbb{Z}$ tal que $8 k_1 = 4$
+      4. Por lo tanto $8 \nmid 4$
+   6. No se cumple $p \mid b$ porque:
+      1. $b = k_2 p$
+      2. $2 = 8 k_2$
+      3. No existe $k_2 \in \mathbb{Z}$ tal que $8 k_2 = 2$
+      4. Por lo tanto $8 \nmid 2$
+   7. Por lo tanto la afirmación no vale si $p$ no es primo.
 
 ## Dar las potencias de $i$ (2025-10)
 

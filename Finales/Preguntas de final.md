@@ -1,6 +1,6 @@
 # Análisis
 
-## Dada una función $f(x, y)$ cuyo dominio es continuo en un subdominio $D \in \mathbb{R}^2$, sus derivadas parciales segundas existen y son continuas. Determinar la matriz Hessiana y definir cómo se relaciona con los extremos de la función. (2026-04)
+## Dada una función $f(x, y)$ cuyo dominio es continuo en un subdominio $D \subset \mathbb{R}^2$, sus derivadas parciales segundas existen y son continuas. Determinar la matriz Hessiana y definir cómo se relaciona con los extremos de la función. (2026-04)
 
 1. Sea $f : D \subset \mathbb{R}^2 \to \mathbb{R}$ una función $f(x, y)$ tal que $f$ es continua en todo $D$.
 2. Sus derivadas parciales segundas existen y son continuas.
@@ -20,7 +20,10 @@
 
 ## Explicar el concepto de diferenciabilidad. Dar ejemplos. (2026-03)
 
-$\dots$
+1. Sea $f : \mathbb{R}^2 \to \mathbb{R}$ una función de dos variables $f(x, y).$
+2. $f$ se dice **diferenciable** en un punto $(x_0, y_0)$ si al acercarnos arbitrariamente a $(x_0, y_0)$, la gráfica de $f$ se aproxima cada vez mejor a un plano llamado plano tangente.
+
+$\dots$ (NO TERMINADO)
 
 ## Analizar la diferenciabilidad en todo $\mathbb{R}^2$ de la función $f : D \subset \mathbb{R}^2 \to \mathbb{R}$ dada por $f(x, y) = \begin{cases} \frac{xy}{x^2 + y^2} & \text{si } (x, y) \neq (0, 0) \\ 0 & \text{si } (x, y) = (0, 0) \end{cases}$ (2024-03)
 

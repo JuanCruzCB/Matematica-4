@@ -129,6 +129,10 @@ $\dots$
 
 $\dots$
 
+## Analizar la diferenciabilidad de: $f(x, y) = \begin{cases} \frac{x y}{\sqrt{x^2 + y^2}} & \text{si } (x, y) \neq (0, 0) \\ 0 & \text{si } (x, y) = (0, 0) \end{cases}$ (2026-11)
+
+$\dots$
+
 ## Estudiar la existencia de los siguientes límites: (2015-09)
 
 ### $\lim_{(x,y) \to (0, 0)} \frac{x^2 sen(x + y)}{x^2 + y^2}$
@@ -162,6 +166,8 @@ $\dots$
 ## $\dots$
 
 # Teoría de números
+
+## Qué es la unidad imaginaria $i$? (2026-11)
 
 ## Definir a los números complejos y ordenarlos. (2026-03)
 
@@ -403,6 +409,8 @@ $\dots$
 
 $\dots$
 
+## Qué es una relación de orden? (2026-11)
+
 ---
 
 # Estructuras algebraicas
@@ -445,6 +453,10 @@ $\dots$
 7. Como la suma de enteros es conmutativa, se tiene que $k_1 + k_2 = k_2 + k_1$ y por lo tanto $a^{k_1 + k_2} = a^{k_2 + k_1}$
 8. De 5, 6 y 7 se deduce $x \ast y = y \ast x$ y por lo tanto $G$ es conmutativo.
 9. Así, queda probado que todo grupo cíclico es conmutativo.
+
+## Dados dos grupos $(G, \ast)$ y $(F, \diamond)$, se define la operación sobre $G \times F$ como: $(x, y) \cdot (z, t) = (x \ast z, y \diamond t)$. Demostrar que $(G \times F, \cdot)$ es un grupo (grupo producto). (2026-11)
+
+$\dots$
 
 ---
 
@@ -549,6 +561,8 @@ En conclusión:
 1. Todos los elementos de $Z_6$ tienen opuesto.
 2. $\overline{1}$ y $\overline{5}$ tienen inverso.
 3. $\overline{0}$, $\overline{2}$, $\overline{3}$, $\overline{4}$ no tienen inverso.
+
+## Qué es una congruencia? (2026-11)
 
 ---
 

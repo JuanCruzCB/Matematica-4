@@ -163,7 +163,7 @@ $\dots$
 
 ### $f(x, y) = \begin{cases} \frac{xy}{\sqrt{x^2 + xy + y^2}} & \text{si } (x, y) \neq (0, 0) \\ 0 & \text{si } (x, y) = (0, 0) \end{cases}$ (2015-09)
 
-## $\dots$
+$\dots$
 
 # Teoría de números
 
@@ -788,23 +788,88 @@ Dado un espacio vectorial $V$, una base de $V$ es un conjunto de vectores $S = \
 
 ## Decidir si los siguientes conjuntos son subespacios. En caso afirmativo hallar una base. Justificar: (2016-04)
 
+Dado un espacio vectorial $V$, un conjunto $S$ es un subespacio de $V$ si:
+
+1. $S \neq \emptyset$
+2. $S \subseteq V$
+3. $S$ es un espacio vectorial. Como $S \subseteq V$, seis de las ocho propiedades se "heredan" de $V$, y basta con verificar solo dos:
+   1. $\forall u, v \in S, u + v \in S$
+   2. $\forall v \in S, \forall \alpha \in K, \alpha v \in S$
+
 ### $S = \lbrace (x, y, z) \in \mathbb{R}^3 \mid z = x + y \rbrace$
 
-$\dots$
+1. $S \neq \emptyset$ porque $(0, 0, 0) \in S$ ya que $0 = 0 + 0$ se cumple.
+2. $S \subseteq \mathbb{R}^3$ porque $S$ contiene ternas de números reales.
+3. Clausura de la suma:
+   1. Sea $(x_1, y_1, z_1) \in S$ y $(x_2, y_2, z_2) \in S$
+   2. $(x_1, y_1, z_1) + (x_2, y_2, z_2) = (x_1 + x_2, y_1 + y_2, z_1 + z_2)$
+   3. Como $z = x + y$: $z_1 = x_1 + y_1$ y $z_2 = x_2 + y_2$
+   4. Sustituyendo: $(x_1 + x_2, y_1 + y_2, (x_1 + y_1) + (x_2 + y_2))$
+   5. Por propiedad asociativa y conmutativa de la suma: $(x_1 + x_2, y_1 + y_2, (x_1 + x_2) + (y_1 + y_2)) \in S$ porque la tercera componente es igual a la primera más la segunda.
+   6. La propiedad se satisface.
+4. Clausura del producto por escalar:
+   1. Sea $v = (x, y, z) \in S$ y sea $\alpha \in \mathbb{R}$
+   2. $\alpha v = \alpha (x, y, z) = (\alpha x, \alpha y, \alpha z)$
+   3. Como $z = x + y$: $(\alpha x, \alpha y, \alpha (x + y))$
+   4. Por propiedad distributiva del producto por escalar: $(\alpha x, \alpha y, \alpha x + \alpha y)$
+   5. Como el producto en los reales es cerrado, podemos decir que:
+      1. $\alpha x = a \in \mathbb{R}$
+      2. $\alpha y = b \in \mathbb{R}$
+   6. Sustituyendo: $(a, b, a + b) \in S$ porque la tercera componente es igual a la primera más la segunda.
+   7. La propiedad se satisface.
+5. Por lo tanto queda probado que $S$ es un subespacio de $V$.
 
-### $S = \lbrace (4, y) \mid y \in R \rbrace$
+### $S = \lbrace (4, y) \mid y \in \mathbb{R} \rbrace$
 
-$\dots$
+1. $S \neq \emptyset$ porque $(4, 0) \in S$ ya que $0 \in \mathbb{R}$
+2. $S \subseteq \mathbb{R}^2$ porque todos los elementos de $S$ son pares ordenados de números reales.
+3. La clausura del producto por escalar no se cumple:
+   1. Sea $v = (4, 0) \in S$ y sea $\alpha = 0$
+   2. $\alpha v = 0 (4, 0) = (0, 0) \notin S$ porque la primera coordenada debe ser $4$ para que el vector pertenezca a $S$.
+4. Por lo tanto $S$ no es un subespacio de $\mathbb{R}^2$.
 
 ## Decidir si los siguientes conjuntos son subespacios. Justificar: (2015-09)
 
+Dado un espacio vectorial $V$, un conjunto $S$ es un subespacio de $V$ si:
+
+1. $S \neq \emptyset$
+2. $S \subseteq V$
+3. $S$ es un espacio vectorial. Como $S \subseteq V$, seis de las ocho propiedades se "heredan" de $V$, y basta con verificar solo dos:
+   1. $\forall u, v \in S, u + v \in S$
+   2. $\forall v \in S, \forall \alpha \in K, \alpha v \in S$
+
 ### $S = \lbrace \begin{bmatrix} a & b \\ a & c \end{bmatrix} \mid a, b, c \in \mathbb{R} \rbrace$
 
-$\dots$
+1. $S \neq \emptyset$ porque $v = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix} \in S$ ya que $0 \in \mathbb{R}$.
+2. $S \subseteq \mathbb{R}^{2 \times 2}$ porque los elementos de $S$ son matrices $2 \times 2$ y $a, b, c \in \mathbb{R}$
+3. Clausura de la suma:
+   1. Sea $u = \begin{bmatrix} a_1 & b_1 \\ a_1 & c_1 \end{bmatrix} \in S$ y $v = \begin{bmatrix} a_2 & b_2 \\ a_2 & c_2 \end{bmatrix} \in S$
+   2. $u + v = \begin{bmatrix} a_1 & b_1 \\ a_1 & c_1 \end{bmatrix} + \begin{bmatrix} a_2 & b_2 \\ a_2 & c_2 \end{bmatrix} = \begin{bmatrix} a_1 + a_2 & b_1 + b_2 \\ a_1 +a_2 & c_1 + c_2 \end{bmatrix}$
+   3. Como la suma de números reales es cerrada, podemos decir que:
+      1. $a_1 + a_2 = a \in \mathbb{R}$
+      2. $b_1 + b_2 = b \in \mathbb{R}$
+      3. $c_1 + c_2 = c \in \mathbb{R}$
+   4. Sustituyendo: $u + v = \begin{bmatrix} a & b \\ a & c \end{bmatrix} \in S$
+   5. La propiedad se satisface.
+4. Clausura del producto por escalar:
+   1. Sea $v = \begin{bmatrix} a & b \\ a & c \end{bmatrix} \in S$ y sea $\alpha \in \mathbb{R}$
+   2. $\alpha v = \alpha \begin{bmatrix} a & b \\ a & c \end{bmatrix} = \begin{bmatrix} \alpha a & \alpha b \\ \alpha a & \alpha c \end{bmatrix}$
+   3. Como el producto de números reales es cerrado, podemos decir que:
+      1. $\alpha a = x \in \mathbb{R}$
+      2. $\alpha b = y \in \mathbb{R}$
+      3. $\alpha c = z \in \mathbb{R}$
+   4. Sustituyendo: $\alpha v = \begin{bmatrix} x & y \\ x & z \end{bmatrix} \in S$
+   5. La propiedad se satisface.
+5. Por lo tanto queda probado que $S$ es un subespacio de $V$.
 
-### $S = \lbrace (1, y) \mid y \in R \rbrace$
+### $S = \lbrace (1, y) \mid y \in \mathbb{R} \rbrace$
 
-$\dots$
+1. $S \neq \emptyset$ porque $v = (1, 0) \in S$ ya que $0 \in \mathbb{R}$.
+2. $S \subseteq \mathbb{R}^2$ porque todos los elementos de $S$ son pares ordenados de números reales.
+3. La clausura del producto por escalar no se cumple:
+   1. Sea $v = (1, 0) \in S$ y sea $\alpha = 0$
+   2. $\alpha v = 0 (1, 0) = (0, 0) \notin S$ porque la primera coordenada debe ser $1$ para que el vector pertenezca a $S$.
+4. Por lo tanto $S$ no es un subespacio de $\mathbb{R}^2$.
 
 ## Analizar si el siguiente conjunto es base de $\mathbb{R}^3$: $\lbrace (0, 1, -1); (1, -1, 1); (-1, 1, 0) \rbrace$ (2016-04)
 
@@ -900,14 +965,50 @@ $\dots$
 
 ## Analizar si las siguientes aplicaciones entre espacios vectoriales son transformaciones lineales. En caso afirmativo hallar Núcleo e Imagen. (2015-09)
 
-### $L : \mathbb{R}^3 \to \mathbb{R}^3$ definida por $L(x, y, z) = (x, y + x, z)$
-
-$\dots$
-
 ### $L : \mathbb{R}^3 \to \mathbb{R}^3$ definida por $L(x, y, z) = (x - 2, y + 3x, z + 1)$
 
-$\dots$
+1. Para que una función $L : V \to W$ sea una transformación lineal debe cumplir dos condiciones:
+   1. Para todo par de vectores $u, v \in V$ se debe cumplir $L(u + v) = L(u) + L(v)$
+   2. Para todo vector $v \in V$ se debe cumplir $L(\alpha v) = \alpha (L(v))$ con $\alpha$ un escalar real
+2. Sea $v = (0, 0, 0)$ (el vector nulo de $\mathbb{R}^3$) y sea $\alpha = 0$
+3. $L(\alpha v) = L(0 (0, 0, 0)) = L(0, 0, 0) = (0 - 2, 0 + 3(0), 0 + 1) = (-2, 0, 1)$
+4. $\alpha (L(v)) = 0 (L(0, 0, 0)) = 0 (-2, 0, 1) = (0, 0, 0)$
+5. Como se ha encontrado un contraejemplo tal que $v \in V$ pero $L(\alpha v) \neq \alpha (L(v))$, la función $L$ no es una transformación lineal.
 
 ### $L : \mathbb{R}^{2 \times 2} \to \mathbb{R}^{2 \times 2}$ definida por $L(\begin{bmatrix} x & y \\ z & w \end{bmatrix}) = \begin{bmatrix} z & -x \\ y & -w \end{bmatrix}$
 
-$\dots$
+1. Para que una función $L : V \to W$ sea una transformación lineal debe cumplir dos condiciones:
+   1. Para todo par de vectores $u, v \in V$ se debe cumplir $L(u + v) = L(u) + L(v)$
+   2. Para todo vector $v \in V$ se debe cumplir $L(\alpha v) = \alpha (L(v))$ con $\alpha$ un escalar real
+2. Probando la primer condición:
+   1. Sean $u = \begin{bmatrix} x_1 & y_1 \\ z_1 & w_1 \end{bmatrix}$ y $v = \begin{bmatrix} x_2 & y_2 \\ z_2 & w_2 \end{bmatrix}$
+   2. $L(u + v) = L(\begin{bmatrix} x_1 & y_1 \\ z_1 & w_1 \end{bmatrix} + \begin{bmatrix} x_2 & y_2 \\ z_2 & w_2 \end{bmatrix}) = L(\begin{bmatrix} x_1 + x_2 & y_1 + y_2 \\ z_1 + z_2 & w_1 + w_2 \end{bmatrix}) = \begin{bmatrix} z_1 + z_2 & -x_1 - x_2 \\ y_1 + y_2 & - w_1 - w_2 \end{bmatrix}$
+   3. $L(u) + L(v) = L(\begin{bmatrix} x_1 & y_1 \\ z_1 & w_1 \end{bmatrix}) + L(\begin{bmatrix} x_2 & y_2 \\ z_2 & w_2 \end{bmatrix}) = \begin{bmatrix} z_1 & -x_1 \\ y_1 & -w_1 \end{bmatrix} + \begin{bmatrix} z_2 & -x_2 \\ y_2 & -w_2 \end{bmatrix} = \begin{bmatrix} z_1 + z_2 & - x_1 - x_2 \\ y_1 + y_2 & - w_1 - w_2 \end{bmatrix}$
+   4. Se verifica que $L(u + v) = L(u) + L(v)$
+3. Probando la segunda condición:
+   1. Sean $v = \begin{bmatrix} x & y \\ z & w \end{bmatrix}$ y $\alpha \in \mathbb{R}$
+   2. $L(\alpha v) = L(\alpha \begin{bmatrix} x & y \\ z & w \end{bmatrix}) = L(\begin{bmatrix} \alpha x & \alpha y \\ \alpha z & \alpha w \end{bmatrix}) = \begin{bmatrix} \alpha z & - \alpha x \\ \alpha y & - \alpha w \end{bmatrix}$
+   3. $\alpha (L(v)) = \alpha (L(\begin{bmatrix} x & y \\ z & w \end{bmatrix})) = \alpha (\begin{bmatrix} z & -x \\ y & -w \end{bmatrix}) = \begin{bmatrix} \alpha z & - \alpha x \\ \alpha y & - \alpha w \end{bmatrix}$
+   4. Se verifica que $L(\alpha v) = \alpha (L(v))$
+4. Por lo tanto queda probado que $L$ es una transformación lineal.
+5. Hallar Núcleo:
+   1. Por definición $Nu(L) = \lbrace v \in V \mid L(v) = 0_w \rbrace$ donde $0_w$ es el vector nulo del codominio
+   2. $Nu(L) = \lbrace v \in V \mid L(v) = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}\rbrace$
+   3. $Nu(L) = \lbrace \begin{bmatrix} x & y \\ z & w \end{bmatrix} \in \mathbb{R}^{2 \times 2} \mid L(\begin{bmatrix} x & y \\ z & w \end{bmatrix}) = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix} \rbrace$
+   4. $\begin{bmatrix} z & -x \\ y & -w \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}$
+   5. Tanto $z$ como $y$ deben ser $0$ obligatoriamente.
+   6. Nos queda $-x = 0$ y $-w = 0$. La única forma de que esto ocurra es que también $x$ y $w$ sean $0$.
+   7. Por lo tanto $Nu(L) = \lbrace \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}\rbrace$
+6. Hallar Imagen:
+   1. Por definición $Im(L) = \lbrace w \in W \mid \exists v \in V, L(v) = w \rbrace$
+   2. $Im(L) = \lbrace \begin{bmatrix} x_2 & y_2 \\ z_2 & w_2 \end{bmatrix} \in W \mid \exists \begin{bmatrix} x_1 & y_1 \\ z_1 & w_1 \end{bmatrix} \in V, L(\begin{bmatrix} x_1 & y_1 \\ z_1 & w_1 \end{bmatrix}) = \begin{bmatrix} x_2 & y_2 \\ z_2 & w_2 \end{bmatrix} \rbrace$
+   3. $L(\begin{bmatrix} x_1 & y_1 \\ z_1 & w_1 \end{bmatrix}) = \begin{bmatrix} z_1 & -x_1 \\ y_1 & -w_1 \end{bmatrix}$
+   4. $\begin{bmatrix} z_1 & -x_1 \\ y_1 & -w_1 \end{bmatrix} = \begin{bmatrix} x_2 & y_2 \\ z_2 & w_2 \end{bmatrix}$
+   5. $\begin{cases} z_1 & = x_2 \\ -x_1 & = y_2 \\ y_1 & = z_2 \\ -w_1 & = w_2 \end{cases}$
+   6. Por lo tanto tenemos:
+      1. $x_1 = -y_2$
+      2. $y_1 = z_2$
+      3. $z_1 = x_2$
+      4. $w_1 = -w_2$
+   7. Dado cualquier $\begin{bmatrix} x_2 & y_2 \\ z_2 & w_2 \end{bmatrix} \in W$, tomando $v = \begin{bmatrix} -y_2 & z_2 \\ x_2 & -w_2 \end{bmatrix} \in V$ se tiene $L(v) = \begin{bmatrix} x_2 & y_2 \\ z_2 & w_2 \end{bmatrix}$
+   8. Por lo tanto $Im(L) = \mathbb{R}^{2 \times 2}$

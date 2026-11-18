@@ -8,6 +8,7 @@
 - [Apuntes práctica Manzin](https://drive.google.com/drive/folders/1_dx4QV5zhBQsbLNS3XZO_KwKqFZMpqk2)
 - [Documento TP entregable grupal](https://docs.google.com/document/d/1jd-N6sYgYK73_zT3k-JijBterTWxKKU1NPFyLPQjUKA/edit)
 - [Símbolos matemáticos](https://github.com/maddybartlett/math-symbols)
+- Comando para transformar `Teoría.md` a PDF: `pandoc '.\Teoría.md' -o '.\Teoría.pdf' --pdf-engine=xelatex -H header.tex`
 
 ### Videos
 

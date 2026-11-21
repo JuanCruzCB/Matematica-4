@@ -449,7 +449,34 @@ $\dots$
 
 ### Dados dos grupos $(G, \ast)$ y $(F, \diamond)$, se define la operación sobre $G \times F$ como: $(x, y) \cdot (z, t) = (x \ast z, y \diamond t)$. Demostrar que $(G \times F, \cdot)$ es un grupo (grupo producto). (2026-11)
 
-$\dots$
+1. Para demostrar que un conjunto acompañado de una operación es un grupo se debe probar que la operación es cerrada, que la operación es asociativa, que existe elemento neutro $e$ para dicha operación, y que todo elemento del conjunto tiene inverso respecto a la operación.
+2. Por definición de producto cartesiano: $G \times F = \lbrace (a, b) \mid a \in G \land b \in F \rbrace$
+3. Se tiene que para cualquier par $(x, y), (z, t) \in G \times F$ se cumple $(x, y) \cdot (z, t) = (x \ast z, y \diamond t)$
+4. **Cerradura**:
+   1. Sean $(x, y) \in G \times F$ y $(z, t) \in G \times F$.
+   2. Como $G$ es un grupo, $\ast$ es cerrada y por lo tanto $x \ast z \in G$
+   3. Como $F$ es un grupo, $\diamond$ es cerrada y por lo tanto $y \diamond t \in F$
+   4. Por lo tanto $(x \ast z, y \diamond t) \in G \times F$
+5. **Asociativa**:
+   1. Sean $(a, b) \in G \times F$, $(c, d) \in G \times F$ y $(e, f) \in G \times F$.
+   2. $((a, b) \cdot (c, d)) \cdot (e, f) = (a \ast c, b \diamond d) \cdot (e, f)$ (Por definición de $\cdot$)
+   3. $(a \ast c, b \diamond d) \cdot (e, f) = ((a \ast c) \ast e, (b \diamond d) \diamond f)$ (Por definición de $\cdot$)
+   4. $((a \ast c) \ast e, (b \diamond d) \diamond f) = (a \ast (c \ast e), b \diamond (d \diamond f))$ (Por asociatividad de $\ast$ y $\diamond$)
+   5. $(a \ast (c \ast e), b \diamond (d \diamond f)) = (a, b) \cdot (c \ast e, d \diamond f)$ (Por definición de $\cdot$)
+   6. $(a, b) \cdot (c \ast e, d \diamond f) = (a, b) \cdot ((c, d) \cdot (e, f))$ (Por definición de $\cdot$)
+   7. Por lo tanto $\cdot$ es asociativa.
+6. **Elemento neutro**:
+   1. Sea $(a, b) \in G \times F$ y sean $e_G$ y $e_F$ los elementos neutros de $G$ y $F$ respectivamente.
+   2. $(a, b) \cdot (e_G, e_F) = (a \ast e_G, b \diamond e_F) = (a, b)$ (Por definición de neutro)
+   3. $(e_G, e_F) \cdot  (a, b) = (e_G \ast a, e_F \diamond b) = (a, b)$ (Por definición de neutro)
+   4. Por lo tanto existe elemento neutro $(e_G, e_F)$ en $G \times F$ ya que $e_G \in G$ y $e_F \in F$.
+7. **Elemento inverso**:
+   1. Como $G$ y $F$ son grupos, para todo $g \in G$ y para todo $f \in F$, existen los elementos inversos $g^{-1}$ y $f^{-1}$.
+   2. Sea $(a, b) \in G \times F$.
+   3. $(a, b) \cdot (a^{-1}, b^{-1}) = (a \ast a^{-1}, b \diamond b^{-1}) = (e_G, e_F)$ (Por definición de inverso)
+   4. $(a^{-1}, b^{-1}) \cdot (a, b) = (a^{-1} \ast a, b^{-1} \diamond b) = (e_G, e_F)$ (Por definición de inverso)
+   5. Por lo tanto existe elemento inverso $(a^{-1}, b^{-1})$ en $G \times F$.
+8. Por lo tanto queda probado que $G \times F$ es un grupo.
 
 ## Subgrupos
 
@@ -539,7 +566,11 @@ $\dots$
 
 ### Qué es una congruencia? (2026-11)
 
-$\dots$
+Dados $m$, $a$ y $b$ enteros con $m \neq 0$, se dice que $a$ es **congruente** con $b$ módulo $m$ si $m$ divide a $a - b$, o, equivalentemente, si el resto de la división de $a$ por $m$ es igual al resto de la división de $b$ por $m$. Que $a$ sea congruente con $b$ módulo $m$ se denota $a \equiv_m b$.
+
+Formalmente, la relación de congruencia se define como: $\equiv_m = \lbrace (a, b) \in \mathbb{Z} \times \mathbb{Z} : m \mid (a - b) \rbrace$
+
+Una congruencia es una relación de equivalencia: reflexiva, simétrica y transitiva.
 
 ## Clase de los enteros módulo $m$
 

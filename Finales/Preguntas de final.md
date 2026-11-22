@@ -415,13 +415,44 @@ $\dots$
 
 ## Relaciones de orden
 
-### Demostrar que la relación "$x$ divide a $y$" es una relación de órden en el conjunto de los números naturales. (2024-03)
+### Demostrar que la relación "$x$ divide a $y$" es una relación de orden en el conjunto de los números naturales. (2024-03)
 
-$\dots$
+1. Para probar que la relación "$x$ divide a $y$" es una relación de orden en $\mathbb{N}$ se debe probar que es reflexiva, antisimétrica y transitiva.
+2. **Reflexiva**:
+   1. Se debe probar que $\forall a \in \mathbb{N}, aRa$
+   2. Sea $a \in \mathbb{N}$.
+   3. $a \mid a$ porque existe $k \in \mathbb{N}$ tal que $a = k \cdot a$, y ese $k$ es $1$.
+   4. Como sea cual sea $a$, se cumple que $a \mid a$, todo número natural está relacionado consigo mismo y la relación es reflexiva.
+3. **Antisimétrica**:
+   1. Se debe probar que $\forall a, b \in \mathbb{N}, aRb \land bRa \Rightarrow a = b$.
+   2. Sean $a, b \in \mathbb{N}$ tal que $a \mid b$ y $b \mid a$
+   3. Como $a \mid b$, existe $k_1 \in \mathbb{N}$ tal que $b = k_1 \cdot a$
+   4. Como $b \mid a$, existe $k_2 \in \mathbb{N}$ tal que $a = k_2 \cdot b$
+   5. Reemplazando en la segunda ecuación: $a = k_2 \cdot (k_1 \cdot a)$
+   6. Por asociatividad: $a = (k_2 \cdot k_1) \cdot a$
+   7. Dividiendo por $a$ de ambos lados (se puede hacer ya que $a \neq 0$): $1 = k_2 \cdot k_1$
+   8. Como $k_1$ y $k_2$ son naturales, la única forma de que dos naturales multiplicados entre sí den como resultado $1$ es que ambos sean $1$.
+   9. Reemplazando en las ecuaciones originales:
+      1. $b = 1 \cdot a \Rightarrow b = a$
+      2. $a = 1 \cdot b \Rightarrow a = b$
+   10. Como sean cuales sean $a$ y $b$ se cumple que si $a \mid b$ y $b \mid a$ entonces $a = b$, la relación es antisimétrica.
+4. **Transitiva**:
+   1. Se debe probar que $\forall a, b, c \in \mathbb{N}, aRb \land bRc \Rightarrow aRc$.
+   2. Sean $a, b, c \in \mathbb{N}$ tal que $a \mid b$ y $b \mid c$
+   3. Como $a \mid b$, existe $k_1 \in \mathbb{N}$ tal que $b = k_1 \cdot a$
+   4. Como $b \mid c$, existe $k_2 \in \mathbb{N}$ tal que $c = k_2 \cdot b$
+   5. Reemplazando en la segunda ecuación: $c = k_2 \cdot (k_1 \cdot a)$
+   6. Por asociatividad: $c = (k_2 \cdot k_1) \cdot a$
+   7. Como el producto de naturales es cerrado, podemos decir que $k_2 \cdot k_1 = k \in \mathbb{N}$
+   8. Reemplazando: $c = k \cdot a$
+   9. Por definición de divisibilidad: $a \mid c$
+   10. Como sean cuales sean $a$, $b$ y $c$ se cumple que si $a \mid b$ y $b \mid c$ entonces $a \mid c$, la relación es transitiva.
+5. Por lo tanto queda probado que la relación dada es una relación de orden.
 
 ### Qué es una relación de orden? (2026-11)
 
-$\dots$
+Una relación de orden es una relación binaria que es **reflexiva**, **antisimétrica** y **transitiva**. Si todo par de elementos es comparable entre sí, el orden se dice total. En caso contrario se dice parcial.
+Formalmente, dado un conjunto, un elemento $a$ es comparable con otro elemento $b$ si $aRb$ o $bRa$.
 
 ## Relaciones de equivalencia
 

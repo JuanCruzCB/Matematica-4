@@ -456,9 +456,28 @@ Formalmente, dado un conjunto, un elemento $a$ es comparable con otro elemento $
 
 ## Relaciones de equivalencia
 
-### Mostrar que la relación $R$ en el conjunto de los números complejos $\mathbb{C}$ definida por: $z_i R z_j$ si y solo si $|z_i| = |z_j|$, con $k \in \mathbb{Z}$ es una relación de equivalencia (2023-05)
+### Mostrar que la relación $R$ en el conjunto de los números complejos $\mathbb{C}$ definida por: $z_i R z_j$ si y solo si $|z_i| = |z_j|$ es una relación de equivalencia (2023-05)
 
-$\dots$
+1. Para probar que la relación $z_i R z_j$ si y solo si $|z_i| = |z_j|$ es una relación de equivalencia en $\mathbb{C}$ se debe probar que es reflexiva, simétrica y transitiva.
+2. **Reflexiva**:
+   1. Se debe probar que $\forall z \in \mathbb{C}, zRz$
+   2. Sea $z = a + bi \in \mathbb{C}$
+   3. Se debe probar que $|z| = |z|$
+   4. Como $|z| = \sqrt{a^2 + b^2}$ con $a, b \in \mathbb{R}$ entonces $|z| \in \mathbb{R}$ y por lo tanto $|z| = |z|$ se cumple por **reflexividad** de la igualdad en $\mathbb{R}$.
+   5. Por lo tanto la relación es reflexiva.
+3. **Simétrica**:
+   1. Se debe probar que $\forall z_1, z_2 \in \mathbb{C}, z_1 R z_2 \Rightarrow z_2 R z_1$
+   2. Sean $z_1 \in \mathbb{C}$ y $z_2 \in \mathbb{C}$
+   3. Se debe probar que $|z_1| = |z_2| \Rightarrow |z_2| = |z_1|$
+   4. Como $|z_1| \in \mathbb{R}$ y $|z_2| \in \mathbb{R}$, si asumimos $|z_1| = |z_2|$ como hipótesis, $|z_2| = |z_1|$ se cumple por **simetría** de la igualdad en $\mathbb{R}$.
+   5. Por lo tanto la relación es simétrica.
+4. **Transitiva**:
+   1. Se debe probar que $\forall z_1, z_2, z_3 \in \mathbb{C}, z_1 R z_2 \land z_2 R z_3 \Rightarrow z_1 R z_3$
+   2. Sean $z_1 \in \mathbb{C}$, $z_2 \in \mathbb{C}$ y $z_3 \in \mathbb{C}$
+   3. Se debe probar que $|z_1| = |z_2| \land |z_2| = |z_3| \Rightarrow |z_1| = |z_3|$
+   4. Como $|z_1| \in \mathbb{R}$, $|z_2| \in \mathbb{R}$ y $|z_3| \in \mathbb{R}$, si asumimos $|z_1| = |z_2|$ y también $|z_2| = |z_3|$ como hipótesis, $|z_1| = |z_3|$ se cumple por **transitividad** de la igualdad en $\mathbb{R}$.
+   5. Por lo tanto la relación es transitiva.
+5. Por lo tanto queda probado que la relación dada es de equivalencia.
 
 ---
 

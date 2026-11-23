@@ -355,7 +355,7 @@ No es posible ordenar a los números complejos.
 1. $n = 5$
 2. $z = 3 + 3i$
 3. $|z| = \sqrt{3^2 + 3^2} = \sqrt{18}$
-4. $\theta = \arctan(\frac{b}{a}) = \arctan(\frac{3}{3}) = 45° = \frac{1}{4} \pi$
+4. $\theta = \arctan(\frac{b}{a}) = \arctan(\frac{3}{3}) = 45^\circ = \frac{1}{4} \pi$
 5. Como $z$ tiene parte real positiva y parte imaginaria positiva, se encuentra en el primer cuadrante (esquina superior derecha). Por lo tanto no es necesario corregir el ángulo sumandole $\pi$.
 6. $w_k = \sqrt[n]{|z|} \cdot e^{i (\frac{\theta + 2k \pi}{n})}$
 7. $w_k = \sqrt[5]{\sqrt{18}} \cdot e^{i (\frac{\frac{1}{4} \pi + 2k \pi}{5})}$

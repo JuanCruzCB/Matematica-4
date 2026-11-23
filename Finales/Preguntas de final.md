@@ -222,31 +222,31 @@ $\dots$
 
 #### Dos enteros se dicen coprimos si su $MCD$ es $1$
 
-$\dots$
+**Correcto**.
 
 #### Dados $a, b \in \mathbb{Z}$ con $b \neq 0$, existen y son únicos $c$ y $r$ tales que $a = bc + r$ con $0 \leq r \leq b$
 
-$\dots$
+**Incorrecto**. $r$ debe ser menor estricto que $|b|$. Con $r \leq b$ el resto no es único.
 
 #### Un número es primo si sólo tiene dos divisores
 
-$\dots$
+**Incorrecto**. Un número es primo si y solo si es distinto de $0$, $1$ y $-1$ y además sus divisores son $1$, $-1$, sí mismo, y su opuesto. Es decir que son cuatro divisores siempre, no dos.
 
 #### Si $a \in \mathbb{Z}$ y $p$ es primo entonces $(a, p) = p$
 
-$\dots$
+**Incorrecto**. Sea $a = 1$ y $p = 2$. $(1, 2) = 1 \neq 2$
 
 #### Todo número entero se puede descomponer en un producto finito de números primos
 
-$\dots$
+**Incorrecto**. $0$, $1$ y $-1$ no pueden ser descompuestos en producto finito de primos. Todos los demás enteros sí.
 
 #### Todas son correctas
 
-$\dots$
+**Incorrecto**.
 
 #### Ninguna es correcta
 
-$\dots$
+**Incorrecto**.
 
 ## Números complejos
 

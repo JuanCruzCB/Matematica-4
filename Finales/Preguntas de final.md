@@ -252,7 +252,18 @@ $\dots$
 
 ### Qué es la unidad imaginaria $i$? (2026-11)
 
-$\dots$
+- La unidad imaginaria $i$ se define como un número que cumple $i^2 = -1$.
+- Se usa para definir a los números complejos, donde $z = a + bi \in \mathbb{C}$ con $a, b \in \mathbb{R}$ e $i$ la unidad imaginaria.
+- $a$ es la parte **real** de $z$ y se denota $Re(z)$.
+- $b$ es la parte **imaginaria** de $z$ y se denota $Im(z)$.
+- La unidad imaginaria surge principalmente para poder resolver ecuaciones sin solución en $\mathbb{R}$ como por ejemplo $x^2 = -1$.
+- Las primeras potencias de $i$ son:
+  - $i^0 = 1$
+  - $i^1 = i$
+  - $i^2 = -1$
+  - $i^3 = -i$
+  - $i^4 = 1$
+  - $i^n$ equivale a $i^k$ donde $k \in \lbrace 0, 1, 2, 3 \rbrace$ es el resto de dividir $n$ por $4$.
 
 ### Definir a los números complejos y ordenarlos. (2026-03)
 
@@ -341,15 +352,63 @@ No es posible ordenar a los números complejos.
 
 #### Hallar las raíces quintas de $z$
 
-$\dots$
+1. $n = 5$
+2. $z = 3 + 3i$
+3. $|z| = \sqrt{3^2 + 3^2} = \sqrt{18}$
+4. $\theta = \arctan(\frac{b}{a}) = \arctan(\frac{3}{3}) = 45° = \frac{1}{4} \pi$
+5. Como $z$ tiene parte real positiva y parte imaginaria positiva, se encuentra en el primer cuadrante (esquina superior derecha). Por lo tanto no es necesario corregir el ángulo sumandole $\pi$.
+6. $w_k = \sqrt[n]{|z|} \cdot e^{i (\frac{\theta + 2k \pi}{n})}$
+7. $w_k = \sqrt[5]{\sqrt{18}} \cdot e^{i (\frac{\frac{1}{4} \pi + 2k \pi}{5})}$
+8. $w_k = \sqrt[10]{18} \cdot e^{i (\frac{\frac{1}{4} \pi + 2k \pi}{5})}$
+9. $w_0 = \sqrt[10]{18} \cdot e^{i (\frac{\frac{1}{4} \pi}{5})} = \sqrt[10]{18} \cdot e^{i (\frac{1}{20} \pi)}$
+10. $w_1 = \sqrt[10]{18} \cdot e^{i (\frac{\frac{1}{4} \pi + 2 \pi}{5})} = \sqrt[10]{18} \cdot e^{i (\frac{\frac{9}{4} \pi}{5})} = \sqrt[10]{18} \cdot e^{i (\frac{9}{20} \pi)}$
+11. $w_2 = \sqrt[10]{18} \cdot e^{i (\frac{\frac{1}{4} \pi + 4 \pi}{5})} = \sqrt[10]{18} \cdot e^{i (\frac{17}{20} \pi)}$
+12. $w_3 = \sqrt[10]{18} \cdot e^{i (\frac{\frac{1}{4} \pi + 6 \pi}{5})} = \sqrt[10]{18} \cdot e^{i (\frac{25}{20} \pi)} = \sqrt[10]{18} \cdot e^{i (\frac{5}{4} \pi)}$
+13. $w_4 = \sqrt[10]{18} \cdot e^{i (\frac{\frac{1}{4} \pi + 8 \pi}{5})} = \sqrt[10]{18} \cdot e^{i (\frac{33}{20} \pi)}$
+14. Por lo tanto, las raíces quintas de $z$ son:
+    1. $w_0 = \sqrt[10]{18} \cdot e^{i (\frac{1}{20} \pi)}$
+    2. $w_1 = \sqrt[10]{18} \cdot e^{i (\frac{9}{20} \pi)}$
+    3. $w_2 = \sqrt[10]{18} \cdot e^{i (\frac{17}{20} \pi)}$
+    4. $w_3 = \sqrt[10]{18} \cdot e^{i (\frac{5}{4} \pi)}$
+    5. $w_4 = \sqrt[10]{18} \cdot e^{i (\frac{33}{20} \pi)}$
 
 ### Hallar la parte real e imaginaria de $\frac{3 - 4i}{5 + 7i}$ (2015-09)
 
-$\dots$
+1. $z = \frac{3 - 4i}{5 + 7i}$
+2. $\frac{3 - 4i}{5 + 7i} \cdot \frac{5 - 7i}{5 - 7i}$
+3. $\frac{(3 - 4i)(5 - 7i)}{(5 + 7i)(5 - 7i)}$
+4. $\frac{(3 - 4i)(5 - 7i)}{25 - 35i + 35i - 49i^2}$
+5. $\frac{(3 - 4i)(5 - 7i)}{25 - 49 (-1)}$
+6. $\frac{(3 - 4i)(5 - 7i)}{25 + 49}$
+7. $\frac{15 - 21i - 20i + 28i^2}{74}$
+8. $\frac{15 - 41i + 28 (-1)}{74}$
+9. $\frac{15 - 41i - 28}{74}$
+10. $\frac{-13 - 41i}{74}$
+11. $Re(z) = \frac{-13}{74}$
+12. $Im(z) = \frac{-41}{74}$
 
 ### Si $z = \frac{1}{4} + ki$, para qué valores de $k$ vale $|z| = \frac{\sqrt{10}}{4}$ (2015-09)
 
-$\dots$
+1. $z = \frac{1}{4} + ki$
+2. Para qué valores de $k$ vale que $|z| = \frac{\sqrt{10}}{4}$?
+3. $|z| = \sqrt{a^2 + b^2} = \sqrt{(\frac{1}{4})^2 + k^2} = \sqrt{\frac{1}{16} + k^2}$
+4. $\sqrt{\frac{1}{16} + k^2} = \frac{\sqrt{10}}{4}$
+5. $(\sqrt{\frac{1}{16} + k^2})^2 = (\frac{\sqrt{10}}{4})^2$
+6. $\frac{1}{16} + k^2 = \frac{(\sqrt{10})^2}{4^2}$
+7. $\frac{1}{16} + k^2 = \frac{10}{16}$
+8. $k^2 = \frac{10}{16} - \frac{1}{16}$
+9. $k^2 = \frac{9}{16}$
+10. $k = \pm \sqrt{\frac{9}{16}}$
+11. $k = \pm \frac{\sqrt{9}}{\sqrt{16}}$
+12. $k = \pm \frac{3}{4}$
+13. Verificando con $k = \frac{3}{4}$:
+    1. $z = \frac{1}{4} + \frac{3}{4}i$
+    2. $|z| = \sqrt{(\frac{1}{4})^2 + (\frac{3}{4})^2}$
+    3. $|z| = \sqrt{\frac{1}{16} + \frac{9}{16}}$
+    4. $|z| = \sqrt{\frac{10}{16}}$
+    5. $|z| = \frac{\sqrt{10}}{\sqrt{16}}$
+    6. $|z| = \frac{\sqrt{10}}{4}$
+14. Se puede verificar de forma análoga para $k = - \frac{3}{4}$ porque al tomar su cuadrado el signo se vuelve positivo.
 
 ### Verdadero o falso (justificar en el primer caso, dar contraejemplo en el segundo caso) (2024-03)
 
@@ -407,7 +466,9 @@ $\dots$
 
 #### Las raíces cuartas de $16$ son $2$ y $-2$
 
-$\dots$
+1. Contraejemplo: $2i$
+2. $(2i)^4 = 2^4 \cdot i^4 = 16 \cdot 1 = 16$
+3. Como $2i$ es una raíz cuarta de $16$ pero no figura en la lista, la afirmación es **falsa**.
 
 ---
 

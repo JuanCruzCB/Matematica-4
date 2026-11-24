@@ -24,8 +24,26 @@
 
 1. Sea $f : \mathbb{R}^2 \to \mathbb{R}$ una función de dos variables $f(x, y).$
 2. $f$ se dice **diferenciable** en un punto $(x_0, y_0)$ si al acercarnos arbitrariamente a $(x_0, y_0)$, la gráfica de $f$ se aproxima cada vez mejor a un plano llamado plano tangente.
-
-$\dots$ (NO TERMINADO)
+3. Formalmente, $f$ es diferenciable en un punto $(x_0, y_0)$ si se cumple el límite:
+   1. $\lim_{(x, y) \to (x_0, y_0)} \frac{f(x, y) - [f(x_0, y_0) + f_x(x_0, y_0) (x - x_0) + f_y(x_0, y_0) (y - y_0)]}{\sqrt{(x - x_0)^2 + (y - y_0)^2}} = 0$
+   2. Donde $f_x$ es la derivada parcial de la función respecto a la variable $x$ y $f_y$ es la derivada parcial respecto a $y$.
+4. Teorema: Si las derivadas parciales de una función existen y son continuas en un entorno de un punto, entonces la función es diferenciable en ese punto.
+5. Ejemplo de función diferenciable en un punto:
+   1. $f(x, y) = x^2 + y^2$
+   2. Es continua en todo su dominio.
+   3. Sus derivadas parciales existen: $f_x = 2x$, $f_y = 2y$
+   4. Ambas derivadas parciales son continuas en todo su dominio.
+   5. Por lo tanto $f$ es diferenciable en todo punto, por ejemplo $(0, 0)$.
+6. Ejemplo de función no diferenciable en un punto:
+   1. $f(x, y) = \sqrt{x^2 + y^2}$
+   2. Es continua en todo su dominio.
+   3. Sus derivadas parciales son: $f_x = \frac{x}{\sqrt{x^2 + y^2}}$, $f_y = \frac{y}{\sqrt{x^2 + y^2}}$
+   4. Analizar las derivadas parciales en el origen:
+      1. $f_x(0, 0) = lim_{h \to 0} \frac{f(h, 0) - f(0, 0)}{h}$
+      2. $f_x(0, 0) = lim_{h \to 0} \frac{\sqrt{h^2}}{h}$
+      3. $f_x(0, 0) = lim_{h \to 0} \frac{|h|}{h}$
+      4. El límite no existe porque su valor cambia según nos aproximamos por izquierda o por derecha.
+      5. Por lo tanto una de las derivadas parciales de $f$ no existe en el punto y por ende la función no es diferenciable en dicho punto.
 
 ### Marcar la/s opción/es correcta/s. Una función real $f(x, y)$ es continua en un punto $(x_0, y_0)$ solo si: (2023-05)
 

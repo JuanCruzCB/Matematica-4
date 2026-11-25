@@ -131,7 +131,16 @@ $\dots$
 
 ### Calcular la derivada direccional de la siguiente función en el punto y dirección del vector: $f(x, y) = 3x^3 + xy$; $p = (2, 4)$; $\vec{v} = (-3, 5)$ (2015-09)
 
-$\dots$
+1. La derivada direccional de $f$ en $p$ en la dirección de $\vec{v}$ se define como: $Df(p) = \nabla f(p) \cdot \vec{v}$
+2. $f(x, y) = 3x^3 + xy$
+3. $p = (2, 4)$
+4. $\vec{v} = (-3, 5)$
+5. $\nabla f(x, y) = (f_x, f_y)$
+6. $f_x = 9x^2 + y$
+7. $f_y = x$
+8. $\nabla f(x, y) = (9x^2 + y, x)$
+9. $\nabla f(2, 4) = (9(2)^2 + 4, 2) = (36 + 4, 2) = (40, 2)$
+10. $Df(p) = \nabla f(p) \cdot \vec{v} = (40, 2) \cdot (-3, 5) = 40(-3) + 2(5) = -120 + 10 = -110$
 
 ## Límites
 
@@ -139,25 +148,57 @@ $\dots$
 
 #### $\lim_{(x,y) \to (0, 0)} \frac{x^2 y}{x^2 + y^2}$
 
-$\dots$
+1. $\lim_{(x,y) \to (0, 0)} \frac{x^2 y}{x^2 + y^2}$
+2. Sabemos, por coordenadas polares:
+   1. $x = r \cos \theta$
+   2. $y = r \sin \theta$
+3. Reemplazando: $\lim_{r \to 0} \frac{(r \cos \theta)^2 r \sin \theta}{(r \cos \theta)^2 + (r \sin \theta)^2}$
+4. Expandiendo: $\lim_{r \to 0} \frac{(r^2 \cos^2 \theta) (r \sin \theta)}{r^2 \cos^2 \theta + r^2 \sin^2 \theta}$
+5. Factorizando: $\lim_{r \to 0} \frac{(r^2 \cos^2 \theta) (r \sin \theta)}{r^2 (\cos^2 \theta + \sin^2 \theta)}$
+6. Por propiedad: $\lim_{r \to 0} \frac{(r^2 \cos^2 \theta) (r \sin \theta)}{r^2 (1)}$
+7. Asociatividad del producto: $\lim_{r \to 0} \frac{r^2 (\cos^2 \theta r \sin \theta)}{r^2}$
+8. Simplificando: $\lim_{r \to 0} \cos^2 \theta r \sin \theta = 0$
+
+El límite existe y es cero.
 
 #### $\lim_{(x,y) \to (0, 0)} \frac{x^2 - y^2}{x^2 + y^2}$
 
-$\dots$
+Analizando límites por caminos:
+
+- $y = 0$, con $x \neq 0$: $\frac{x^2}{x^2} = 1 \rightarrow 1$
+- $x = 0$, con $y \neq 0$: $\frac{-y^2}{y^2} = -1 \rightarrow -1$
+
+Como por la dirección $y = 0$ el límite vale $1$ y por $x = 0$ el límite vale $-1$, se concluye que el límite no existe.
 
 ### Estudiar la existencia de los siguientes límites: (2015-09)
 
-#### $\lim_{(x,y) \to (0, 0)} \frac{x^2 sen(x + y)}{x^2 + y^2}$
+#### $\lim_{(x,y) \to (0, 0)} \frac{x^2 \sin(x + y)}{x^2 + y^2}$
 
 $\dots$
 
 #### $\lim_{(x,y) \to (0, 0)} \frac{y^2}{x^2 + y^2}$
 
-$\dots$
+Analizando límites por caminos:
+
+- $y = 0$, con $x \neq 0$: $\frac{0}{x^2} = 0 \rightarrow 0$
+- $x = 0$, con $y \neq 0$: $\frac{y^2}{y^2} = 1 \rightarrow 1$
+
+Como por la dirección $y = 0$ el límite vale $0$ y por $x = 0$ el límite vale $1$, se concluye que el límite no existe.
 
 #### $\lim_{(x,y) \to (0, 0)} \frac{x^2 y^2}{x^2 + y^2}$
 
-$\dots$
+1. $\lim_{(x,y) \to (0, 0)} \frac{x^2 y^2}{x^2 + y^2}$
+2. Sabemos, por coordenadas polares:
+   1. $x = r \cos \theta$
+   2. $y = r \sin \theta$
+3. Reemplazando: $\lim_{r \to 0} \frac{(r \cos \theta)^2 (r \sin \theta)^2}{(r \cos \theta)^2 + (r \sin \theta)^2}$
+4. Expandiendo: $\lim_{r \to 0} \frac{(r^2 \cos^2 \theta) (r^2 \sin^2 \theta)}{r^2 \cos^2 \theta + r^2 \sin^2 \theta}$
+5. Factorizando: $\lim_{r \to 0} \frac{(r^2 \cos^2 \theta) (r^2 \sin^2 \theta)}{r^2 (\cos^2 \theta + \sin^2 \theta)}$
+6. Por propiedad: $\lim_{r \to 0} \frac{(r^2 \cos^2 \theta) (r^2 \sin^2 \theta)}{r^2 (1)}$
+7. Asociatividad del producto: $\lim_{r \to 0} \frac{r^2 (r^2 \cos^2 \theta \sin^2 \theta)}{r^2}$
+8. Simplificando: $\lim_{r \to 0} (r^2 \cos^2 \theta \sin^2 \theta) = 0$
+
+El límite existe y es cero.
 
 ## Continuidad
 

@@ -174,7 +174,21 @@ Como por la dirección $y = 0$ el límite vale $1$ y por $x = 0$ el límite vale
 
 #### $\lim_{(x,y) \to (0, 0)} \frac{x^2 \sin(x + y)}{x^2 + y^2}$
 
-$\dots$
+1. $\lim_{(x,y) \to (0, 0)} \frac{x^2 \sin(x + y)}{x^2 + y^2}$
+2. Sabemos, por coordenadas polares:
+   1. $x = r \cos \theta$
+   2. $y = r \sin \theta$
+3. Reemplazando: $\lim_{r \to 0} \frac{(r \cos \theta)^2 \sin ((r \cos \theta) + (r \sin \theta))}{(r \cos \theta)^2 + (r \sin \theta)^2}$
+4. Expandiendo: $\lim_{r \to 0} \frac{(r^2 \cos^2 \theta) \sin ((r \cos \theta) + (r \sin \theta))}{(r^2 \cos^2 \theta) + (r^2 \sin^2 \theta)}$
+5. Factorizando: $\lim_{r \to 0} \frac{(r^2 \cos^2 \theta) \sin ((r \cos \theta) + (r \sin \theta))}{r^2 (\cos^2 \theta + \sin^2 \theta)}$
+6. Por propiedad: $\lim_{r \to 0} \frac{(r^2 \cos^2 \theta) \sin ((r \cos \theta) + (r \sin \theta))}{r^2 (1)}$
+7. Asociatividad del producto: $\lim_{r \to 0} \frac{r^2 (\cos^2 \theta) \sin ((r \cos \theta) + (r \sin \theta))}{r^2}$
+8. Simplificando: $\lim_{r \to 0} (\cos^2 \theta) \sin ((r \cos \theta) + (r \sin \theta))$
+9. Reemplazando: $\lim_{r \to 0} (\cos^2 \theta) \sin ((0 \cos \theta) + (0 \sin \theta))$
+10. $\lim_{r \to 0} (\cos^2 \theta) \sin (0)$
+11. $\lim_{r \to 0} (\cos^2 \theta) 0 = 0 \rightarrow 0$
+
+El límite existe y es cero.
 
 #### $\lim_{(x,y) \to (0, 0)} \frac{y^2}{x^2 + y^2}$
 

@@ -152,12 +152,12 @@ $\dots$
 2. Sabemos, por coordenadas polares:
    1. $x = r \cos \theta$
    2. $y = r \sin \theta$
-3. Reemplazando: $\lim_{r \to 0} \frac{(r \cos \theta)^2 r \sin \theta}{(r \cos \theta)^2 + (r \sin \theta)^2}$
-4. Expandiendo: $\lim_{r \to 0} \frac{(r^2 \cos^2 \theta) (r \sin \theta)}{r^2 \cos^2 \theta + r^2 \sin^2 \theta}$
-5. Factorizando: $\lim_{r \to 0} \frac{(r^2 \cos^2 \theta) (r \sin \theta)}{r^2 (\cos^2 \theta + \sin^2 \theta)}$
-6. Por propiedad: $\lim_{r \to 0} \frac{(r^2 \cos^2 \theta) (r \sin \theta)}{r^2 (1)}$
-7. Asociatividad del producto: $\lim_{r \to 0} \frac{r^2 (\cos^2 \theta r \sin \theta)}{r^2}$
-8. Simplificando: $\lim_{r \to 0} \cos^2 \theta r \sin \theta = 0$
+3. Reemplazando: $\lim_{r \to 0^+} \frac{(r \cos \theta)^2 r \sin \theta}{(r \cos \theta)^2 + (r \sin \theta)^2}$
+4. Expandiendo: $\lim_{r \to 0^+} \frac{(r^2 \cos^2 \theta) (r \sin \theta)}{r^2 \cos^2 \theta + r^2 \sin^2 \theta}$
+5. Factorizando: $\lim_{r \to 0^+} \frac{(r^2 \cos^2 \theta) (r \sin \theta)}{r^2 (\cos^2 \theta + \sin^2 \theta)}$
+6. Por propiedad: $\lim_{r \to 0^+} \frac{(r^2 \cos^2 \theta) (r \sin \theta)}{r^2 (1)}$
+7. Asociatividad del producto: $\lim_{r \to 0^+} \frac{r^2 (\cos^2 \theta r \sin \theta)}{r^2}$
+8. Simplificando: $\lim_{r \to 0^+} \cos^2 \theta r \sin \theta = 0$
 
 El límite existe y es cero.
 
@@ -165,8 +165,8 @@ El límite existe y es cero.
 
 Analizando límites por caminos:
 
-- $y = 0$, con $x \neq 0$: $\frac{x^2}{x^2} = 1 \rightarrow 1$
-- $x = 0$, con $y \neq 0$: $\frac{-y^2}{y^2} = -1 \rightarrow -1$
+- $y = 0$, con $x \neq 0$: $\frac{x^2}{x^2} = 1$
+- $x = 0$, con $y \neq 0$: $\frac{-y^2}{y^2} = -1$
 
 Como por la dirección $y = 0$ el límite vale $1$ y por $x = 0$ el límite vale $-1$, se concluye que el límite no existe.
 
@@ -178,15 +178,15 @@ Como por la dirección $y = 0$ el límite vale $1$ y por $x = 0$ el límite vale
 2. Sabemos, por coordenadas polares:
    1. $x = r \cos \theta$
    2. $y = r \sin \theta$
-3. Reemplazando: $\lim_{r \to 0} \frac{(r \cos \theta)^2 \sin ((r \cos \theta) + (r \sin \theta))}{(r \cos \theta)^2 + (r \sin \theta)^2}$
-4. Expandiendo: $\lim_{r \to 0} \frac{(r^2 \cos^2 \theta) \sin ((r \cos \theta) + (r \sin \theta))}{(r^2 \cos^2 \theta) + (r^2 \sin^2 \theta)}$
-5. Factorizando: $\lim_{r \to 0} \frac{(r^2 \cos^2 \theta) \sin ((r \cos \theta) + (r \sin \theta))}{r^2 (\cos^2 \theta + \sin^2 \theta)}$
-6. Por propiedad: $\lim_{r \to 0} \frac{(r^2 \cos^2 \theta) \sin ((r \cos \theta) + (r \sin \theta))}{r^2 (1)}$
-7. Asociatividad del producto: $\lim_{r \to 0} \frac{r^2 (\cos^2 \theta) \sin ((r \cos \theta) + (r \sin \theta))}{r^2}$
-8. Simplificando: $\lim_{r \to 0} (\cos^2 \theta) \sin ((r \cos \theta) + (r \sin \theta))$
-9. Reemplazando: $\lim_{r \to 0} (\cos^2 \theta) \sin ((0 \cos \theta) + (0 \sin \theta))$
-10. $\lim_{r \to 0} (\cos^2 \theta) \sin (0)$
-11. $\lim_{r \to 0} (\cos^2 \theta) 0 = 0 \rightarrow 0$
+3. Reemplazando: $\lim_{r \to 0^+} \frac{(r \cos \theta)^2 \sin ((r \cos \theta) + (r \sin \theta))}{(r \cos \theta)^2 + (r \sin \theta)^2}$
+4. Expandiendo: $\lim_{r \to 0^+} \frac{(r^2 \cos^2 \theta) \sin ((r \cos \theta) + (r \sin \theta))}{(r^2 \cos^2 \theta) + (r^2 \sin^2 \theta)}$
+5. Factorizando: $\lim_{r \to 0^+} \frac{(r^2 \cos^2 \theta) \sin ((r \cos \theta) + (r \sin \theta))}{r^2 (\cos^2 \theta + \sin^2 \theta)}$
+6. Por propiedad: $\lim_{r \to 0^+} \frac{(r^2 \cos^2 \theta) \sin ((r \cos \theta) + (r \sin \theta))}{r^2 (1)}$
+7. Asociatividad del producto: $\lim_{r \to 0^+} \frac{r^2 (\cos^2 \theta) \sin ((r \cos \theta) + (r \sin \theta))}{r^2}$
+8. Simplificando: $\lim_{r \to 0^+} (\cos^2 \theta) \sin ((r \cos \theta) + (r \sin \theta))$
+9. Reemplazando: $\lim_{r \to 0^+} (\cos^2 \theta) \sin ((0 \cos \theta) + (0 \sin \theta))$
+10. $\lim_{r \to 0^+} (\cos^2 \theta) \sin (0)$
+11. $\lim_{r \to 0^+} (\cos^2 \theta) 0 = 0$
 
 El límite existe y es cero.
 
@@ -194,8 +194,8 @@ El límite existe y es cero.
 
 Analizando límites por caminos:
 
-- $y = 0$, con $x \neq 0$: $\frac{0}{x^2} = 0 \rightarrow 0$
-- $x = 0$, con $y \neq 0$: $\frac{y^2}{y^2} = 1 \rightarrow 1$
+- $y = 0$, con $x \neq 0$: $\frac{0}{x^2} = 0$
+- $x = 0$, con $y \neq 0$: $\frac{y^2}{y^2} = 1$
 
 Como por la dirección $y = 0$ el límite vale $0$ y por $x = 0$ el límite vale $1$, se concluye que el límite no existe.
 
@@ -205,12 +205,12 @@ Como por la dirección $y = 0$ el límite vale $0$ y por $x = 0$ el límite vale
 2. Sabemos, por coordenadas polares:
    1. $x = r \cos \theta$
    2. $y = r \sin \theta$
-3. Reemplazando: $\lim_{r \to 0} \frac{(r \cos \theta)^2 (r \sin \theta)^2}{(r \cos \theta)^2 + (r \sin \theta)^2}$
-4. Expandiendo: $\lim_{r \to 0} \frac{(r^2 \cos^2 \theta) (r^2 \sin^2 \theta)}{r^2 \cos^2 \theta + r^2 \sin^2 \theta}$
-5. Factorizando: $\lim_{r \to 0} \frac{(r^2 \cos^2 \theta) (r^2 \sin^2 \theta)}{r^2 (\cos^2 \theta + \sin^2 \theta)}$
-6. Por propiedad: $\lim_{r \to 0} \frac{(r^2 \cos^2 \theta) (r^2 \sin^2 \theta)}{r^2 (1)}$
-7. Asociatividad del producto: $\lim_{r \to 0} \frac{r^2 (r^2 \cos^2 \theta \sin^2 \theta)}{r^2}$
-8. Simplificando: $\lim_{r \to 0} (r^2 \cos^2 \theta \sin^2 \theta) = 0$
+3. Reemplazando: $\lim_{r \to 0^+} \frac{(r \cos \theta)^2 (r \sin \theta)^2}{(r \cos \theta)^2 + (r \sin \theta)^2}$
+4. Expandiendo: $\lim_{r \to 0^+} \frac{(r^2 \cos^2 \theta) (r^2 \sin^2 \theta)}{r^2 \cos^2 \theta + r^2 \sin^2 \theta}$
+5. Factorizando: $\lim_{r \to 0^+} \frac{(r^2 \cos^2 \theta) (r^2 \sin^2 \theta)}{r^2 (\cos^2 \theta + \sin^2 \theta)}$
+6. Por propiedad: $\lim_{r \to 0^+} \frac{(r^2 \cos^2 \theta) (r^2 \sin^2 \theta)}{r^2 (1)}$
+7. Asociatividad del producto: $\lim_{r \to 0^+} \frac{r^2 (r^2 \cos^2 \theta \sin^2 \theta)}{r^2}$
+8. Simplificando: $\lim_{r \to 0^+} (r^2 \cos^2 \theta \sin^2 \theta) = 0$
 
 El límite existe y es cero.
 
@@ -218,11 +218,53 @@ El límite existe y es cero.
 
 ### Determinar el dominio de continuidad: $f(x, y) = \begin{cases} \frac{9}{\sqrt{x^2 + y^2}} & \text{si } (x, y) \neq (0, 0) \\ 0 & \text{si } (x, y) = (0, 0) \end{cases}$ (2016-04)
 
-$\dots$
+1. El dominio de continuidad de una función es el conjunto de puntos donde la función es continua.
+2. Para que una función de dos variables sea continua en un punto se deben cumplir tres condiciones:
+   1. $f(x, y)$ está definida.
+   2. $\lim_{(x, y) \to (x_0, y_0)} f(x, y)$ existe.
+   3. $\lim_{(x, y) \to (x_0, y_0)} f(x, y) = f(x_0, y_0)$
+3. Cuando $(x, y) \neq (0, 0)$ la función se comporta bien porque tenemos un cociente de funciones continuas y además el denominador no se anula, por lo que la función es continua.
+4. Lo importante es ver qué ocurre en el origen.
+5. **Condición 1**: $f(0, 0) = 0$ está definida. ✅
+6. **Condición 2**:
+   1. $\lim_{(x, y) \to (0, 0)} \frac{9}{\sqrt{x^2 + y^2}}$
+   2. $\lim_{r \to 0^+} \frac{9}{\sqrt{(r \cos \theta)^2 + (r \sin \theta)^2}}$
+   3. $\lim_{r \to 0^+} \frac{9}{\sqrt{r^2 \cos^2 \theta + r^2 \sin^2 \theta}}$
+   4. $\lim_{r \to 0^+} \frac{9}{\sqrt{r^2 (\cos^2 \theta + \sin^2 \theta)}}$
+   5. $\lim_{r \to 0^+} \frac{9}{\sqrt{r^2 (1)}}$
+   6. $\lim_{r \to 0^+} \frac{9}{\sqrt{r^2}}$
+   7. $\lim_{r \to 0^+} \frac{9}{r} = +\infty$
+   8. La función tiende a infinito positivo siempre, independientemente del valor de $\theta$.
+   9. Como $+\infty$ no es un número, el límite no existe.
+7. Como la segunda condición no se cumple, la tercera tampoco se cumplirá.
+8. Por lo tanto la función no es continua en el origen.
+9. El dominio de continuidad de la función es: $\mathbb{R}^2 - \lbrace (0, 0) \rbrace$
 
 ### Determinar el dominio de continuidad: $f(x, y) = \begin{cases} \frac{x^2}{\sqrt{x^2 + y^2}} & \text{si } (x, y) \neq (0, 0) \\ 0 & \text{si } (x, y) = (0, 0) \end{cases}$ (2015-09)
 
-$\dots$
+1. El dominio de continuidad de una función es el conjunto de puntos donde la función es continua.
+2. Para que una función de dos variables sea continua en un punto se deben cumplir tres condiciones:
+   1. $f(x, y)$ está definida.
+   2. $\lim_{(x, y) \to (x_0, y_0)} f(x, y)$ existe.
+   3. $\lim_{(x, y) \to (x_0, y_0)} f(x, y) = f(x_0, y_0)$
+3. Cuando $(x, y) \neq (0, 0)$ la función se comporta bien porque tenemos un cociente de funciones continuas y además el denominador no se anula, por lo que la función es continua.
+4. Lo importante es ver qué ocurre en el origen.
+5. **Condición 1**: $f(0, 0) = 0$ está definida. ✅
+6. **Condición 2**:
+   1. $\lim_{(x, y) \to (0, 0)} \frac{x^2}{\sqrt{x^2 + y^2}}$
+   2. $\lim_{r \to 0^+} \frac{(r \cos \theta)^2}{\sqrt{(r \cos \theta)^2 + (r \sin \theta)^2}}$
+   3. $\lim_{r \to 0^+} \frac{r^2 \cos^2 \theta}{\sqrt{(r^2 \cos^2 \theta) + (r^2 \sin^2 \theta)}}$
+   4. $\lim_{r \to 0^+} \frac{r^2 \cos^2 \theta}{\sqrt{r^2 (\cos^2 \theta + \sin^2 \theta)}}$
+   5. $\lim_{r \to 0^+} \frac{r^2 \cos^2 \theta}{\sqrt{r^2 (1)}}$
+   6. $\lim_{r \to 0^+} \frac{r^2 \cos^2 \theta}{\sqrt{r^2}}$
+   7. $\lim_{r \to 0^+} \frac{r^2 \cos^2 \theta}{r}$
+   8. $\lim_{r \to 0^+} r \cos^2 \theta = 0$
+   9. El límite existe y vale cero independientemente del valor de $\theta$. ✅
+7. **Condición 3**:
+   1. $\lim_{(x, y) \to (0, 0)} f(x, y) = f(0, 0)$
+   2. $0 = 0$
+   3. Como el límite existe y es exactamente igual al valor de la función en el punto, la tercera condición se cumple. ✅
+8. Por lo tanto el dominio de continuidad de la función es todo $\mathbb{R}^2$.
 
 ## Análisis de diferenciabilidad
 

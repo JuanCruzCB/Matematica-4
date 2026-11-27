@@ -270,7 +270,54 @@ El límite existe y es cero.
 
 ### Analizar la diferenciabilidad de: $f(x, y) = \begin{cases} \frac{x^2 y}{\sqrt{x^2 + y^2}} & \text{si } (x, y) \neq (0, 0) \\ 0 & \text{si } (x, y) = (0, 0) \end{cases}$ (2016-04)
 
-$\dots$
+1. Analizar la diferenciabilidad fuera de $(0, 0)$:
+   1. La función es un cociente de funciones.
+   2. El numerador $x^2 y$ es diferenciable en todo $\mathbb{R}^2$ por ser un polinomio común.
+   3. El denominador $\sqrt{x^2 + y^2}$ es una composición de funciones entre el polinomio $x^2 + y^2$ y la función raíz cuadrada.
+      1. El polinomio es diferenciable en todo $\mathbb{R}^2$.
+      2. La raíz cuadrada es diferenciable en $(0, \infty)$.
+      3. Como $x^2 + y^2 > 0$ para todo $(x, y) \neq (0, 0)$, el denominador es diferenciable en todo $\mathbb{R}^2 - \lbrace (0, 0) \rbrace$.
+      4. Además el denominador no se anula en $\mathbb{R}^2 - \lbrace (0, 0) \rbrace$.
+   4. Por teorema se sabe que todo cociente de funciones diferenciables donde el denominador no se anula es diferenciable. Como el denominador no se anula en $\mathbb{R}^2 - \lbrace (0, 0) \rbrace$, el teorema aplica.
+   5. Por lo tanto la función es diferenciable en todo $\mathbb{R}^2 - \lbrace (0, 0) \rbrace$. ✅
+2. Analizar la diferenciabilidad en $(0, 0)$:
+   1. $\lim_{(x, y) \to (0, 0)} f(x, y)$ debe ser igual a $f(0, 0)$.
+   2. $f(0, 0) = 0$
+   3. $\lim_{(x, y) \to (0, 0)} \frac{x^2 y}{\sqrt{x^2 + y^2}}$
+   4. $\lim_{r \to 0^+} \frac{(r \cos \theta)^2 (r \sin \theta)}{\sqrt{(r \cos \theta)^2 + (r \sin \theta)^2}}$
+   5. $\lim_{r \to 0^+} \frac{r^2 \cos^2 \theta (r \sin \theta)}{\sqrt{r^2 (\cos^2 \theta + \sin^2 \theta)}}$
+   6. $\lim_{r \to 0^+} \frac{r^2 \cos^2 \theta (r \sin \theta)}{\sqrt{r^2 (1)}}$
+   7. $\lim_{r \to 0^+} \frac{r^2 \cos^2 \theta (r \sin \theta)}{r}$
+   8. $\lim_{r \to 0^+} r^2 \cos^2 \theta \sin \theta = 0$
+   9. Como el límite existe y es igual al valor de la función en el punto, la función es continua en el origen. ✅
+3. Para ver si es diferenciable en el origen, se debe cumplir el límite: $\lim_{(x, y) \to (0, 0)} \frac{f(x, y) - [f(0, 0) + f_x(0, 0) (x - 0) + f_y(0, 0) (y - 0)]}{\sqrt{(x - 0)^2 + (y - 0)^2}} = 0$
+4. Simplificando el límite: $\lim_{(x, y) \to (0, 0)} \frac{f(x, y) - [f_x(0, 0) x + f_y(0, 0) y]}{\sqrt{x^2 + y^2}} = 0$
+5. Obteniendo la derivada parcial respecto de $x$ por definición:
+   1. $f_x(0, 0) = \lim_{h \to 0} \frac{f(0 + h, 0) - f(0, 0)}{h}$
+   2. $f_x(0, 0) = \lim_{h \to 0} \frac{f(h, 0) - 0}{h}$
+   3. $f_x(0, 0) = \lim_{h \to 0} \frac{f(h, 0)}{h}$
+   4. $f_x(0, 0) = \lim_{h \to 0} \frac{\frac{h^2 \cdot 0}{\sqrt{h^2 + 0}}}{h}$
+   5. $f_x(0, 0) = \lim_{h \to 0} \frac{0}{h} = 0$
+6. Obteniendo la derivada parcial respecto de $y$ por definición:
+   1. $f_y(0, 0) = \lim_{h \to 0} \frac{f(0, 0 + h) - f(0, 0)}{h}$
+   2. $f_y(0, 0) = \lim_{h \to 0} \frac{f(0, h) - 0}{h}$
+   3. $f_y(0, 0) = \lim_{h \to 0} \frac{f(0, h)}{h}$
+   4. $f_y(0, 0) = \lim_{h \to 0} \frac{\frac{0^2 \cdot h}{\sqrt{0^2 + h^2}}}{h}$
+   5. $f_y(0, 0) = \lim_{h \to 0} \frac{0}{h} = 0$
+7. Resolviendo el límite de diferenciabilidad:
+   1. $\lim_{(x, y) \to (0, 0)} \frac{f(x, y) - [0 \cdot x + 0 \cdot y]}{\sqrt{x^2 + y^2}}$
+   2. $\lim_{(x, y) \to (0, 0)} \frac{f(x, y)}{\sqrt{x^2 + y^2}}$
+   3. $\lim_{(x, y) \to (0, 0)} \frac{\frac{x^2 y}{\sqrt{x^2 + y^2}}}{\sqrt{x^2 + y^2}}$
+   4. $\lim_{(x, y) \to (0, 0)} \frac{x^2 y}{\sqrt{x^2 + y^2}} \cdot \frac{1}{\sqrt{x^2 + y^2}}$
+   5. $\lim_{(x, y) \to (0, 0)} \frac{x^2 y}{\sqrt{x^2 + y^2} \cdot \sqrt{x^2 + y^2}}$
+   6. $\lim_{(x, y) \to (0, 0)} \frac{x^2 y}{(\sqrt{x^2 + y^2})^2}$
+   7. $\lim_{(x, y) \to (0, 0)} \frac{x^2 y}{x^2 + y^2}$
+   8. $\lim_{r \to 0^+} \frac{(r \cos \theta)^2 (r \sin \theta)}{(r \cos \theta)^2 + (r \sin \theta)^2}$
+   9. $\lim_{r \to 0^+} \frac{r^2 \cos^2 \theta (r \sin \theta)}{r^2 (\cos^2 \theta + \sin^2 \theta)}$
+   10. $\lim_{r \to 0^+} \frac{r^2 \cos^2 \theta (r \sin \theta)}{r^2 (1)}$
+   11. $\lim_{r \to 0^+} r \cos^2 \theta \sin \theta = 0$
+8. Como el límite de diferenciabilidad existe y es igual a cero, la función es diferenciable en el origen. ✅
+9. Como ya se había visto que la función es diferenciable en todo punto distinto del origen y ahora hallamos que también es diferenciable en el origen, se concluye que la función es diferenciable en todo $\mathbb{R}^2$.
 
 ### Analizar la diferenciabilidad de: $f(x, y) = \begin{cases} \frac{x y}{\sqrt{x^2 + y^2}} & \text{si } (x, y) \neq (0, 0) \\ 0 & \text{si } (x, y) = (0, 0) \end{cases}$ (2026-11)
 
